@@ -4,9 +4,7 @@
     --down-price-color: #EA3943;
     --up-price-color: #16C784;
     --secondary-color: #616E85;
-}
-
-/* font */
-:root{
-    
+    --line-color: #EFF2F5;
+    --placeholder: #A6B0C3;
+    --gray-400: #A6B0C3;
 }
