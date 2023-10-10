@@ -637,6 +637,13 @@ tr {
     gap: 8px;
 }
 
+.ctn__newsletter__bg {
+    max-width: 1252px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
 .ctn__newsletter {
     display: flex;
     justify-content: space-between;
