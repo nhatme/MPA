@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../assets/img/avatar/Jupiter.png">
     <link rel="stylesheet" href="../src/css/style.css">
+    <link rel="stylesheet" href="../src/css/my-style.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <title>MPA - Official</title>
@@ -353,25 +354,27 @@
                     </div>
                 </div>
                 <div class="ctn__lf__right">
-                    <div class="ctn__lfr__showrows">
-                        <span>Show rows</span>
-                        <div class="ctn__lfrsr__btn">
-                            <span>20</span>
-                            <img src="../src/img/svg/dropdown-down.svg" alt="">
-                        </div>
+
+                    <p class="ctn__lfrsr__name">Show rows</p>
+
+                    <div class="ctn__lfrsr__btn">
+                        <span>20</span>
+                        <img src="../src/img/svg/dropdown-down.svg" alt="">
                     </div>
-                    <div class="ctn__lfr__filterBtn">
+
+                    <div class="ctn__lfrsr__btn">
                         <img src="../src/img/svg/filter.svg" alt="">
                         <span>Filters</span>
                     </div>
-                    <div class="ctn__lfr__customize">
+
+                    <div class="ctn__lfrsr__btn">
                         <img src="../src/img/svg/customize.svg" alt="">
                         <span>Customize</span>
                     </div>
 
                     <div class="ctn__lfr__listorsquare">
-                        <img src="../src/img/svg/three-line.svg" alt="">
-                        <img src="../src/img/svg/four-squares.svg" alt="">
+                        <img class="ctn__lfrls__selected" src="../src/img/svg/three-line.svg" alt="">
+                        <img class="ctn__lfrls__square" src="../src/img/svg/four-squares.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -652,6 +655,35 @@
                 </tbody>
 
             </table>
+
+        </div>
+
+        <div class="pages__rows">
+            <div class="pr__pages">
+                <p class="pr__pages__p ">Showing 1-20 out of 9056</p>
+                <div class="pages__count__list">
+                    <img class="pc__count pc__control" src="../src/img/svg/arrow-left.svg" alt="">
+                    <a href="#" class="pc__count selected text-white btn-radius ">1</a>
+                    <a href="#" class="pc__count">2</a>
+                    <a href="#" class="pc__count">3</a>
+                    <a href="#" class="pc__count">4</a>
+                    <a href="#" class="pc__count">5</a>
+                    <a href="#" class="pc__count">6</a>
+                    <a href="#" class="pc__count">...</a>
+                    <a href="#" class="pc__count">500</a>
+                    <img class="pc__count pc__control" src="../src/img/svg/arrow-right.svg" alt="">
+                </div>
+                <div class="pr">
+                    <p class="pr__p0">Show rows</p>
+                    <div class="pr__dprows">
+                        <p class="prdpr__p">20</p>
+                        <img src="../src/img/svg/dropdown-down.svg" class="prdpr__dp"></img>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ctn__newsletter">
 
         </div>
 

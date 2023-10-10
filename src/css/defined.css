@@ -11,11 +11,13 @@
     --gray: #A6B0C3;
     --gray-secondary: #808A9D;
     --btn-blue: #F0F6FF;
+    --white: white;
 
 
     /* font size  */
     --font-size-24px: 24px;
     --font-size-16px: 16px;
+    --font-size-15px: 15px;
     --font-size-14px: 14px;
     --font-size-12px: 12px;
     --font-size-11px: 11px;
@@ -34,3 +36,4 @@
     /* box shadow special  */
     --box-shadow: rgba(88, 102, 126, 0.08) 0px 4px 24px, rgba(88, 102, 126, 0.12) 0px 1px 2px;
 }
+

@@ -1,0 +1,13 @@
+@import "./defined.css";
+
+.selected {
+    background-color: var(--main-color);
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.btn-radius {
+    border-radius: 6px;
+} 
