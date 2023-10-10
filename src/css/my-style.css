@@ -1,13 +1,120 @@
 @import "./defined.css";
 
-.selected {
-    background-color: var(--main-color);
-}
+
+/* color  */
 
 .text-white {
     color: var(--white);
 }
 
-.btn-radius {
+.main-color {
+    background-color: var(--main-color);
+}
+
+.main-color-bg {
+    background-color: var(--main-color);
+}
+
+.text-2nd-color {
+    color: var(--secondary-color);
+}
+
+.up-price {
+    color: var(--up-price-color);
+}
+
+.gray-2nd-color {
+    color: var(--gray-secondary);
+}
+
+.newsletterbg {
+    background-color: var(--newsletterbg);
+}
+
+/* radius  */
+
+.radius-6px {
     border-radius: 6px;
-} 
+}
+
+
+/* font size and weight */
+
+.fs-12px-fw-400 {
+    font-size: var(--font-size-12px);
+    font-weight: var(--fw-400);
+}
+
+.fs-12px-fw-500 {
+    font-size: var(--font-size-12px);
+    font-weight: var(--fw-500);
+}
+
+.fs-12px-fw-600 {
+    font-size: var(--font-size-12px);
+    font-weight: var(--fw-600);
+}
+
+.fs-12px-fw-700 {
+    font-size: var(--font-size-12px);
+    font-weight: var(--fw-700);
+}
+
+/* ========================== */
+
+.fs-14px-fw-400 {
+    font-size: var(--font-size-14px);
+    font-weight: var(--fw-400);
+}
+
+.fs-14px-fw-500 {
+    font-size: var(--font-size-14px);
+    font-weight: var(--fw-500);
+}
+
+.fs-14px-fw-600 {
+    font-size: var(--font-size-14px);
+    font-weight: var(--fw-600);
+}
+
+/* ========================== */
+
+.fs-15px-fw-600 {
+    font-size: var(--font-size-15px);
+    font-weight: var(--fw-600);
+}
+
+/* ========================== */
+
+.fs-16px-fw-600 {
+    font-size: var(--font-size-16px);
+    font-weight: var(--fw-600);
+}
+
+.fs-16px-fw-400 {
+    font-size: var(--font-size-16px);
+    font-weight: var(--fw-400);
+}
+
+/* ========================== */
+
+.fs-32px-fw-300 {
+    font-size: var(--font-size-32px);
+    font-weight: var(--fw-300);
+}
+
+.fs-32px-fw-700 {
+    font-size: var(--font-size-32px);
+    font-weight: var(--fw-700);
+}
+
+/* border  */
+
+.border-bottom {
+    border-bottom: 1px solid var(--line-color);
+}
+
+/* line height */
+.lh-35px {
+    line-height: 35px;
+}
