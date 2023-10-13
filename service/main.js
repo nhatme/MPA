@@ -1,37 +1,35 @@
-
-const api_key = "4f10050d-6940-42fd-86ff-8bd8ed6b0306"
-const url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=5"
-
-
-
-// $.ajax({
-//     url,
-//     type:"get",
-//     headers:{"X-CMC_PRO_API_KEY":api_key},
-//     success:function(data){
-//         console.log(data)
-//     }
-// })
-
-$.ajax({
-    url: url,
-    headers:{"X-CMC_PRO_API_KEY":api_key},
-    success: (data)=>{
-        console.log("oko:",data)
-    }
-  });
+import express from "express"
+import productRoutes from './api/routes/products.js'
+import orderRoutes from './api/routes/products.js'
+// import bodyParser from "body-parser"
+import morgan from "morgan"
 
 
 
+const app = express()
 
-// fetch(url, { mode: 'no-cors' })
-//     .then(response => {
-//         // Log the response status code and response text
-//         console.log('Response status:', response.status);
-//         console.log('Response text:', response.statusText);
+app.use(morgan('dev'))
+// app.use(bodyParser.urlencoded({extended: false}))
+// app.use(bodyParser.json())
 
-//         if (!response.ok) {
-//             throw new Error('Network response was not ok');
-//         }
-//         return response.json();
-//     })
+
+app.use('/products', productRoutes)
+app.use('/orders', orderRoutes)
+
+
+app.use((req, res, next) => {
+    const error = new Error('Not found')
+    error.status = 404
+    next(error)
+})
+
+app.use((error, req, res, next) => {
+    res.status(error.status || 500)
+    res.json({
+        error: {
+            message: error.message
+        }
+    })
+})
+
+export default app
