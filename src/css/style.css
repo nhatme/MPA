@@ -8,154 +8,7 @@
     text-decoration: none;
 }
 
-/* start header  */
-/* start top header  */
-
-.sign-left {
-    color: var(--secondary-color);
-    margin: 4px;
-}
-
-.value {
-    color: var(--main-color);
-}
-
-.top-header-left {
-    display: flex;
-    gap: 12px;
-}
-
-.top-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 24px;
-}
-
-.top-header-right {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-}
-
-.top-header-right-half {
-    display: flex;
-    gap: 10px;
-}
-
-.top-header-right-group {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.item-unit {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.top-header-right-line-straight {
-    width: 0.5px;
-    height: 22px;
-    border-left: 0.5px solid;
-    color: var(--line-color);
-}
-
-.line-header {
-    border-bottom: 0.5px solid;
-    color: var(--line-color);
-}
-
-/* end top header  */
-
-/* start second-header */
-
-.second-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 24px;
-}
-
-.second-header-left {
-    display: flex;
-}
-
-.second-header-left-logo {
-    display: flex;
-    padding-right: 16px;
-}
-
-.second-header-left-menuBar {
-    display: flex;
-    padding-left: 16px;
-}
-
-.second-header-left-menuBar div {
-    font-size: var(--font-size-14px);
-    font-weight: var(--fw-600);
-    padding: 24px 16px;
-}
-
-.second-header-right-item {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.second-header-right-items {
-    display: flex;
-    gap: 16px;
-}
-
-.second-header-right {
-    display: flex;
-    gap: 12px;
-}
-
-.second-header-right-searchbar {
-    display: flex;
-    align-items: center;
-    padding: 8px;
-    background-color: var(--line-color);
-    border-radius: 8px;
-    gap: 4px;
-}
-
-.header-right-searchbar {
-    border: none;
-    outline: none;
-    background: none;
-    padding: 0;
-}
-
-.header-right-searchbar::placeholder {
-    font-size: var(--font-size-12px);
-    font-weight: var(--fw-600);
-    color: var(--placeholder);
-}
-
-.change-color-icon-gg {
-    color: var(--placeholder);
-}
-
-.header-right-searchbar-prompt {
-    color: var(--line-color);
-    border-radius: 5px;
-    padding: 2px 9px;
-}
-
-.search-icon-gg {
-    color: var(--placeholder);
-}
-
-/* end second-header */
-/* end header  */
-
-
 /* ===================================================================== */
-
 
 /* start container */
 
@@ -240,14 +93,14 @@
 
 .ctn-bottom-box-detail-info {
     display: flex;
-    gap: 8px;
+    gap: 16px;
     align-items: center;
 }
 
 .ctn__bbdi__avatar__name {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 8px;
 }
 
 .ctn__bbd__realtime-price {
@@ -504,93 +357,10 @@ tr {
     padding-left: 4px;
 }
 
-
 /* end pages rows  */
-
 
 /* end lists currency */
 
 /* end container */
-
-/* start footer  */
-
-.footer {
-    padding: 48px 24px;
-}
-
-.f__linkslogo {
-    display: flex;
-    justify-content: space-between;
-}
-
-.f__logo {
-    padding: 10px;
-}
-
-.f__links {
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.f__link {
-    padding-right: 8px;
-}
-
-.fl__topic {
-    padding: 4px 0px 16px 0px;
-}
-
-.f__copyright__apps {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 64px;
-}
-
-.f__mobilev {
-    display: flex;
-    gap: 8px;
-}
-
-.ctn__newsletter__bg {
-    max-width: 1252px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-}
-
-.ctn__newsletter {
-    display: flex;
-    justify-content: space-between;
-    padding: 64px 0;
-}
-
-.ctnn__title {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.ctnn__title__btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.ctnnt__top {
-    display: flex;
-    gap: 12px;
-}
-
-.ctnn__btn {
-    padding: 12px 32px;
-    width: fit-content;
-}
-
-.ctnnbtn {
-    padding-top: 40px;
-}
-
-/* end footer  */
 
 /* ===================================================================== */

@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300&display=swap');
+@import "../defined.css";
+
+/* start header  */
+/* start top header  */
+
+.sign-left {
+    color: var(--secondary-color);
+    margin: 4px;
+}
+
+.value {
+    color: var(--main-color);
+}
+
+.top-header-left {
+    display: flex;
+    gap: 12px;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 24px;
+}
+
+.top-header-right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.top-header-right-half {
+    display: flex;
+    gap: 10px;
+}
+
+.top-header-right-group {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.item-unit {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.top-header-right-line-straight {
+    width: 0.5px;
+    height: 22px;
+    border-left: 0.5px solid;
+    color: var(--line-color);
+}
+
+.line-header {
+    border-bottom: 0.5px solid;
+    color: var(--line-color);
+}
+
+/* end top header  */
+
+/* start second-header */
+
+.second-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 24px;
+}
+
+.second-header-left {
+    display: flex;
+}
+
+.second-header-left-logo {
+    display: flex;
+    padding-right: 16px;
+}
+
+.second-header-left-menuBar {
+    display: flex;
+    padding-left: 16px;
+}
+
+.second-header-left-menuBar div {
+    font-size: var(--font-size-14px);
+    font-weight: var(--fw-600);
+    padding: 24px 16px;
+}
+
+.second-header-right-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.second-header-right-items {
+    display: flex;
+    gap: 16px;
+}
+
+.second-header-right {
+    display: flex;
+    gap: 12px;
+}
+
+.second-header-right-searchbar {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: var(--line-color);
+    border-radius: 8px;
+    gap: 4px;
+}
+
+.header-right-searchbar {
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+}
+
+.header-right-searchbar::placeholder {
+    font-size: var(--font-size-12px);
+    font-weight: var(--fw-600);
+    color: var(--placeholder);
+}
+
+.change-color-icon-gg {
+    color: var(--placeholder);
+}
+
+.header-right-searchbar-prompt {
+    color: var(--line-color);
+    border-radius: 5px;
+    padding: 2px 9px;
+}
+
+.search-icon-gg {
+    color: var(--placeholder);
+}
+
+/* end second-header */
+/* end header  */
