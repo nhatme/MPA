@@ -17,6 +17,7 @@
 .container {
     max-width: 1252px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .ctn__top__highlights__slider {
@@ -156,6 +157,7 @@
 
 .ctn__lf__left {
     display: flex;
+    width: 1252px;
 }
 
 .ctn__lfl__cur__categ {
@@ -235,7 +237,7 @@
 
 
 table {
-    width: 100%;
+    width: 1252px;
     border-collapse: collapse;
 }
 

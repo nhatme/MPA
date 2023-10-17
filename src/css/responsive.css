@@ -1,0 +1,36 @@
+@media (max-width: 1200px) {
+
+    .top-header {
+        display: none;
+    }
+
+    .second-header-left-menuBar {
+        display: none;
+    }
+
+    /* .second-header-right {
+        display: none;
+    } */
+
+    .ctn__lists__filter {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .ctn__lfrsr__btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 765px) {
+    .ctn-highlights-switch {
+        display: none;
+    }
+
+    .ctn-bottom {
+        display: none;
+    }
+}

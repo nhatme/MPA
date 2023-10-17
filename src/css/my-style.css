@@ -152,3 +152,8 @@
 .lh-35px {
     line-height: 35px;
 }
+
+
+.d-none {
+    display: none;
+}

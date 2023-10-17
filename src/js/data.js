@@ -12,7 +12,7 @@ $.ajax({
 
 // render list coin
 function renderListCoin(data) {
-    console.log(data)
+    // console.log(data)
     const html = data.map((item, index) => {
         return `
                 <tr>
