@@ -1,15 +1,20 @@
+let currentPage = 1
+let limit = 5
 
-
-
-$.ajax({
-    url: "http://localhost:3000/getlistcoin",
-    success: function (data) {
-        if (data.data) {
-            renderListCoin(data.data)
+function getAPI(page = 1, limit) {
+    $(".list-coin").html("loading")
+    $.ajax({
+        url: `http://localhost:3000/getlistcoin?page=${page}&limit=${limit}`,
+        success: function (data) {
+            if (data.data) {
+                renderListCoin(data.data)
+                renderPage(data.status.total_count)
+            }
         }
-    }
-})
+    })
 
+}
+getAPI(currentPage, limit)
 // render list coin
 function renderListCoin(data) {
     // console.log(data)
@@ -62,4 +67,29 @@ function renderListCoin(data) {
                 `
     }).join("")
     $(".list-coin").html(html)
+}
+function renderPage(total) {
+    const totalPage = Math.round(total / 20)
+    let html = ""
+    for (var i = 1; i <= 6; i++) {
+
+        console.log(currentPage)
+        if (currentPage == i) {
+            html += `<div class="page-item pc__count main-color fs-15px-fw-600" page="${i}">${i}</div>`
+
+        } else {
+
+            html += `<div  class="page-item pc__count fs-15px-fw-600" page="${i}">${i}</div>`
+        }
+    }
+    html += '<div class="pc__count fs-15px-fw-600 " page="">...</div>'
+    html += `<div class="page-item pc__count fs-15px-fw-600" page="">${totalPage}</div>`
+    $(".pagination").html(html)
+
+    $(".page-item").click(function () {
+        currentPage = $(this).attr("page")
+        getAPI(currentPage, limit)
+
+    })
+
 }

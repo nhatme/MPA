@@ -204,6 +204,15 @@
     align-items: center;
 }
 
+.ctn__showrows {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 5px 8px;
+    border-radius: 6px;
+    background-color: var(--line-color);
+}
+
 .ctn__lfrsr__btn {
     display: flex;
     gap: 4px;
