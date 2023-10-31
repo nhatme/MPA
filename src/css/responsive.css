@@ -1,4 +1,6 @@
-@media (max-width: 1225px) {
+
+
+@media screen and (max-width: 1225px) {
 
     .top-header {
         display: none;
@@ -8,10 +10,17 @@
         display: none;
     }
 
+    .second-header {
+        padding: 16px 24px;
+    }
+
     /* .second-header-right {
         display: none;
     } */
 
+    .second-header-right {
+        display: none;
+    }
     .ctn__showrows {
         display: none;
     }
@@ -27,9 +36,17 @@
         display: flex;
         justify-content: center;
     }
+
+    .second-header-right-rss {
+        display: flex;
+    }
 }
 
-@media (max-width: 765px) {
+@media screen and (max-width: 1005px) {
+
+}
+
+@media screen and (max-width: 765px) {
     .ctn-highlights-switch {
         display: none;
     }
@@ -38,3 +55,4 @@
         display: none;
     }
 }
+

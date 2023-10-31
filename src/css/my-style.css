@@ -157,3 +157,22 @@
 .d-none {
     display: none;
 }
+
+
+/* width  */
+
+.w_100pc {
+    width: 100%;
+}
+
+/* padding  */
+
+.p_left_16px {
+    padding-left: 16px;
+}
+
+/* display  */
+
+.d_none {
+    display: none;
+}
