@@ -68,6 +68,7 @@ body {
     padding: 16px;
     border-radius: 6px;
     box-shadow: var(--box-shadow);
+    margin: 0 2px;
 }
 
 .ctn-bottom-box-title {
@@ -99,7 +100,7 @@ body {
 
 .ctn-bottom-box-detail-info {
     display: flex;
-    gap: 16px;
+    gap: 4px;
     align-items: center;
     padding-right: 16px;
 }
@@ -120,10 +121,15 @@ body {
     justify-content: space-between;
 }
 
-.ctn__bbd__follow__btn {
+.ctn__bbd__follow {
+    display: flex;
+    align-items: center;
     padding: 8px 16px;
     border-radius: 5px;
     background-color: var(--line-color);
+}
+
+.ctn__bbd__follow__btn {
 }
 
 .ctn__bb__slider {

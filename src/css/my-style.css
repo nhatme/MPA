@@ -142,6 +142,10 @@
     font-weight: var(--fw-700);
 }
 
+.xx_small {
+    font-size: xx-small;
+}
+
 /* border  */
 
 .border-bottom {
@@ -169,10 +173,18 @@
     width: 20%;
 }
 
+.w_30pc {
+    width: 30%;
+}
+
 /* padding  */
 
 .p_left_16px {
     padding-left: 16px;
+}
+
+.p_right_4px {
+    padding-right: 4px;
 }
 
 /* display  */
@@ -187,4 +199,5 @@
 .truncate {
     overflow: hidden;
     text-overflow: ellipsis;
+    
 }
