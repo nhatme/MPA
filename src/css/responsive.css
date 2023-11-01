@@ -27,7 +27,7 @@
 
     .ctn__lists__filter {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap: 16px;
     }
 
@@ -40,6 +40,15 @@
     .second-header-right-rss {
         display: flex;
     }
+    
+}
+
+@media screen and (max-width: 1156px) {
+   
+}
+
+@media screen and (max-width: 1020px) {
+
 }
 
 @media screen and (max-width: 1005px) {
