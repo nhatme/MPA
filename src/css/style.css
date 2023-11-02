@@ -134,8 +134,7 @@ body {
     background-color: var(--line-color);
 }
 
-.ctn__bbd__follow__btn {
-}
+.ctn__bbd__follow__btn {}
 
 .ctn__bb__slider {
     display: flex;
@@ -170,16 +169,20 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    /* cursor: -webkit-grabbing;
+    cursor: grabbing; */
 }
+
+
 
 .ctn__lf__left {
     display: flex;
     width: 100%;
-    white-space: nowrap;
-    overflow-x: scroll;
 }
 
-.ctn__lf__left::-webkit-scrollbar {
+.ctn__lists__filter::-webkit-scrollbar {
     display: none;
 }
 
@@ -254,6 +257,14 @@ body {
     padding-right: 2px;
 }
 
+.ctn__lfrsr__btn {
+    display: flex;
+    gap: 4px;
+    padding: 5px 8px;
+    border-radius: 6px;
+    background-color: var(--line-color);
+}
+
 /* end filter  */
 
 /* start table currency  */
@@ -275,6 +286,10 @@ td {
 
 tr {
     border-bottom: 1px solid var(--line-color);
+}
+
+thead tr {
+    border-top: 1px solid var(--line-color);
 }
 
 .list-coin {

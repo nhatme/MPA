@@ -159,8 +159,8 @@
     font-size: var(--fs-24px);
 }
 
-.fs_24px {
-    font-style: var(--fs-24px);
+.fs_20px {
+    font-style: var(--fs-20px);
 }
 
 /* border  */
@@ -236,6 +236,10 @@
     cursor: pointer;
 }
 
+.scroll_x {
+    overflow-x: scroll;
+}
+
 
 .no_wrap {
     white-space: nowrap;
@@ -246,4 +250,6 @@
 .flex_wrap {
     flex-wrap: wrap;
 }
+
+
 

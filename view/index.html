@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../src/css/web/header.css">
     <link rel="stylesheet" href="../src/css/web/footer.css">
     <link rel="stylesheet" href="../src/css/responsive.css">
+    <link rel="stylesheet" href="../src/css/scrollbar.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -130,6 +131,11 @@
                     </div>
 
                     <!-- =========================== -->
+
+                    <div class="ctn__bb__slider">
+                        <img src="../src/img/svg/dot-blue.svg" alt="" class="ctn__bb__dot">
+                        <img src="../src/img/svg/dot-white.svg" alt="" class="ctn__bb__dot">
+                    </div>
 
                 </div>
 
@@ -263,7 +269,7 @@
         </div>
 
         <div class="ctn__lists">
-            <div class="ctn__lists__filter">
+            <div class="ctn__lists__filter no_wrap scroll_x" draggable="true">
                 <div class="ctn__lf__left">
                     <div class="ctn__lfl__cur__categ">
                         <div class="ctn__lflcc__cur">
@@ -272,7 +278,7 @@
                         </div>
                         <div class="ctn__lflcc__categ">
                             <img src="../src/img/svg/category.svg" alt="">
-                            <span class="fs-12px-fw-600 ctn__lflccc__category">Darrell Steward</span>
+                            <span class="fs-12px-fw-600 ctn__lflccc__category text-2nd-color">Darrell Steward</span>
                         </div>
                     </div>
 
@@ -281,25 +287,25 @@
                     <div class="ctn__lfl__hot">
                         <div class="ctn__lflh__1">
                             <img src="../src/img/svg/burning-hot.svg" alt="">
-                            <span class="fs-12px-fw-600">Savannah Nguyen</span>
+                            <span class="fs-12px-fw-600 text-2nd-color">Savannah Nguyen</span>
                         </div>
                         <div class="ctn__lflh__1">
                             <img src="../src/img/svg/burning-hot.svg" alt="">
-                            <span class="fs-12px-fw-600">Guy Hawkins</span>
+                            <span class="fs-12px-fw-600 text-2nd-color">Guy Hawkins</span>
                         </div>
                         <div class="ctn__lflh__1">
                             <img src="../src/img/svg/burning-hot.svg" alt="">
-                            <span class="fs-12px-fw-600">Courtney Henry</span>
+                            <span class="fs-12px-fw-600 text-2nd-color">Courtney Henry</span>
                         </div>
                         <div class="ctn__lflh__1">
                             <img src="../src/img/svg/burning-hot.svg" alt="">
-                            <span class="fs-12px-fw-600">Cody Fisher</span>
+                            <span class="fs-12px-fw-600 text-2nd-color">Cody Fisher</span>
                         </div>
                     </div>
                 </div>
                 <div class="ctn__lf__right">
 
-                    <p class="d-none fs-12px-fw-400">Show rows</p>
+                    <p class="no_wrap fs-12px-fw-400 ctnlfr_show_rows">Show rows</p>
 
                     <div class="ctn__showrows">
                         <span class="fs-12px-fw-600">20</span>
@@ -323,90 +329,94 @@
                 </div>
             </div>
 
-            <table>
-                <thead>
-
-                    <tr>
-                        <th class="ctn__list__th fs-12px-fw-700 fs-12px-fw-700"></th>
-                        <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__left">#</th>
-                        <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__left">Name</th>
-                        <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__right">Price</th>
-                        <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__right">1h %</th>
-                        <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__right">24h %</th>
-                        <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__right">7d %</th>
-                        <th class="ctn__lists__table__td__right">
-                            <div class="ctn__list__th__icon">
-                                <span class="fs-12px-fw-700">Market Cap</span>
-                                <img src="../src/img/svg/info-italic.svg" alt="">
-                            </div>
-                        </th>
-                        <th class="ctn__lists__table__td__right">
-                            <div class="ctn__list__th__icon">
-                                <span class="fs-12px-fw-700">Volume(24h)</span>
-                                <img src="../src/img/svg/info-italic.svg" alt="">
-                            </div>
-                        </th>
-                        <th class="ctn__lists__table__td__right">
-                            <div class="ctn__list__th__icon">
-                                <span class="fs-12px-fw-700">Circulating Supply</span>
-                                <img src="../src/img/svg/info-italic.svg" alt="">
-                            </div>
-                        </th>
-                        <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__right">Last 7 Days</th>
-                    </tr>
-
-                </thead>
-
-                <tbody class="list-coin">
-
-                    <tr>
-                        <td class="ctn__list__td__star">
-                            <img src="../src/img/svg/star-stroke.svg" alt="">
-                        </td>
-                        <td class="ctn__list__td fs-14px-fw-500 fs-12px-fw-700 text-2nd-color">0</td>
-                        <td class="ctn__list__td">
-                            <div class="ctn__list__td__info">
-                                <img src="../src/img/avatar/img.png" alt="">
-                                <span class="fs-14px-fw-600">0</span>
-                                <span class="fs-14px-fw-500 gray-2nd-color">0</span>
-                            </div>
-                        </td>
-                        <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">0</td>
-                        <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
-                            <div class="ctn__list__td__percentIndex">
-                                <img src="../src/img/svg/up-price.svg" alt="">
-                                <span class="up-price">0</span>
-                            </div>
-                        </td>
-                        <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
-                            <div class="ctn__list__td__percentIndex">
-                                <img src="../src/img/svg/up-price.svg" alt="">
-                                <span class="up-price">0</span>
-                            </div>
-                        </td>
-                        <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
-                            <div class="ctn__list__td__percentIndex">
-                                <img src="../src/img/svg/up-price.svg" alt="">
-                                <span class="up-price">0</span>
-                            </div>
-                        </td>
-                        <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">0</td>
-                        <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
-                            <div class="ctn__list__td__totalVolume">
+            <div class="scroll_x no_wrap">
+                <table>
+                    <thead>
+    
+                        <tr>
+                            <th class="ctn__list__th fs-12px-fw-700 fs-12px-fw-700"></th>
+                            <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__left">#</th>
+                            <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__left">Name</th>
+                            <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__right">Price</th>
+                            <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__right">1h %</th>
+                            <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__right">24h %</th>
+                            <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__right">7d %</th>
+                            <th class="ctn__lists__table__td__right">
+                                <div class="ctn__list__th__icon">
+                                    <span class="fs-12px-fw-700">Market Cap</span>
+                                    <img src="../src/img/svg/info-italic.svg" alt="">
+                                </div>
+                            </th>
+                            <th class="ctn__lists__table__td__right">
+                                <div class="ctn__list__th__icon">
+                                    <span class="fs-12px-fw-700">Volume(24h)</span>
+                                    <img src="../src/img/svg/info-italic.svg" alt="">
+                                </div>
+                            </th>
+                            <th class="ctn__lists__table__td__right">
+                                <div class="ctn__list__th__icon">
+                                    <span class="fs-12px-fw-700">Circulating Supply</span>
+                                    <img src="../src/img/svg/info-italic.svg" alt="">
+                                </div>
+                            </th>
+                            <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__right">Last 7 Days</th>
+                        </tr>
+    
+                    </thead>
+    
+                    <tbody class="list-coin">
+    
+                        <tr>
+                            <td class="ctn__list__td__star">
+                                <img src="../src/img/svg/star-stroke.svg" alt="">
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 fs-12px-fw-700 text-2nd-color">0</td>
+                            <td class="ctn__list__td">
+                                <div class="ctn__list__td__info">
+                                    <img src="../src/img/avatar/img.png" alt="">
+                                    <span class="fs-14px-fw-600">0</span>
+                                    <span class="fs-14px-fw-500 gray-2nd-color">0</span>
+                                </div>
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">0</td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
+                                <div class="ctn__list__td__percentIndex">
+                                    <img src="../src/img/svg/up-price.svg" alt="">
+                                    <span class="up-price">0</span>
+                                </div>
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
+                                <div class="ctn__list__td__percentIndex">
+                                    <img src="../src/img/svg/up-price.svg" alt="">
+                                    <span class="up-price">0</span>
+                                </div>
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
+                                <div class="ctn__list__td__percentIndex">
+                                    <img src="../src/img/svg/up-price.svg" alt="">
+                                    <span class="up-price">0</span>
+                                </div>
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">0</td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
+                                <div class="ctn__list__td__totalVolume">
+                                    <span>0</span>
+                                    <span class="text-2nd-color fs-12px-fw-500">360,056 BTC</span>
+                                </div>
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
                                 <span>0</span>
-                                <span class="text-2nd-color fs-12px-fw-500">360,056 BTC</span>
-                            </div>
-                        </td>
-                        <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
-                            <span>0</span>
-                            <span>0</span>
-                        </td>
-                        <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">Line chart</td>
-                    </tr>
+                                <span>0</span>
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">Line chart</td>
+                        </tr>
 
-                </tbody>
-
-            </table>
+                        
+    
+                    </tbody>
+    
+                </table>
+            </div>
 
         </div>
 

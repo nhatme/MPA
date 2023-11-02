@@ -23,10 +23,6 @@
         display: none;
     }
 
-    .ctn__showrows {
-        display: none;
-    }
-
     .ctn__lfrsr__btn {
         width: 100%;
         display: flex;
@@ -54,7 +50,23 @@
     .ctn__lists__filter {
         display: flex;
         flex-direction: column-reverse;
-        gap: 8px;
+        gap: 16px;
+    }
+
+    .ctn__showrows {
+        display: none;
+    }
+
+    .ctnlfr_show_rows {
+        display: none;
+    }
+
+    .ctn__lf__left {
+        overflow-x: scroll;
+    }
+
+    .ctn__lf__left::-webkit-scrollbar {
+        display: none;
     }
 
     .ctn__lfrsr__btn {

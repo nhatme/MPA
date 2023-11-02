@@ -83,12 +83,12 @@ header.innerHTML = `
                             </div>
                         </div>
                         <div class="second-header-right-rss d_none">
-                            <div class="pointer fs_24px m_inline_start_16px">
+                            <div class="pointer fs_20px m_inline_start_16px">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </div>
-                            <img class="pointer m_inline_start_16px" src="../src/img/diamond-icon 1.svg" alt="" width="24px">
-                            <img class="pointer m_inline_start_16px" src="../src/img/notice.svg" alt="" width="24px">
-                            <div class="pointer fs_24px m_inline_start_16px">
+                            <img class="pointer m_inline_start_16px" src="../src/img/diamond-icon 1.svg" alt="" width="20px">
+                            <img class="pointer m_inline_start_16px" src="../src/img/notice.svg" alt="" width="20px">
+                            <div class="pointer fs_20px m_inline_start_16px">
                                 <i class="fa-solid fa-bars"></i>
                             </div>
                         </div>

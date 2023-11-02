@@ -7,7 +7,15 @@ footer.innerHTML = `
                             </div>
                             <div class="f__links">
                                 <div class="f__link">
-                                    <div class="fl__topic fs-16px-fw-600">Bessie Cooper</div>
+                                    <div class="fl__topic fs-16px-fw-600">Products</div>
+                                    <div class="lh-35px fs-14px-fw-500 gray-2nd-color">ChatGPT Plugin</div>
+                                    <div class="lh-35px fs-14px-fw-500 gray-2nd-color">Blockchain Explorer</div>
+                                    <div class="lh-35px fs-14px-fw-500 gray-2nd-color">Crypto API</div>
+                                    <div class="lh-35px fs-14px-fw-500 gray-2nd-color">Crypto Indices</div>
+                                    <div class="lh-35px fs-14px-fw-500 gray-2nd-color">Doodles</div>
+                                </div>
+                                <div class="f__link">
+                                    <div class="fl__topic fs-16px-fw-600">Company</div>
                                     <div class="lh-35px fs-14px-fw-500 gray-2nd-color">Bc Explorer</div>
                                     <div class="lh-35px fs-14px-fw-500 gray-2nd-color">Bc Explorer</div>
                                     <div class="lh-35px fs-14px-fw-500 gray-2nd-color">Bc Explorer</div>
@@ -15,7 +23,7 @@ footer.innerHTML = `
                                     <div class="lh-35px fs-14px-fw-500 gray-2nd-color">Bc Explorer</div>
                                 </div>
                                 <div class="f__link">
-                                    <div class="fl__topic fs-16px-fw-600">Bessie Cooper</div>
+                                    <div class="fl__topic fs-16px-fw-600">Support</div>
                                     <div class="lh-35px fs-14px-fw-500 gray-2nd-color">Bc Explorer</div>
                                     <div class="lh-35px fs-14px-fw-500 gray-2nd-color">Bc Explorer</div>
                                     <div class="lh-35px fs-14px-fw-500 gray-2nd-color">Bc Explorer</div>
@@ -23,15 +31,7 @@ footer.innerHTML = `
                                     <div class="lh-35px fs-14px-fw-500 gray-2nd-color">Bc Explorer</div>
                                 </div>
                                 <div class="f__link">
-                                    <div class="fl__topic fs-16px-fw-600">Bessie Cooper</div>
-                                    <div class="lh-35px fs-14px-fw-500 gray-2nd-color">Bc Explorer</div>
-                                    <div class="lh-35px fs-14px-fw-500 gray-2nd-color">Bc Explorer</div>
-                                    <div class="lh-35px fs-14px-fw-500 gray-2nd-color">Bc Explorer</div>
-                                    <div class="lh-35px fs-14px-fw-500 gray-2nd-color">Bc Explorer</div>
-                                    <div class="lh-35px fs-14px-fw-500 gray-2nd-color">Bc Explorer</div>
-                                </div>
-                                <div class="f__link">
-                                    <div class="fl__topic fs-16px-fw-600">Bessie Cooper</div>
+                                    <div class="fl__topic fs-16px-fw-600">Socials</div>
                                     <div class="lh-35px fs-14px-fw-500 gray-2nd-color">Bc Explorer</div>
                                     <div class="lh-35px fs-14px-fw-500 gray-2nd-color">Bc Explorer</div>
                                     <div class="lh-35px fs-14px-fw-500 gray-2nd-color">Bc Explorer</div>

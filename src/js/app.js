@@ -1,3 +1,25 @@
-const author = "Nhat Phan says"
+const scroll = document.querySelector('.ctn__lists__filter ')
+let isDown = false
+let startX
+let scrollLeft
 
-console.log(author)
+scroll.addEventListener('mousedown', () => {
+    isDown = true
+})
+
+scroll.addEventListener('mouseleave', () => {
+    isDown = false
+    
+})
+
+
+scroll.addEventListener('mouseup', () => {
+    isDown = false
+    
+})
+
+
+scroll.addEventListener('mousemove', () => {
+})
+
+
