@@ -14,6 +14,7 @@ function getAPI(page = 1, limit) {
     })
 
 }
+
 getAPI(currentPage, limit)
 // render list coin
 function renderListCoin(data) {

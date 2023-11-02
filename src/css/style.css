@@ -27,7 +27,7 @@ body {
 }
 
 .ctn__top__highlights__slider {
-    margin: 48px 0;
+    margin: 40px 0;
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -76,12 +76,14 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 6px;
+    white-space: nowrap;
 }
 
 .ctn-bottom-box-title-trending {
     display: flex;
     align-items: center;
     gap: 10px;
+    overflow: hidden;
 }
 
 .ctn-bottom-box-title-more {
@@ -102,13 +104,16 @@ body {
     display: flex;
     gap: 4px;
     align-items: center;
-    padding-right: 16px;
+    padding-right: 6px;
+    overflow: hidden;
 }
 
 .ctn__bbdi__avatar__name {
     display: flex;
     align-items: center;
     gap: 8px;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .ctn__bbd__realtime-price {
@@ -170,6 +175,12 @@ body {
 .ctn__lf__left {
     display: flex;
     width: 100%;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+
+.ctn__lf__left::-webkit-scrollbar {
+    display: none;
 }
 
 .ctn__lfl__cur__categ {
@@ -225,19 +236,10 @@ body {
     background-color: var(--line-color);
 }
 
-.ctn__lfrsr__btn {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-    padding: 5px 8px;
-    border-radius: 6px;
-    background-color: var(--line-color);
-}
-
 .ctn__lfr__listorsquare {
     display: flex;
     gap: 4px;
-    padding: 4px;
+    padding: 6px;
     background-color: var(--line-color);
     border-radius: 6px;
 }

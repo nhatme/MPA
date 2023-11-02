@@ -83,15 +83,36 @@ header.innerHTML = `
                             </div>
                         </div>
                         <div class="second-header-right-rss d_none">
-                            <div class="p_left_16px">
+                            <div class="pointer fs_24px m_inline_start_16px">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </div>
-                            <img class="p_left_16px" src="../src/img/diamond-icon 1.svg" alt="">
-                            <img class="p_left_16px" src="../src/img/notice.svg" alt="">
-                            <div class="p_left_16px">
+                            <img class="pointer m_inline_start_16px" src="../src/img/diamond-icon 1.svg" alt="" width="24px">
+                            <img class="pointer m_inline_start_16px" src="../src/img/notice.svg" alt="" width="24px">
+                            <div class="pointer fs_24px m_inline_start_16px">
                                 <i class="fa-solid fa-bars"></i>
                             </div>
                         </div>
                     </div>
                     <div class="line-header"></div>
+
+                    <div class="top-header-rss">
+                            <div class="fs-11px-fw-600">
+                                <span class="sign-left">Cryptos:</span> <span class="value">0</span>
+                            </div>
+                            <div class="fs-11px-fw-600">
+                                <span class="sign-left">Exchanges:</span> <span class="value">0</span>
+                            </div>
+                            <div class="fs-11px-fw-600">
+                                <span class="sign-left">Market Cap:</span> <span class="value">0</span>
+                            </div>
+                            <div class="fs-11px-fw-600">
+                                <span class="sign-left">Dominance:</span> <span class="value">0</span>
+                            </div>
+                            <div class="fs-11px-fw-600">
+                                <span class="sign-left">ETH Gas:</span> <span class="value">0</span>
+                            </div>
+                            <div class="fs-11px-fw-600">
+                                <span class="sign-left">Fear & Greed:</span> <span class="value">0</span>
+                            </div>
+                        </div>
                     `
