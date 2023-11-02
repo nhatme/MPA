@@ -2,7 +2,7 @@ let currentPage = 1
 let limit = 5
 
 function getAPI(page = 1, limit) {
-    $(".list-coin").html("loading")
+    // $(".list-coin").html("")
     $.ajax({
         url: `http://localhost:3000/getlistcoin?page=${page}&limit=${limit}`,
         success: function (data) {
@@ -12,7 +12,6 @@ function getAPI(page = 1, limit) {
             }
         }
     })
-
 }
 
 getAPI(currentPage, limit)
@@ -69,6 +68,8 @@ function renderListCoin(data) {
     }).join("")
     $(".list-coin").html(html)
 }
+
+
 function renderPage(total) {
     const totalPage = Math.round(total / 20)
     let html = ""
