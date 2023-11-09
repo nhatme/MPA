@@ -38,6 +38,8 @@
         align-items: center;
         padding: 12px 24px;
         border-bottom: 1px solid var(--line-color);
+        white-space: nowrap;
+        overflow: hidden;
     }
 
     .top-header-rss div {
@@ -107,6 +109,10 @@
 
     .ctn__top__highlights__slider {
         margin: 24px 0;
+    }
+
+    .ctnn__bg {
+        width: 200px;
     }
 
 }
