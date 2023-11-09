@@ -20,6 +20,7 @@ scroll.addEventListener('mouseup', () => {
 
 
 scroll.addEventListener('mousemove', () => {
+    
 })
 
 
