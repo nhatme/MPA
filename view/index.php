@@ -4,19 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../src/img/avatar/Jupiter.png">
-    <link rel="stylesheet" href="./component/css/style.css">
+    <link rel="icon" type="image/x-icon" href="/src/img/avatar/Jupiter.png">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./component/css/my-style.css">
     <link rel="stylesheet" href="./component/css/web/header.css">
     <link rel="stylesheet" href="./component/css/web/footer.css">
     <link rel="stylesheet" href="./component/css/responsive.css">
     <link rel="stylesheet" href="./component/css/scrollbar.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <title>MPA - Official</title>
-
 </head>
 
 <body>
@@ -41,7 +38,7 @@
                             <div class="fs-14px-fw-400 text-2nd-color ctnhlid__re">The global crypto market cap is</div>
                             <span class="fs-14px-fw-600 text-2nd-color ctnhlid__bo">$1.05T</span>
                             <span class="fs-14px-fw-400 text-2nd-color ctnhlid__re">, a</span>
-                            <img src="../src/img/svg/down-price.svg" alt="">
+                            <img src="/src/img/svg/down-price.svg" alt="">
                             <div class="fs-14px-fw-600 down-price ctnhlid__bo">0.37%</div>
                             <div class="fs-14px-fw-400 text-2nd-color ctnhlid__re">decrease over the last day.</div>
                             <div class="no_wrap ctn-highlights-readmore gray fs-14px-fw-400 ctnhlid__re">Read More</div>
@@ -76,7 +73,7 @@
 
                     <div class="ctn-bottom-box-detail">
                         <div class="ctn-bottom-box-detail-info">
-                            <p class="">1</p>
+                            <p class="fs-12px-fw-400 gray-2nd-color">1</p>
                             <div class="ctn__bbdi__avatar__name">
                                 <img class="ctn__bbdi__img" src="../src/img/avatar/img2.png" alt="" width="24px" height="24px">
                                 <p class="truncate fs-12px-fw-600">Kathryn Memorial</p>
@@ -93,7 +90,7 @@
 
                     <div class="ctn-bottom-box-detail">
                         <div class="ctn-bottom-box-detail-info">
-                            <p class="">2</p>
+                            <p class="fs-12px-fw-400 gray-2nd-color">2</p>
                             <div class="ctn__bbdi__avatar__name">
                                 <img class="ctn__bbdi__img" src="../src/img/avatar/img3.png" alt="" width="24px" height="24px">
                                 <p class="truncate fs-12px-fw-600">Wendy Bitch</p>
@@ -110,7 +107,7 @@
 
                     <div class="ctn-bottom-box-detail">
                         <div class="ctn-bottom-box-detail-info">
-                            <p class="">3</p>
+                            <p class="fs-12px-fw-400 gray-2nd-color">3</p>
                             <div class="ctn__bbdi__avatar__name">
                                 <img class="ctn__bbdi__img" src="../src/img/avatar/img.png" alt="" width="24px" height="24px">
                                 <p class="truncate fs-12px-fw-600">Gloria Fade in</p>
@@ -160,7 +157,7 @@
                                     <img class="ctn__bbdi__img" src="../src/img/avatar/img.png" alt="" width="24px" height="24px">
                                     <p class="truncate fs-12px-fw-600">Henry, Titanic Jack</p>
                                 </div>
-                                <img src="../src/img/svg/check-verified.svg" alt="" width="10px">
+                                <iconify-icon class="main-color fs_14px" icon="bxs:badge-check"></iconify-icon>
                                 <p class="truncate fs-12px-fw-400 gray-2nd-color">@samwise</p>
                             </div>
                             <div class="ctn__bbd__follow">
@@ -181,7 +178,7 @@
                                     <img class="ctn__bbdi__img" src="../src/img/avatar/img3.png" alt="" width="24px" height="24px">
                                     <p class="truncate fs-12px-fw-600">My heart</p>
                                 </div>
-                                <img src="../src/img/svg/check-verified.svg" alt="" width="10px">
+                                <iconify-icon class="main-color fs_14px" icon="bxs:badge-check"></iconify-icon>
                                 <p class="truncate fs-12px-fw-400 gray-2nd-color">@oliverking</p>
                             </div>
                             <div class="ctn__bbd__follow">
@@ -202,7 +199,7 @@
                                     <img class="ctn__bbdi__img" src="../src/img/avatar/img2.png" alt="" width="24px" height="24px">
                                     <p class="truncate fs-12px-fw-600">Henry, Arthurok</p>
                                 </div>
-                                <img src="../src/img/svg/check-verified.svg" alt="" width="10px">
+                                <iconify-icon class="main-color fs_14px" icon="bxs:badge-check"></iconify-icon>
                                 <p class="truncate fs-12px-fw-400 gray-2nd-color">@sophiagreenok</p>
                             </div>
                             <div class="ctn__bbd__follow">
@@ -427,8 +424,18 @@
                     <img class="pc__count fs-15px-fw-600 pc__control" src="../src/img/svg/arrow-right.svg" alt="">
                 </div>
                 <div class="pr">
-                    <p class="fs-14px-fw-400">Show rows</p>
-                    <div class="pr__dprows">
+                    <p class="fs-14px-fw-400 mr_16px">Show rows</p>
+                    <div class="pr__dprows color_gray_200_bg radius-6px">
+                        <p class="prdpr__p fs-15px-fw-600">20</p>
+                        <img src="../src/img/svg/dropdown-down.svg" class="prdpr__dp"></img>
+                    </div>
+                </div>
+            </div>
+            <div class="pr__pages__rss d_none">
+                <p class="pr__pages__prss fs-12px-fw-400">Showing 1 - 20 out of 9056</p>
+                <div class="prrss flex align_center">
+                    <p class="fs-14px-fw-400 mr_16px">Show rows</p>
+                    <div class="pr__dprows color_gray_200_bg radius-6px">
                         <p class="prdpr__p fs-15px-fw-600">20</p>
                         <img src="../src/img/svg/dropdown-down.svg" class="prdpr__dp"></img>
                     </div>
@@ -444,22 +451,26 @@
         </div>
     </div>
 
-    <div class="newsletterbg ctn__newsletter">
+    <div class="bg_color_2 ctn__newsletter">
         <div class="ctn__newsletter__bg">
             <div class="ctnn__title__btn">
                 <div class="ctnn__title">
                     <div class="ctnnt__top">
-                        <div class="fs-32px-fw-700">Stay on top of crypto.All the time, any time.</div>
+                        <div class="ctnnt__top__title fs-32px-fw-700">Stay on top of crypto.All the time, any time.</div>
                     </div>
-                    <div class="fs-16px-fw-400">Get all things you need today, don't miss any single newsletter.</div>
+                    <div class="ctnnt__top__detail fs-14px-fw-400 gray-2nd-color">Please keep me updated by email with the latest crypto news, research findings, reward programs, event updates, coin listings and more information from MarketPlaceAsset.</div>
                 </div>
+
+                <input type="text" class="ctnn__input fs-16px-fw-600 radius-6px" placeholder="Enter your e-mail address">
                 <div class="ctnnbtn">
                     <div class="ctnn__btn fs-16px-fw-600 main-color-bg text-white radius-6px">
                         Subscribe now
                     </div>
                 </div>
             </div>
-            <img src="../src/img/svg/newsletterbg.svg" alt="" class="ctnn__bg">
+            <div class="ctnn_backg">
+                <img src="../src/img/svg/newsletterbg.svg" alt="" class="ctnn__bg">
+            </div>
         </div>
     </div>
 
@@ -467,7 +478,7 @@
 
     <!-- start footer  -->
     <div class="footer">
-        <?php include "./component/footer.php"?>
+        <?php include "./component/footer.php" ?>
     </div>
     <!-- end footer  -->
 

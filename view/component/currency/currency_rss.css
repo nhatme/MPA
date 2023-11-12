@@ -1,0 +1,17 @@
+@import "../css/defined.css";
+
+@media screen and (max-width: 1225px) {}
+
+@media only screen and (max-width: 1024px) {
+    .grid_table {
+        grid-template-columns: clamp(330px, 23%, 480px) 1fr;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .grid_table {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 530px) {}

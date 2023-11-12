@@ -10,7 +10,7 @@
 }
 
 .f__logo {
-    padding: 10px;
+    padding-bottom: 32px;
 }
 
 .f__links {
@@ -21,6 +21,12 @@
 
 .f__link {
     padding-right: 8px;
+    width: 50%;
+}
+
+.f__links__row {
+    display: flex;
+    width: 50%;
 }
 
 .fl__topic {
@@ -38,43 +44,5 @@
     gap: 8px;
 }
 
-.ctn__newsletter__bg {
-    max-width: 1252px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-}
-
-.ctn__newsletter {
-    display: flex;
-    justify-content: space-between;
-    padding: 64px 20px;
-}
-
-.ctnn__title {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.ctnn__title__btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.ctnnt__top {
-    display: flex;
-    gap: 12px;
-}
-
-.ctnn__btn {
-    padding: 12px 32px;
-    width: fit-content;
-}
-
-.ctnnbtn {
-    padding-top: 40px;
-}
 
 /* end footer  */

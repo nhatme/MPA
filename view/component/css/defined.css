@@ -1,25 +1,35 @@
 :root {
 
-    /* color  */
-    --primary-color-text: #222531;
-    --secondary-color: #58667e;
+    /* color */
     --main-color: #3861FB;
+    --secondary-color: #58667e;
+    --primary-color-text: #222531;
+    --second-text-color: #4F6E85;
+    --second-color-body: #616E85;
     --down-price-color: #EA3943;
     --up-price-color: #16C784;
-    --line-color: #EFF2F5;
-    --scrollbar: #CFD6E4;
-    --placeholder: #A6B0C3;
+    --color-gray-100: #F8FAFD;
+    --color-gray-200: #EFF2F5;
+    --color-gray-300: #CFD6E4;
+    --color-gray-400: #A6B0C3;
     --gray: #A6B0C3;
     --gray-secondary: #808A9D;
     --btn-blue: #F0F6FF;
     --white: white;
-    --newsletterbg: #F8FAFD;
+    --bg-hover: rgb(248, 250, 253);
+    --color-reminder: #F5B97F;
+    --color-bg-hover: #CED5E3;
+    --color-bg-1: #FCFDFE;
 
 
     /* font size  */
+    --fs-40px: 40px;
     --fs-32px: 32px;
     --fs-28px: 28px;
+    --fs-25px: 25px;
     --fs-24px: 24px;
+    --fs-20px: 20px;
+    --fs-18px: 18px;
     --fs-16px: 16px;
     --fs-15px: 15px;
     --fs-14px: 14px;
@@ -37,6 +47,7 @@
     --fw-400: 400;
     --fw-300: 300;
 
-    /* box shadow special  */
+    /* box shadow  */
     --box-shadow: rgba(88, 102, 126, 0.08) 0px 4px 24px, rgba(88, 102, 126, 0.12) 0px 1px 2px;
+    --box-shadow2: 0px 8px 32px 0px rgba(128, 138, 157, 0.24), 0px 1px 2px 0px rgba(128, 138, 157, 0.12);
 }

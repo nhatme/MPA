@@ -1,18 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300&display=swap');
+@import "./allstyle.css";
 @import "./defined.css";
-
-* {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    color: var(--primary-color-text);
-    text-decoration: none;
-    /* box-sizing: inherit; */
-}
-
-html,
-body {
-    box-sizing: border-box;
-}
 
 /* ===================================================================== */
 
@@ -102,7 +89,7 @@ body {
 
 .ctn-bottom-box-detail-info {
     display: flex;
-    gap: 4px;
+    gap: 8px;
     align-items: center;
     padding-right: 6px;
     overflow: hidden;
@@ -131,7 +118,7 @@ body {
     align-items: center;
     padding: 8px 16px;
     border-radius: 5px;
-    background-color: var(--line-color);
+    background-color: var(--color-gray-200);
 }
 
 .ctn__bbd__follow__btn {}
@@ -236,14 +223,14 @@ body {
     align-items: center;
     padding: 5px 8px;
     border-radius: 6px;
-    background-color: var(--line-color);
+    background-color: var(--color-gray-200);
 }
 
 .ctn__lfr__listorsquare {
     display: flex;
     gap: 4px;
     padding: 6px;
-    background-color: var(--line-color);
+    background-color: var(--color-gray-200);
     border-radius: 6px;
 }
 
@@ -262,7 +249,7 @@ body {
     gap: 4px;
     padding: 5px 8px;
     border-radius: 6px;
-    background-color: var(--line-color);
+    background-color: var(--color-gray-200);
 }
 
 /* end filter  */
@@ -285,11 +272,11 @@ td {
 }
 
 tr {
-    border-bottom: 1px solid var(--line-color);
+    border-bottom: 1px solid var(--color-gray-200);
 }
 
 thead tr {
-    border-top: 1px solid var(--line-color);
+    border-top: 1px solid var(--color-gray-200);
 }
 
 .list-coin {
@@ -379,7 +366,6 @@ thead tr {
 
 .pr {
     display: flex;
-    gap: 20px;
     align-items: center;
 }
 
@@ -402,10 +388,79 @@ thead tr {
     padding-left: 4px;
 }
 
+
 /* end pages rows  */
 
 /* end lists currency */
 
 /* end container */
+
+
+/* start news letter  */
+
+
+.ctn__newsletter__bg {
+    max-width: 1252px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.ctn__newsletter {
+    display: flex;
+    justify-content: space-between;
+    padding: 48px 20px;
+}
+
+.ctnn__title {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ctnn__title__btn {
+    display: flex;
+    flex-direction: column;
+}
+
+.ctnnt__top {
+    display: flex;
+    gap: 12px;
+}
+
+.ctnn__input {
+    margin-top: 24px;
+    padding: 12px 16px;
+    outline: none;
+    border: 1px solid var(--gray);
+}
+
+.ctnn__btn {
+    padding: 12px 32px;
+    text-align: center;
+
+}
+
+.ctnnbtn {
+    margin-top: 24px;
+}
+
+.ctnn_backg {
+    padding: 0 24px;
+    width: 80%;
+
+}
+
+.ctnn__bg {
+    width: 100%;
+}
+
+.ctnnt__top__title {
+    font-size: var(--fs-32px);
+    font-weight: var(--fw-700);
+}
+
+/* end news letter  */
 
 /* ===================================================================== */

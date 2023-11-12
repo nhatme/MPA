@@ -1,26 +1,24 @@
-const scroll = document.querySelector('.ctn__lists__filter ')
-let isDown = false
-let startX
-let scrollLeft
 
-scroll.addEventListener('mousedown', () => {
-    isDown = true
+const eachMenubars = document.querySelectorAll('.each_menubar')
+const dropdowns = document.querySelectorAll('.dropdown')
+
+eachMenubars.forEach((el, index) => {
+    el.onmouseover = () => {
+        dropdowns[index].classList.remove("d_none")
+    }
+
+    el.onmouseout = () => {
+        dropdowns[index].classList.add("d_none")
+    }
+
+    dropdowns[index].onmouseover = () => {
+        dropdowns[index].classList.remove("d_none")
+    }
+
+    dropdowns[index].onmouseout = () => {
+        dropdowns[index].classList.add("d_none")
+    }
 })
 
-scroll.addEventListener('mouseleave', () => {
-    isDown = false
-    
-})
-
-
-scroll.addEventListener('mouseup', () => {
-    isDown = false
-    
-})
-
-
-scroll.addEventListener('mousemove', () => {
-    
-})
 
 

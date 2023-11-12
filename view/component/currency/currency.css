@@ -1,0 +1,97 @@
+@import "../css/allstyle.css";
+@import "../css/defined.css";
+
+.csh__top {
+    column-gap: 8px;
+    align-items: center;
+    grid-template-columns: min-content 1fr repeat(2, min-content);
+}
+
+.coinss_slider::before {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0px;
+    width: 2px;
+    height: 10px;
+    top: -3px;
+    background: var(--color-gray-400);
+    border-radius: 3px;
+}
+
+.netInfo_btn:hover {
+    cursor: pointer;
+    background-color: var(--color-bg-hover);
+}
+
+.offLinks_btn:hover {
+    cursor: pointer;
+    background-color: var(--color-bg-hover);
+}
+
+.socibtn:hover {
+    cursor: pointer;
+    background-color: var(--color-bg-hover);
+}
+
+.toUSDConvert {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1px;
+}
+
+.toUSDConvertLeft {
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.toUSDConvertRight {
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+/* ========================================== */
+
+.grid_table {
+    display: grid;
+    grid-template-columns: clamp(330px, 23%, 480px) 1fr clamp(330px, 23vw, 390px);
+}
+
+/* ========================================== */
+
+.navBar_category {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 8px;
+}
+
+.chart_style {
+    flex: 1 1 0%;
+}
+
+.chart_type_control {
+    flex: 1 1 0%;
+}
+
+.thread_topic {
+    padding: 24px 24px 12px;
+}
+
+.special_event {
+    grid-template-columns: 84px 1fr;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.link_more {
+    background-color: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    left: 0;
+    border-radius: 8px;
+    padding: 2px 4px;
+    margin: 6px;
+}
+
+.react_icon {
+    padding: 12px 0 16px;
+}

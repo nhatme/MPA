@@ -4,6 +4,7 @@ const router = express.Router()
 
 const api_key = "4f10050d-6940-42fd-86ff-8bd8ed6b0306"
 const url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest"
+const urlInfo = "https://pro-api.coinmarketcap.com/v2/cryptocurrency/info"
 
 router.get('', (req, res, next) => {
 
