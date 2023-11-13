@@ -2,6 +2,12 @@
 
 @media screen and (max-width: 1225px) {}
 
+@media screen and (max-width: 1280px) {
+    .grid_table {
+        grid-template-columns: clamp(330px, 23%, 480px) 1fr;
+    }
+}
+
 @media only screen and (max-width: 1024px) {
     .grid_table {
         grid-template-columns: clamp(330px, 23%, 480px) 1fr;

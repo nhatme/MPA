@@ -537,7 +537,7 @@
     </div>
     <!-- end footer  -->
 
-    <script src="/src/js/app.js"></script>
+    <script src="/mpa/src/js/app.js"></script>
 </body>
 
 </html>

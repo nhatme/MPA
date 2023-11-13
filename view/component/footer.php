@@ -50,7 +50,7 @@
         2023 MarketPlaceAsset. All rights reserved
     </div>
     <div class="f__mobilev">
-        <div class="fm__googleplay"><img src="/src/img/svg/googleplay.svg" alt=""></div>
-        <div class="fm__appstore"><img src="/src/img/svg/appstore.svg" alt=""></div>
+        <div class="fm__googleplay"><img src="/mpa/src/img/svg/googleplay.svg" alt=""></div>
+        <div class="fm__appstore"><img src="/mpa/src/img/svg/appstore.svg" alt=""></div>
     </div>
 </div>

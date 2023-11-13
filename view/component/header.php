@@ -27,16 +27,16 @@
             </div>
             <div class="item-unit">
                 <div class="top-header-right-group">
-                    <img src="/src/img/icon.svg" alt="">
+                    <img src="/mpa/src/img/icon.svg" alt="">
                 </div>
                 <span class="fs-12px-fw-600">USD</span>
                 <iconify-icon icon="icon-park-solid:down-one" class="fs_14px"></iconify-icon>
             </div>
         </div>
         <div class="top-header-right-line-straight"></div>
-        <img src="/src/img/diamond-icon 1.svg" alt="">
-        <img src="/src/img/notice.svg" alt="">
-        <img src="/src/img/profile.png" alt="" width="28px">
+        <img src="/mpa/src/img/diamond-icon 1.svg" alt="">
+        <img src="/mpa/src/img/notice.svg" alt="">
+        <img src="/mpa/src/img/profile.png" alt="" width="28px">
     </div>
 </div>
 <div class="line-header"></div>
@@ -47,8 +47,8 @@
         </div>
     </div>
     <div class="second-header-left">
-        <a href="/view/index.php" class="second-header-left-logo">
-            <img src="/src/img/logo/MarketPlaceAsset.svg" alt="">
+        <a href="/mpa/view/index.php" class="second-header-left-logo">
+            <img src="/mpa/src/img/logo/MarketPlaceAsset.svg" alt="">
         </a>
         <div class="second-header-left-menuBar">
             <div style="position: relative;">
@@ -216,8 +216,8 @@
         <div class="pointer fs_20px m_inline_start_16px">
             <i class="fa-solid fa-magnifying-glass"></i>
         </div>
-        <img class="pointer m_inline_start_16px" src="/src/img/diamond-icon 1.svg" alt="" width="20px">
-        <img class="pointer m_inline_start_16px top-header-notice" src="/src/img/notice.svg" alt="" width="20px">
+        <img class="pointer m_inline_start_16px" src="/mpa/src/img/diamond-icon 1.svg" alt="" width="20px">
+        <img class="pointer m_inline_start_16px top-header-notice" src="/mpa/src/img/notice.svg" alt="" width="20px">
         <div class="pointer fs_20px m_inline_start_16px">
             <i class="fa-solid fa-bars"></i>
         </div>

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/src/img/avatar/Jupiter.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/mpa/src/img/avatar/Jupiter.png">
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./component/css/my-style.css">
     <link rel="stylesheet" href="./component/css/web/header.css">
     <link rel="stylesheet" href="./component/css/web/footer.css">
@@ -38,7 +38,7 @@
                             <div class="fs-14px-fw-400 text-2nd-color ctnhlid__re">The global crypto market cap is</div>
                             <span class="fs-14px-fw-600 text-2nd-color ctnhlid__bo">$1.05T</span>
                             <span class="fs-14px-fw-400 text-2nd-color ctnhlid__re">, a</span>
-                            <img src="/src/img/svg/down-price.svg" alt="">
+                            <iconify-icon class="fs_14px down-price" icon="icon-park-solid:down-one"></iconify-icon>
                             <div class="fs-14px-fw-600 down-price ctnhlid__bo">0.37%</div>
                             <div class="fs-14px-fw-400 text-2nd-color ctnhlid__re">decrease over the last day.</div>
                             <div class="no_wrap ctn-highlights-readmore gray fs-14px-fw-400 ctnhlid__re">Read More</div>
@@ -81,7 +81,7 @@
                             <p class="truncate no_wrap fs-12px-fw-400 gray-2nd-color">Stage Excellent</p>
                         </div>
                         <div class="ctn__bbd__realtime-price">
-                            <img class="ctn__bbd__sign" src="../src/img/svg/up-price.svg" alt="">
+                            <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
                             <p class="fs-12px-fw-400 up-price">2%</p>
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                             <p class="truncate no_wrap fs-12px-fw-400 gray-2nd-color">Interaction 3D Model</p>
                         </div>
                         <div class="ctn__bbd__realtime-price">
-                            <img class="ctn__bbd__sign" src="../src/img/svg/up-price.svg" alt="">
+                            <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
                             <p class="fs-12px-fw-400 up-price">2%</p>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
                             <p class="truncate no_wrap fs-12px-fw-400 gray-2nd-color">Industrial Product </p>
                         </div>
                         <div class="ctn__bbd__realtime-price">
-                            <img class="ctn__bbd__sign" src="../src/img/svg/up-price.svg" alt="">
+                            <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
                             <p class="fs-12px-fw-400 up-price">2%</p>
                         </div>
                     </div>
@@ -368,19 +368,19 @@
                                 <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">0</td>
                                 <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
                                     <div class="ctn__list__td__percentIndex">
-                                        <img src="../src/img/svg/up-price.svg" alt="">
+                                        <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
                                         <span class="up-price">0</span>
                                     </div>
                                 </td>
                                 <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
                                     <div class="ctn__list__td__percentIndex">
-                                        <img src="../src/img/svg/up-price.svg" alt="">
+                                        <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
                                         <span class="up-price">0</span>
                                     </div>
                                 </td>
                                 <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
                                     <div class="ctn__list__td__percentIndex">
-                                        <img src="../src/img/svg/up-price.svg" alt="">
+                                        <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
                                         <span class="up-price">0</span>
                                     </div>
                                 </td>
