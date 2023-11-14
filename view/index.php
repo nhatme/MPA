@@ -7,8 +7,8 @@
     <link rel="icon" type="image/x-icon" href="/mpa/src/img/avatar/Jupiter.png">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./component/css/my-style.css">
-    <link rel="stylesheet" href="./component/css/web/header.css">
-    <link rel="stylesheet" href="./component/css/web/footer.css">
+    <link rel="stylesheet" href="./component/css/header.css">
+    <link rel="stylesheet" href="./component/css/footer.css">
     <link rel="stylesheet" href="./component/css/responsive.css">
     <link rel="stylesheet" href="./component/css/scrollbar.css">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
@@ -25,6 +25,7 @@
     </div>
 
     <!-- End header  -->
+    
     <!-- start container  -->
     <div class="container">
         <div class="ctn__top__highlights__slider w_100pc">
@@ -162,7 +163,7 @@
                             </div>
                             <div class="ctn__bbd__follow">
                                 <div class="xx_small p_right_4px">
-                                    <i class="fa-solid fa-plus"></i>
+                                    <iconify-icon class="fs_16px flex" icon="ic:round-plus"></iconify-icon>
                                 </div>
                                 <div class="fs-12px-fw-600">
                                     Follow
@@ -183,7 +184,7 @@
                             </div>
                             <div class="ctn__bbd__follow">
                                 <div class="xx_small p_right_4px">
-                                    <i class="fa-solid fa-plus"></i>
+                                    <iconify-icon class="fs_16px flex" icon="ic:round-plus"></iconify-icon>
                                 </div>
                                 <div class="fs-12px-fw-600">
                                     Follow
@@ -204,7 +205,7 @@
                             </div>
                             <div class="ctn__bbd__follow">
                                 <div class="xx_small p_right_4px">
-                                    <i class="fa-solid fa-plus"></i>
+                                    <iconify-icon class="fs_16px flex" icon="ic:round-plus"></iconify-icon>
                                 </div>
                                 <div class="fs-12px-fw-600">
                                     Follow

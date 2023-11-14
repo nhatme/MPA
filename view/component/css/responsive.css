@@ -27,6 +27,7 @@
 
     .second-header-right-rss {
         display: flex;
+        align-items: center;
     }
 
     .top-header-wrapper {

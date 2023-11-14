@@ -7,11 +7,11 @@
     <link rel="icon" type="image/x-icon" href="/src/img/avatar/Jupiter.png">
     <link rel="stylesheet" href="../currency/currency.css">
     <link rel="stylesheet" href="../css/my-style.css">
-    <link rel="stylesheet" href="../css/web/header.css">
-    <link rel="stylesheet" href="../css/web/footer.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="./currency_rss.css">
     <link rel="stylesheet" href="../css/scrollbar.css">
+    <link rel="stylesheet" href="./currency_rss.css">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <title>Document</title>
 </head>

@@ -93,6 +93,10 @@
     border: none;
 }
 
+.border_main {
+    border: 1px solid var(--main-color);
+}
+
 .border_300 {
     border: 1px solid var(--color-gray-300);
 }
@@ -292,6 +296,10 @@
     font-size: var(--fs-32px);
 }
 
+.fs_26px {
+    font-size: var(--fs-26px);
+}
+
 .fs_24px {
     font-size: var(--fs-24px);
 }
@@ -321,6 +329,10 @@
     line-height: 35px;
 }
 
+.lh-32px {
+    line-height: 32px;
+}
+
 .lh-24px {
     line-height: 24px;
 }
@@ -328,6 +340,10 @@
 /* height  */
 .h_24px {
     height: 24px;
+}
+
+.h_32px {
+    height: 32px;
 }
 
 .h_84px {
@@ -405,6 +421,10 @@
 
 .p_0px_24px {
     padding: 0px 24px;
+}
+
+.p_0px_16px {
+    padding: 0px 16px;
 }
 
 .p_8px_16px {
