@@ -25,7 +25,8 @@
 
     <!-- start container  -->
     <div class="container">
-        
+        <?php include "./watchlist-section/createownacc.php" ?>
+        <?php include "./watchlist-section/mobileapp.php" ?>
     </div>
     <!-- End container  -->
 
