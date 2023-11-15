@@ -1,0 +1,13 @@
+.mobile_grid_table {
+    display: flex;
+    gap: 32px;
+}
+
+.ios_android {
+    background: url("https://s2.coinmarketcap.com/static/cloud/img/watchlist/landingpage-bg-2.png");
+}
+
+.app_formore {
+    top: 0;
+    left: 0;
+}

@@ -1,10 +1,9 @@
 <div class="mobileapp">
-    <div class="grid">
-        <div class="p_32px color_gray_100_bg">
-            <div>
-                <img src="https://s2.coinmarketcap.com/static/cloud/img/watchlist/landingpage-bg-2.png" alt="">
-            </div>
-            <div>
+
+    <div class="mobile_grid_table">
+        
+        <div class="ios_android p_32px color_gray_100_bg radius-32px">
+            <div class="app_formore">
                 <div>
                     <span>We're also on</span>
                     <span>iOS and Android</span>
@@ -16,9 +15,11 @@
                 </div>
             </div>
         </div>
-        <div class="flex">
-            <div>
-                <div class="p_32px color_gray_100_bg">
+
+
+        <div class="flex g_32px">
+            <div class="">
+                <div class="p_32px color_gray_100_bg radius-32px">
                     <div>
                         <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="72" height="72" rx="36" fill="#FF775F"></rect>
@@ -29,7 +30,7 @@
                     <div class="fs-18px-fw-700">Instant price alerts</div>
                     <div class="fs-14px-fw-500 gray-2nd-color">Receive timely notifications on major crypto movements</div>
                 </div>
-                <div class="p_32px color_gray_100_bg">
+                <div class="p_32px color_gray_100_bg radius-32px">
                     <div>
                         <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="72" height="72" rx="36" fill="#23DCF5"></rect>
@@ -41,8 +42,10 @@
                     <div class="fs-14px-fw-500 gray-2nd-color">Top-notch crypto portfolio tracking at no costs</div>
                 </div>
             </div>
-            <div>
-                <div class="p_32px color_gray_100_bg">
+
+
+            <div class="">
+                <div class="p_32px color_gray_100_bg radius-32px">
                     <div>
                         <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="72" height="72" rx="36" fill="#8AABFF"></rect>
@@ -53,7 +56,7 @@
                     <div class="fs-18px-fw-700">Organize lists your way</div>
                     <div class="fs-14px-fw-500 gray-2nd-color">Create separate lists to track various crypto fields</div>
                 </div>
-                <div class="p_32px color_gray_100_bg">
+                <div class="p_32px color_gray_100_bg radius-32px">
                     <div>
                         <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="72" height="72" rx="36" fill="#17DF94"></rect>
