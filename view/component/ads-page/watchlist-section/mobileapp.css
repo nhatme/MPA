@@ -1,13 +1,11 @@
-.mobile_grid_table {
-    display: flex;
-    gap: 32px;
-}
+@import "/view/component/css/defined.css";
+
 
 .ios_android {
     background: url("https://s2.coinmarketcap.com/static/cloud/img/watchlist/landingpage-bg-2.png");
+    background-position: center center;
 }
 
-.app_formore {
-    top: 0;
-    left: 0;
+.mobile_grid_table .ios_android {
+    background-color: var(--color-gray-100);
 }

@@ -31,6 +31,9 @@
     </div>
     <!-- End container  -->
 
+    <!-- faq  -->
+    <?php include "./watchlist-section/faq.php" ?>
+
     <!-- start footer  -->
     <div class="footer">
         <?php include "../footer.php" ?>

@@ -29,7 +29,7 @@
 
     <!-- start container  -->
 
-    <div class="container">
+    <div class="container border-bottom">
         <div class="grid_table">
 
             <div class="p_24px">
@@ -467,34 +467,34 @@
                             </div>
                             <div class="flex f_column g_6px pt_12px">
                                 <div class="flex g_6px">
-                                    <div class="flex align_center g_6px h_24px border_300 p_0_8px radius_30px">
+                                    <div class="flex align_center g_6px h_24px border_300 p_0_8px radius-32px">
                                         <iconify-icon class="fs_12px" icon="basil:like-outline"></iconify-icon>
                                         <span class="fs-12px-fw-600">97</span>
                                     </div>
-                                    <div class="flex align_center g_6px h_24px border_300 p_0_8px radius_30px">
+                                    <div class="flex align_center g_6px h_24px border_300 p_0_8px radius-32px">
                                         <iconify-icon class="fs_12px" icon="flat-color-icons:like"></iconify-icon>
                                         <span class="fs-12px-fw-600">487</span>
                                     </div>
-                                    <div class="flex align_center g_6px h_24px border_300 p_0_8px radius_30px">
+                                    <div class="flex align_center g_6px h_24px border_300 p_0_8px radius-32px">
                                         <iconify-icon class="fs_12px" icon="cryptocurrency-color:hodl"></iconify-icon>
                                         <span class="fs-12px-fw-600">38</span>
                                     </div>
-                                    <div class="flex align_center g_6px h_24px border_300 p_0_8px radius_30px">
+                                    <div class="flex align_center g_6px h_24px border_300 p_0_8px radius-32px">
                                         <iconify-icon class="fs_12px" icon="material-symbols:build"></iconify-icon>
                                         <span class="fs-12px-fw-600">29</span>
                                     </div>
-                                    <div class="flex align_center g_6px h_24px border_300 p_0_8px radius_30px">
+                                    <div class="flex align_center g_6px h_24px border_300 p_0_8px radius-32px">
                                         <iconify-icon class="fs_12px" icon="carbon:person-favorite"></iconify-icon>
                                         <span class="fs-12px-fw-600">16</span>
                                     </div>
-                                    <div class="flex align_center g_6px h_24px border_300 p_0_8px radius_30px">
+                                    <div class="flex align_center g_6px h_24px border_300 p_0_8px radius-32px">
                                         <iconify-icon class="fs_12px" icon="streamline:inbox-favorite-solid"></iconify-icon>
                                         <span class="fs-12px-fw-600">13</span>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="flex">
-                                        <div class="flex align_center g_6px h_24px border_300 p_0_8px radius_30px">
+                                        <div class="flex align_center g_6px h_24px border_300 p_0_8px radius-32px">
                                             <iconify-icon class="fs_12px" icon="mdi:network-favorite"></iconify-icon>
                                             <span class="fs-12px-fw-600">16</span>
                                         </div>
