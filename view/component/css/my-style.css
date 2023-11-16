@@ -233,6 +233,11 @@
 
 /* ========================== */
 
+.fs-15px-fw-400 {
+    font-size: var(--fs-15px);
+    font-weight: var(--fw-400);
+}
+
 .fs-15px-fw-500 {
     font-size: var(--fs-15px);
     font-weight: var(--fw-500);
@@ -242,6 +247,12 @@
     font-size: var(--fs-15px);
     font-weight: var(--fw-600);
 }
+
+.fs-15px-fw-700 {
+    font-size: var(--fs-15px);
+    font-weight: var(--fw-700);
+}
+
 
 /* ========================== */
 
@@ -282,6 +293,20 @@
 
 /* ========================== */
 
+
+.fs-20px-fw-600 {
+    font-size: var(--fs-20px);
+    font-weight: var(--fw-600);
+}
+
+.fs-20px-fw-700 {
+    font-size: var(--fs-20px);
+    font-weight: var(--fw-700);
+}
+
+
+/* ========================== */
+
 .fs-22px-fw-500 {
     font-size: var(--fs-22px);
     font-weight: var(--fw-500);
@@ -304,6 +329,10 @@
     font-size: var(--fs-24px);
     font-weight: var(--fw-700);
 }
+
+
+/* ========================== */
+
 
 .fs-25px-fs-700 {
     font-style: var(--fs-25px);
@@ -370,6 +399,11 @@
 }
 
 /* line height */
+.lh-64px {
+    line-height: 64px;
+}
+
+
 .lh-40px {
     line-height: 40px;
 }
@@ -409,6 +443,14 @@
     width: 100%;
 }
 
+.w_15pc {
+    width: 15%;
+}
+
+.w_16pc {
+    width: 16%;
+}
+
 .w_20pc {
     width: 20%;
 }
@@ -425,8 +467,17 @@
     width: 60%;
 }
 
+.w_80pc {
+    width: 80%;
+}
+
+
 .w_55px {
     width: 55px;
+}
+
+.fit_cont {
+    width: fit-content;
 }
 
 /* height  */
@@ -460,6 +511,10 @@
     padding-top: 12px;
 }
 
+.pt_16px {
+    padding-top: 16px;
+}
+
 .pt_24px {
     padding-top: 24px;
 }
@@ -476,13 +531,25 @@
     padding-bottom: 16px;
 }
 
+.pb_32px {
+    padding-bottom: 32px;
+}
+
 
 .p_32px_24px {
     padding: 32px 24px;
 }
 
+.p_24px_32px {
+    padding: 24px 32px;
+}
+
 .p_16px_24px {
     padding: 16px 24px;
+}
+
+.p_12px_24px {
+    padding: 12px 24px;
 }
 
 .p_4px_24px {
@@ -571,6 +638,14 @@
     margin-bottom: 100px;
 }
 
+.mb_4px {
+    margin-bottom: 4px;
+}
+
+.mb_6px {
+    margin-bottom: 6px;
+}
+
 .mb_8px {
     margin-bottom: 8px;
 }
@@ -619,6 +694,10 @@
     margin-right: 8px;
 }
 
+.m_rl_32px {
+    margin: 0 32px;
+}
+
 .m_rl_24px {
     margin: 0 24px;
 }
@@ -661,6 +740,10 @@
 
 .mr_4px {
     margin-right: 4px;
+}
+
+.mr_32px {
+    margin-right: 32px;
 }
 
 
@@ -799,6 +882,10 @@
     gap: 32px;
 }
 
+.g_48px {
+    gap: 48px;
+}
+
 /* grid box  */
 
 .grid {
@@ -818,4 +905,11 @@
 
 .opacity_05 {
     opacity: .5;
+}
+
+
+/* textarea  */ 
+
+.resize_none {
+    resize: none;
 }

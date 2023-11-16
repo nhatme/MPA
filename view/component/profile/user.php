@@ -15,7 +15,32 @@
 </head>
 
 <body>
+    <!-- Start header  -->
 
+    <div class="header">
+        <?php include "../header.php" ?>
+    </div>
+
+    <!-- End header  -->
+
+    <!-- ================================================================== -->
+
+    <!-- start container  -->
+
+    <div class="container">
+        <?php require "./user_main.php" ?>
+    </div>
+
+    <!-- End container  -->
+
+    <!-- ================================================================== -->
+
+
+    <!-- start footer  -->
+    <div class="footer">
+        <?php include "../footer.php" ?>
+    </div>
+    <!-- end footer  -->
 </body>
 
 </html>

@@ -1,0 +1,7 @@
+@import "../css/allstyle.css";
+@import "../css/defined.css";
+
+.container {
+    max-width: 1252px;
+    margin: 0 auto;
+}
