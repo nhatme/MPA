@@ -40,10 +40,6 @@
                 </div>
             </div>
         </div>
-        <div class="nav-guide flex align_center g_16px">
-            <iconify-icon class="fs_24px" icon="icon-park-outline:guide-board"></iconify-icon>
-            <span class="fs-14px-fw-600">Guide</span>
-        </div>
     </div>
     <div class="main w_70pc mt_48px">
         <div class="path flex align_center g_6px mb_48px h_32px">
@@ -178,14 +174,51 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
-
     </div>
     <div class="line_straight"></div>
     <div class="profile w_15pc mt_48px">
-        <p>User Profile</p>
+        <div>
+            <p class="fs-18px-fw-600 center">User Profile</p>
+            <img src="" alt="">
+            <p></p>
+            <a href="">Edit Profile</a>
+        </div>
+        <div>
+            <p>Account</p>
+            <div>
+                <span>Joined</span>
+                <span>June 22, 2020</span>
+            </div>
+            <div>
+                <span>Assets Value</span>
+                <span>$1,328,240,00</span>
+            </div>
+        </div>
+        <div>
+            <p>Assets</p>
+            <div>
+                <span>Bitcoin</span>
+                <span>23.5 BTC</span>
+            </div>
+            <div>
+                <span>Bitcoin</span>
+                <span>23.5 BTC</span>
+            </div>
+            <div>
+                <span>Bitcoin</span>
+                <span>23.5 BTC</span>
+            </div>
+            <div>
+                <span>Bitcoin</span>
+                <span>23.5 BTC</span>
+            </div>
+            <div>
+                <span>Bitcoin</span>
+                <span>23.5 BTC</span>
+            </div>
+
+        </div>
     </div>
 
 </div>

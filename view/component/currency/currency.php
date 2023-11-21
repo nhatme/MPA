@@ -99,12 +99,7 @@
                                             <div class="fs-12px-fw-600">$722,432,211,606</div>
                                         </div>
                                     </div>
-                                    <div class="flex g_12px">
-                                        <div>
-                                            <span class="coinss_slider color_gray_200_bg" style="width: 99.98%;"></span>
-                                        </div>
-                                        <span class="fs-12px-fw-500 second-color-body p_0_4px radius-4px color_gray_200_bg">#1</span>
-                                    </div>
+                                    
                                 </div>
 
                                 <!-- ================================================== -->
@@ -125,12 +120,7 @@
                                             <div class="fs-12px-fw-600">$20,734,114,656</div>
                                         </div>
                                     </div>
-                                    <div class="flex g_12px">
-                                        <div>
-                                            <span class="coinss_slider color_gray_200_bg" style="width: 99.98%;"></span>
-                                        </div>
-                                        <span class="fs-12px-fw-500 second-color-body p_0_4px radius-4px color_gray_200_bg">#2</span>
-                                    </div>
+                                
                                 </div>
 
                                 <!-- ================================================== -->
@@ -161,12 +151,6 @@
                                                 <span class="fs-12px-fw-600">19,539,268 BTC</span>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="flex g_12px">
-                                        <div>
-                                            <span class="coinss_slider color_gray_200_bg" style="width: 99.98%;"></span>
-                                        </div>
-                                        <span class="fs-12px-fw-500 second-color-body p_0_4px radius-4px">93.04%</span>
                                     </div>
                                 </div>
 

@@ -1,0 +1,26 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 48px;
+}
+
+.input {
+    border: 1px solid var(--main-color);
+    background-color: transparent;
+    border-radius: 6px;
+    height: 40px;
+    padding-left: 16px;
+}
+
+.id-generate {
+    text-decoration: underline;
+}
+
+button {
+    border: 1px solid var(--main-color);
+    padding: 10px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: white;
+}
