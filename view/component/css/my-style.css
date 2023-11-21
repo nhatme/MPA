@@ -403,7 +403,6 @@
     line-height: 64px;
 }
 
-
 .lh-40px {
     line-height: 40px;
 }
@@ -443,6 +442,14 @@
     width: 100%;
 }
 
+.w_10pc {
+    width: 10%;
+}
+
+.w_12pc {
+    width: 12%;
+}
+
 .w_15pc {
     width: 15%;
 }
@@ -465,6 +472,14 @@
 
 .w_60pc {
     width: 60%;
+}
+
+.w_70pc {
+    width: 70%;
+}
+
+.w_76pc {
+    width: 76%;
 }
 
 .w_80pc {
@@ -708,6 +723,10 @@
 
 .m_rl_8px {
     margin: 0 8px;
+}
+
+.mt_48px {
+    margin-top: 48px;
 }
 
 .mt_32px {

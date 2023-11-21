@@ -1,0 +1,27 @@
+.navbar {
+    background-color: #f3fbff;
+}
+
+.navbar-right {
+    padding: 24px 0 24px 48px;
+}
+
+.main {
+    padding: 0 24px 16px 24px;
+}
+
+.profile {
+    padding: 0 24px 16px 24px;
+}
+
+.line_straight {
+    border-right: 1px solid var(--color-gray-300);
+}
+
+.activity-detail {
+
+}
+
+.activity-detail-each {
+    padding: 0 16px 16px 16px;
+}
