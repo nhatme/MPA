@@ -1,3 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./view/src/img/avatar/Jupiter.png">
+    <link rel="stylesheet" href="./view/src/css/style.css">
+    <link rel="stylesheet" href="./view/src/css/my-style.css">
+    <link rel="stylesheet" href="./view/src/css/header.css">
+    <link rel="stylesheet" href="./view/src/css/footer.css">
+    <link rel="stylesheet" href="./view/src/css/responsive.css">
+    <link rel="stylesheet" href="./view/src/css/scrollbar.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>MPA - Official</title>
+</head>
+
+<body>
+
+    <!-- Start header  -->
+
+    <div class="header">
+
         <div class="top-header">
             <div class="top-header-left">
                 <div class="fs-11px-fw-600">
@@ -27,17 +51,17 @@
                     </div>
                     <div class="item-unit">
                         <div class="top-header-right-group">
-                            <img src="/mpa/src/img/icon.svg" alt="">
+                            <img src="./view/src/img/icon.svg" alt="">
                         </div>
                         <span class="fs-12px-fw-700">USD</span>
                         <iconify-icon icon="icon-park-solid:down-one" class="fs_14px"></iconify-icon>
                     </div>
                 </div>
                 <div class="top-header-right-line-straight"></div>
-                <img src="/mpa/src/img/diamond-icon 1.svg" alt="">
+                <img src="./view/src/img/diamond-icon 1.svg" alt="">
                 <div class="align_center g_12px d_none">
-                    <img src="/mpa/src/img/notice.svg" alt="">
-                    <img src="/mpa/src/img/profile.png" alt="" width="28px">
+                    <img src="./view/src/img/notice.svg" alt="">
+                    <img src="./view/src/img/profile.png" alt="" width="28px">
                 </div>
                 <div class="flex g_8px">
                     <div class="p_0px_16px fs-12px-fw-700 main-color lh-32px border_main radius-8px pointer">Log In</div>
@@ -54,7 +78,7 @@
             </div>
             <div class="second-header-left">
                 <a href="/mpa/view/index.php" class="second-header-left-logo">
-                    <img src="/mpa/src/img/logo/MarketPlaceAsset.svg" alt="">
+                    <img src="./view/src/img/svg/MarketPlaceAsset.svg" alt="">
                 </a>
                 <div class="second-header-left-menuBar">
                     <div style="position: relative;">
@@ -222,7 +246,7 @@
                 <div class="flex pointer fs_24px m_inline_start_16px">
                     <iconify-icon icon="mingcute:search-line"></iconify-icon>
                 </div>
-                <img class="pointer m_inline_start_16px" src="/mpa/src/img/diamond-icon 1.svg" alt="" width="24px">
+                <img class="pointer m_inline_start_16px" src="./view/src/img/diamond-icon 1.svg" alt="" width="24px">
                 <div class="flex pointer fs_26px m_inline_start_16px">
                     <iconify-icon icon="ic:round-menu"></iconify-icon>
                 </div>
@@ -251,3 +275,7 @@
                 </div>
             </div>
         </div>
+
+    </div>
+
+    <!-- End header  -->

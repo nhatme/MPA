@@ -1,29 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/src/img/avatar/Jupiter.png">
-    <link rel="stylesheet" href="../currency/currency.css">
-    <link rel="stylesheet" href="../css/my-style.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="../css/scrollbar.css">
-    <link rel="stylesheet" href="./currency_rss.css">
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <title>Document</title>
-</head>
-
-<body>
-    <!-- Start header  -->
-
-    <div class="header">
-        <?php include "../header.php" ?>
-    </div>
-
-    <!-- End header  -->
 
     <!-- ================================================================== -->
 
@@ -513,15 +488,3 @@
     <!-- End container  -->
 
     <!-- ================================================================== -->
-
-
-    <!-- start footer  -->
-    <div class="footer">
-        <?php include "../footer.php" ?>
-    </div>
-    <!-- end footer  -->
-
-    <script src="/mpa/src/js/app.js"></script>
-</body>
-
-</html>

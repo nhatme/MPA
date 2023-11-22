@@ -1,8 +1,3 @@
-<head>
-    <link rel="stylesheet" href="admin.css">
-    <link rel="stylesheet" href="../css/my-style.css">
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-</head>
 
 <div class="container flex w_100pc">
 

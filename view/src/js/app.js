@@ -19,6 +19,3 @@ eachMenubars.forEach((el, index) => {
         dropdowns[index].classList.add("d_none")
     }
 })
-
-
-
