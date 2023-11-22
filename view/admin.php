@@ -1,5 +1,4 @@
-
-<div class="container flex w_100pc">
+<div class="container_admin flex w_100pc">
 
     <div class="navbar w_15pc p_24px">
         <div class="navbar-right">

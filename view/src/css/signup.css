@@ -1,7 +1,7 @@
 @import "./allstyle.css";
 @import "./defined.css";
 
-.container {
+.container_signup {
     margin: 0 auto;
     box-shadow: var(--box-shadow);
 }

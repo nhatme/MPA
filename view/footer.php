@@ -4,7 +4,7 @@
 
      <div class="f__linkslogo">
          <div class="f__logo">
-             <img src="../src/img/logo/MarketPlaceAsset.svg" width="200px" alt="">
+             <img src="./view/src/img/svg/MarketPlaceAsset.svg" width="200px" alt="">
          </div>
          <div class="f__links">
              <div class="f__links__row">
@@ -54,8 +54,8 @@
              2023 MarketPlaceAsset. All rights reserved
          </div>
          <div class="f__mobilev">
-             <div class="fm__googleplay"><img src="/mpa/src/img/svg/googleplay.svg" alt=""></div>
-             <div class="fm__appstore"><img src="/mpa/src/img/svg/appstore.svg" alt=""></div>
+             <div class="fm__googleplay"><img src="./view/src/img/svg/googleplay.svg" alt=""></div>
+             <div class="fm__appstore"><img src="./view/src/img/svg/appstore.svg" alt=""></div>
          </div>
      </div>
 
@@ -65,8 +65,8 @@
  <!-- end footer  -->
 
  
- <script src="../src/js/app.js"></script>
- <script src="../src/js/data.js"></script>
+ <script src="./view/src/js/app.js"></script>
+ <!-- <script src="./view/src/js/data.js"></script> -->
  </body>
 
  </html>

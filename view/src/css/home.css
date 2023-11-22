@@ -283,6 +283,10 @@ thead tr {
     overflow-x: auto;
 }
 
+.lis-coin-detail:hover {
+    background-color: var(--color-gray-200);
+}
+
 .ctn__list__th {
     padding: 10px;
 }

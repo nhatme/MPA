@@ -1,4 +1,4 @@
-<div class="container p_32px radius-32px" style="width: 496px; height: 854px;">
+<div class="container_signup p_32px radius-32px" style="width: 496px; height: 854px;">
     <div class="">
         <div class="flex flex_center mb_32px pt_8px g_32px">
             <div class="label-log fs-22px-fw-500 text-2nd-color">Log In</div>

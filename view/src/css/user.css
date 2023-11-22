@@ -1,5 +1,5 @@
-@import "../css/allstyle.css";
-@import "../css/defined.css";
+@import "./allstyle.css";
+@import "./defined.css";
 
 .container {
     max-width: 1252px;

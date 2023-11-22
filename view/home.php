@@ -36,7 +36,7 @@
                         <img src="./view/src/img/svg/fire-trending.svg" alt="">
                         <p class="fs-16px-fw-700">Trending</p>
                     </div>
-                    <div class="ctn-bottom-box-title-more">
+                    <div class="ctn-bottom-box-title-more pointer">
                         <p class="fs-12px-fw-700 main-color">More</p>
                         <img src="./view/src/img/svg/right.svg" alt="">
                     </div>
@@ -115,7 +115,7 @@
                         <img src="./view/src/img/svg/star-top.svg" alt="">
                         <p class="truncate fs-16px-fw-700">Top Community Accounts</p>
                     </div>
-                    <div class="ctn-bottom-box-title-more">
+                    <div class="ctn-bottom-box-title-more pointer">
                         <p class="fs-12px-fw-700 main-color">More</p>
                         <img src="./view/src/img/svg/right.svg" alt="">
                     </div>
@@ -133,7 +133,7 @@
                             <iconify-icon class="main-color fs_14px" icon="bxs:badge-check"></iconify-icon>
                             <p class="truncate fs-12px-fw-400 gray-2nd-color">@samwise</p>
                         </div>
-                        <div class="ctn__bbd__follow">
+                        <div class="ctn__bbd__follow pointer">
                             <div class="xx_small p_right_4px">
                                 <iconify-icon class="fs_16px flex" icon="ic:round-plus"></iconify-icon>
                             </div>
@@ -154,7 +154,7 @@
                             <iconify-icon class="main-color fs_14px" icon="bxs:badge-check"></iconify-icon>
                             <p class="truncate fs-12px-fw-400 gray-2nd-color">@oliverking</p>
                         </div>
-                        <div class="ctn__bbd__follow">
+                        <div class="ctn__bbd__follow pointer">
                             <div class="xx_small p_right_4px">
                                 <iconify-icon class="fs_16px flex" icon="ic:round-plus"></iconify-icon>
                             </div>
@@ -175,7 +175,7 @@
                             <iconify-icon class="main-color fs_14px" icon="bxs:badge-check"></iconify-icon>
                             <p class="truncate fs-12px-fw-400 gray-2nd-color">@sophiagreenok</p>
                         </div>
-                        <div class="ctn__bbd__follow">
+                        <div class="ctn__bbd__follow pointer">
                             <div class="xx_small p_right_4px">
                                 <iconify-icon class="fs_16px flex" icon="ic:round-plus"></iconify-icon>
                             </div>
@@ -207,7 +207,7 @@
                         <p class="fs-16px-fw-700">Fear & Greed Index</p>
                         <img src="./view/src/img/svg/info.svg" alt="" width="14px">
                     </div>
-                    <div class="ctn-bottom-box-title-more">
+                    <div class="ctn-bottom-box-title-more pointer">
                         <p class="fs-12px-fw-700 main-color">More</p>
                         <img src="./view/src/img/svg/right.svg" alt="">
                     </div>
@@ -326,7 +326,98 @@
                     </thead>
 
                     <tbody class="list-coin">
-                        <tr>
+
+                        <tr class="lis-coin-detail" style="cursor: pointer;">
+                            <td class="ctn__list__td__star">
+                                <img src="./view/src/img/svg/star-stroke.svg" alt="">
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 fs-12px-fw-700 text-2nd-color">0</td>
+                            <td class="ctn__list__td">
+                                <div class="ctn__list__td__info">
+                                    <img src="./view/src/img/avatar/img.png" alt="">
+                                    <span class="fs-14px-fw-600">0</span>
+                                    <span class="fs-14px-fw-500 gray-2nd-color">0</span>
+                                </div>
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">0</td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
+                                <div class="ctn__list__td__percentIndex">
+                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
+                                    <span class="up-price">0</span>
+                                </div>
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
+                                <div class="ctn__list__td__percentIndex">
+                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
+                                    <span class="up-price">0</span>
+                                </div>
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
+                                <div class="ctn__list__td__percentIndex">
+                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
+                                    <span class="up-price">0</span>
+                                </div>
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">0</td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
+                                <div class="ctn__list__td__totalVolume">
+                                    <span>0</span>
+                                    <span class="text-2nd-color fs-12px-fw-500">360,056 BTC</span>
+                                </div>
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
+                                <span>0</span>
+                                <span>0</span>
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">Line chart</td>
+                        </tr>
+
+                        <tr class="lis-coin-detail" style="cursor: pointer;">
+                            <td class="ctn__list__td__star">
+                                <img src="./view/src/img/svg/star-stroke.svg" alt="">
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 fs-12px-fw-700 text-2nd-color">0</td>
+                            <td class="ctn__list__td">
+                                <div class="ctn__list__td__info">
+                                    <img src="./view/src/img/avatar/img.png" alt="">
+                                    <span class="fs-14px-fw-600">0</span>
+                                    <span class="fs-14px-fw-500 gray-2nd-color">0</span>
+                                </div>
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">0</td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
+                                <div class="ctn__list__td__percentIndex">
+                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
+                                    <span class="up-price">0</span>
+                                </div>
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
+                                <div class="ctn__list__td__percentIndex">
+                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
+                                    <span class="up-price">0</span>
+                                </div>
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
+                                <div class="ctn__list__td__percentIndex">
+                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
+                                    <span class="up-price">0</span>
+                                </div>
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">0</td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
+                                <div class="ctn__list__td__totalVolume">
+                                    <span>0</span>
+                                    <span class="text-2nd-color fs-12px-fw-500">360,056 BTC</span>
+                                </div>
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
+                                <span>0</span>
+                                <span>0</span>
+                            </td>
+                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">Line chart</td>
+                        </tr>
+
+                        <tr class="lis-coin-detail" style="cursor: pointer;">
                             <td class="ctn__list__td__star">
                                 <img src="./view/src/img/svg/star-stroke.svg" alt="">
                             </td>
