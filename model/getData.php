@@ -37,7 +37,6 @@ function getId($endpoint, $limit)
     }
     // return $valueArr;
     return $idStr;
-    // print_r($idStr);
 }
 
 function getCoinOrigin($endpoint, $limit)
@@ -97,7 +96,7 @@ function getInfo($endpoint, $id)
 }
 
 // $coinOrigin = getCoinOrigin($getLatestList, 10);
-// print_r(count($coinOrigin));
+// print_r(($coinOrigin));
 
 // $valueId = getId($getLatestList, 10);
 // print_r($valueId);
@@ -111,33 +110,71 @@ $conn = connectDB();
 
 if ($conn !== null) {
 
+    $sqlQueries = array();
+    // $idArr = array();
+    // $nameArr = array();
+    // $logoArr = array();
+    // $symbolArr = array();
+    // $rankArr = array();
+    // $priceArr = array();
+    // $change_1hArr = array();
+    // $change_24hArr = array();
+
+    $arrBigsMulti = [];
+    $arrBigs = array();
+
+
     foreach (getCoinOrigin($getLatestList, 10) as $key => $value) {
-        try {
-            $counter++;
-            print_r($value);
-            $id = uniqid(); // check duplicate
-            $name = $value["name"];
-            $logo = getInfo($getInfo, getId($getLatestList, 10))[$key]["logo"];
-            $symbol = $value["symbol"];
-            $rank = $value["cmc_rank"];
-            $price = $value["quote"]["USD"]["price"];
-            $change_1h = $value["quote"]["USD"]["percent_change_1h"];
-            $change_24h = $value["quote"]["USD"]["volume_change_24h"];
-            $change_7d = $value["quote"]["USD"]["percent_change_7d"];
-            $market_cap = $value["quote"]["USD"]["market_cap"];
-            $volume_24h = $value["quote"]["USD"]["volume_24h"];
-            $circulating_supply = $value["circulating_supply"];
-            $max_supply = $value["max_supply"];
-            $created_at = $value["date_added"];
+        // $id = uniqid();
+        $name = $value["name"];
+        $logo = getInfo($getInfo, getId($getLatestList, 10))[$key]["logo"];
+        $symbol = $value["symbol"];
+        $rank = $value["cmc_rank"];
+        $price = $value["quote"]["USD"]["price"];
+        $change_1h = $value["quote"]["USD"]["percent_change_1h"];
+        $change_24h = $value["quote"]["USD"]["volume_change_24h"];
+        $change_7d = $value["quote"]["USD"]["percent_change_7d"];
+        $market_cap = $value["quote"]["USD"]["market_cap"];
+        $volume_24h = $value["quote"]["USD"]["volume_24h"];
+        $circulating_supply = $value["circulating_supply"];
+        $max_supply = $value["max_supply"];
+        $created_at = $value["date_added"];
 
-            $sql = "INSERT INTO crypto (id, name_product, logo, symbol, cmc_rank, price, change_1h, change_24h, change_7d, market_cap, volume_24h, circulating_supply, max_supply, created_at)
-            VALUES ('$id', '$name', '$logo',  '$symbol', '$rank', '$price', '$change_1h', '$change_24h', '$change_7d', '$market_cap', '$volume_24h', '$circulating_supply', '$max_supply', '$created_at')";
-            $conn->exec($sql);
+        $arrBigs = array(
+            'id' => uniqid(),
+            'name_product' => $name,
+            'logo' => $logo,
+            'symbol' => $symbol,
+            'cmc_rank' => $rank,
+            'price' => $price,
+            'change_1h' => $change_1h,
+            'change_24h' => $change_24h,
+            'change_7d' => $change_7d,
+            'market_cap' => $market_cap,
+            'volume_24h' => $volume_24h,
+            'circulating_supply' => $circulating_supply,
+            'max_supply' => $max_supply,
+            'created_at' => $created_at
+        );
 
-            echo "Loop $counter times";
-        } catch (PDOException $e) {
-            echo "error: " . $e->getMessage();
-        }
+        $arrBigsMulti = [
+            $key => $arrBigs
+        ];
+    }
+
+    print_r($arrBigsMulti);
+
+
+    foreach ($arrBigs as $data) {
+        $sql = "INSERT INTO crypto (id, name_product, logo, symbol, cmc_rank, price, change_1h, change_24h, change_7d, market_cap, volume_24h, circulating_supply, max_supply, created_at)
+        VALUES (
+                    '{$data['id']}', '{$data['name_product']}', '{$data['logo']}', '{$data['symbol']}',
+                    '{$data['cmc_rank']}', '{$data['price']}', '{$data['change_1h']}', '{$data['change_24h']}', '{$data['change_7d']}',
+                    '{$data['market_cap']}', '{$data['volume_24h']}', '{$data['circulating_supply']}', '{$data['max_supply']}', '{$data['created_at']}'
+
+                )";
+                
+        $conn->exec($sql);
     }
 } else {
     print_r(connectDB());
