@@ -6,7 +6,7 @@ function connectDB()
     $oke = null;
     $servername = "localhost:3308";
     $username = "root";
-    $password = "Nhatp@20";
+    $password = "12345678";
 
     try {
         $conn = new PDO("mysql:host=$servername;dbname=mpa_db", $username, $password);
@@ -20,6 +20,4 @@ function connectDB()
     }
     return $oke;
 }
-
-
 ?>

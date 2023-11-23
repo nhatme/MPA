@@ -30,7 +30,7 @@ function getData(endPoint, param) {
 
             // console.log(`?id=${idCoin.join(",")}`)
             // console.log( idCoin.join(","))
-            resolve(idCoin.join(",")) 
+            resolve(idCoin.join(","))
 
             // console.log(json);
             // resolve(json);
@@ -80,8 +80,9 @@ function getLogoFunc(endPoint, param) {
 
 // get id 
 getData(getLastest, "")
-.then(data=>{
-    getLogoFunc(getLogo, `?id=${data}`)
-})
+
+    .then(data => {
+        getLogoFunc(getLogo, `?id=${data}`)
+    })
 
 
