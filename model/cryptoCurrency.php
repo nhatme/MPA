@@ -1,4 +1,5 @@
 <?php
+include_once "./getData.php";
 
 class CryptoCurrency
 {
@@ -6,6 +7,7 @@ class CryptoCurrency
     private $name;
     private $logo;
     private $symbol;
+    private $rank;
     private $price;
     private $change_1h;
     private $change_24h;
@@ -34,6 +36,11 @@ class CryptoCurrency
     public function getSymbol()
     {
         return $this->symbol;
+    }
+
+    public function getRank()
+    {
+        return $this->rank;
     }
 
     public function getPrice()
@@ -79,12 +86,13 @@ class CryptoCurrency
         return $this->created_at;
     }
 
-    public function __construct($id, $name, $logo, $symbol, $price, $change_1h, $change_24h, $change_7d, $market_cap, $circulating_supply, $max_supply, $created_at)
+    public function __construct($id, $name, $logo, $symbol, $rank, $price, $change_1h, $change_24h, $change_7d, $market_cap, $circulating_supply, $max_supply, $created_at)
     {
         $this->id = $id;
         $this->name = $name;
         $this->logo = $logo;
         $this->symbol = $symbol;
+        $this->rank = $rank;
         $this->price = $price;
         $this->change_1h = $change_1h;
         $this->change_24h = $change_24h;
@@ -104,4 +112,10 @@ class CryptoCurrency
 }
 
 // $valueId = getId($getLatestList, $idStr, $limit);
-// print_r($valueId);
+// foreach ($valueId as $key => $value) {
+//     print_r($value);
+//     echo "<br>";
+// }
+
+// $valueInfo = getInfo($getInfo, getId($getLatestList, $idStr, $limit));
+// print_r(count($valueInfo));
