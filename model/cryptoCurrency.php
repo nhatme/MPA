@@ -1,5 +1,4 @@
 <?php
-include_once "./getData.php";
 
 class CryptoCurrency
 {
@@ -95,17 +94,14 @@ class CryptoCurrency
         $this->max_supply = $max_supply;
         $this->created_at = $created_at;
     }
+
+    public function __construct2($id, $name, $logo)
+    {
+        $this->id = $id;
+        $this->name = $name;
+        $this->logo = $logo;
+    }
 }
 
-$valueId = getId($getLatestList, $idStr, 10);
-print_r($valueId);
-
-$valueInfos = getInfo($getInfo, getId($getLatestList, "1,1027,825,1839,52,5426,3408,2010,74,1958", 10));
-
-foreach ($valueInfos as $key => $value) {
-    print_r($value);
-    echo "  <br>
-            <h1>Nhat Dep Trai</h1> 
-            <br>
-        ";
-}
+// $valueId = getId($getLatestList, $idStr, $limit);
+// print_r($valueId);

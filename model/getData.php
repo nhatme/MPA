@@ -3,7 +3,7 @@
 include_once "./connectDB.php";
 // Create a stream
 
-$limit = 100;
+$limit = 20;
 $getLatestList = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest";
 $getInfo = 'https://pro-api.coinmarketcap.com/v2/cryptocurrency/info';
 
@@ -70,4 +70,17 @@ function getInfo($endpoint, $id)
     }
 
     return $valueArr;
+}
+
+
+
+$valueInfos = getInfo($getInfo, getId($getLatestList, $idStr, $limit));
+
+connectDB();
+foreach ($valueInfos as $key => $value) {
+    $name = $value["name"];
+    // $sql = "INSERT INTO crypto (id, name_product, symbol, price, change_1h, change_24h, change_7d, market_cap, volume_24h, circulating_supply, max_supply, created_at)
+    // VALUES ('#123456', '$name', "")";
+    // use exec() because no results are returned
+    $conn->exec($sql);
 }
