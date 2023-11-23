@@ -15,7 +15,7 @@
 }
 
 .line_straight {
-    border-right: 1px solid var(--color-gray-300);
+    border-right: 1px solid var(--color-gray-200);
 }
 
 .activity-detail {
