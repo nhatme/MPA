@@ -288,14 +288,13 @@
                 </div>
             </div>
         </div>
-
         <div class="table-wrapper" style="position: relative;">
             <div class="scroll_x no_wrap">
                 <table>
                     <thead>
 
                         <tr>
-                            <th class="ctn__list__th fs-12px-fw-700 fs-12px-fw-700"></th>
+                            <th class="ctn__list__th fs-12px-fw-700"></th>
                             <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__left">#</th>
                             <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__left tb-fixed">Name</th>
                             <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__right">Price</th>
@@ -327,143 +326,110 @@
 
                     <tbody class="list-coin">
 
-                        <tr class="lis-coin-detail" style="cursor: pointer;">
-                            <td class="ctn__list__td__star">
-                                <img src="./view/src/img/svg/star-stroke.svg" alt="">
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 fs-12px-fw-700 text-2nd-color">0</td>
-                            <td class="ctn__list__td">
-                                <div class="ctn__list__td__info">
-                                    <img src="./view/src/img/avatar/img.png" alt="">
-                                    <span class="fs-14px-fw-600">0</span>
-                                    <span class="fs-14px-fw-500 gray-2nd-color">0</span>
-                                </div>
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">0</td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
-                                <div class="ctn__list__td__percentIndex">
-                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
-                                    <span class="up-price">0</span>
-                                </div>
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
-                                <div class="ctn__list__td__percentIndex">
-                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
-                                    <span class="up-price">0</span>
-                                </div>
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
-                                <div class="ctn__list__td__percentIndex">
-                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
-                                    <span class="up-price">0</span>
-                                </div>
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">0</td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
-                                <div class="ctn__list__td__totalVolume">
-                                    <span>0</span>
-                                    <span class="text-2nd-color fs-12px-fw-500">360,056 BTC</span>
-                                </div>
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
-                                <span>0</span>
-                                <span>0</span>
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">Line chart</td>
-                        </tr>
-
-                        <tr class="lis-coin-detail" style="cursor: pointer;">
-                            <td class="ctn__list__td__star">
-                                <img src="./view/src/img/svg/star-stroke.svg" alt="">
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 fs-12px-fw-700 text-2nd-color">0</td>
-                            <td class="ctn__list__td">
-                                <div class="ctn__list__td__info">
-                                    <img src="./view/src/img/avatar/img.png" alt="">
-                                    <span class="fs-14px-fw-600">0</span>
-                                    <span class="fs-14px-fw-500 gray-2nd-color">0</span>
-                                </div>
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">0</td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
-                                <div class="ctn__list__td__percentIndex">
-                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
-                                    <span class="up-price">0</span>
-                                </div>
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
-                                <div class="ctn__list__td__percentIndex">
-                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
-                                    <span class="up-price">0</span>
-                                </div>
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
-                                <div class="ctn__list__td__percentIndex">
-                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
-                                    <span class="up-price">0</span>
-                                </div>
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">0</td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
-                                <div class="ctn__list__td__totalVolume">
-                                    <span>0</span>
-                                    <span class="text-2nd-color fs-12px-fw-500">360,056 BTC</span>
-                                </div>
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
-                                <span>0</span>
-                                <span>0</span>
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">Line chart</td>
-                        </tr>
-
-                        <tr class="lis-coin-detail" style="cursor: pointer;">
-                            <td class="ctn__list__td__star">
-                                <img src="./view/src/img/svg/star-stroke.svg" alt="">
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 fs-12px-fw-700 text-2nd-color">0</td>
-                            <td class="ctn__list__td">
-                                <div class="ctn__list__td__info">
-                                    <img src="./view/src/img/avatar/img.png" alt="">
-                                    <span class="fs-14px-fw-600">0</span>
-                                    <span class="fs-14px-fw-500 gray-2nd-color">0</span>
-                                </div>
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">0</td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
-                                <div class="ctn__list__td__percentIndex">
-                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
-                                    <span class="up-price">0</span>
-                                </div>
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
-                                <div class="ctn__list__td__percentIndex">
-                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
-                                    <span class="up-price">0</span>
-                                </div>
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
-                                <div class="ctn__list__td__percentIndex">
-                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
-                                    <span class="up-price">0</span>
-                                </div>
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">0</td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
-                                <div class="ctn__list__td__totalVolume">
-                                    <span>0</span>
-                                    <span class="text-2nd-color fs-12px-fw-500">360,056 BTC</span>
-                                </div>
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">
-                                <span>0</span>
-                                <span>0</span>
-                            </td>
-                            <td class="ctn__list__td fs-14px-fw-500 ctn__lists__table__td__right">Line chart</td>
-                        </tr>
-
                     </tbody>
+                    <script>
+                        const tableCoin = document.querySelector('.list-coin');
 
+                        function formatNum(number) {
+                            const formatter = new Intl.NumberFormat('en-US');
+                            if (number == 0) {
+                                return "";
+                            } else {
+                                return formatter.format(number);
+                            }
+                        }
+                        tableCoin.innerHTML =   `
+                                                <?php
+                                                foreach ($coinDetail->getCoin() as $key => $value) {
+                                                    // echo $value->getId();
+                                                ?>
+                                                    <tr class="list-coin-detail" style="cursor: pointer;">
+
+                                                        <td class="ctn__list__td__star">
+                                                            <img src="./view/src/img/svg/star-stroke.svg" alt="">
+                                                        </td>
+                                                        <td class="ctn__list__td fs-14px-fw-600 fs-12px-fw-700 text-2nd-color"><?= $key + 1 ?></td>
+                                                        <td class="ctn__list__td">
+                                                            <div class="ctn__list__td__info">
+                                                                <img style="border-radius: 50px;" src="<?= $value->getLogo(); ?>" alt="">
+                                                                <span class="fs-14px-fw-600"><?= $value->getName(); ?></span>
+                                                                <span class="fs-14px-fw-600 gray-2nd-color"><?= $value->getSymbol(); ?></span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">$<?= $value->getPrice(); ?></td>
+                                                        <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">
+                                                            <div class="ctn__list__td__percentIndex">
+                                                                <?php
+                                                                if ((float)($value->getchange_1h()) < 0) {
+                                                                ?>
+                                                                    <iconify-icon class="fs_14px down-price" icon="icon-park-solid:down-one"></iconify-icon>
+                                                                    <span class="down-price">${(Math.round((<?= $value->getchange_1h(); ?>) * 100) / 100).toFixed(2)}%</span>
+                                                                <?php
+                                                                } else {
+                                                                ?>
+                                                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
+                                                                    <span class="up-price">${(Math.round((<?= $value->getchange_1h(); ?>) * 100) / 100).toFixed(2)}%</span>
+                                                                <?php
+                                                                }; ?>
+                                                            </div>
+                                                        </td>
+                                                        <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">
+                                                            <div class="ctn__list__td__percentIndex">
+                                                                <?php
+                                                                if ((float)($value->getchange_24h()) < 0) {
+                                                                ?>
+                                                                    <iconify-icon class="fs_14px down-price" icon="icon-park-solid:down-one"></iconify-icon>
+                                                                    <span class="down-price">${(Math.round((<?= $value->getchange_24h(); ?>) * 100) / 100).toFixed(2)}%</span>
+                                                                <?php
+                                                                } else {
+                                                                ?>
+                                                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
+                                                                    <span class="up-price">${(Math.round((<?= $value->getchange_24h(); ?>) * 100) / 100).toFixed(2)}%</span>
+                                                                <?php
+                                                                }; ?>
+                                                                </span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">
+                                                            <div class="ctn__list__td__percentIndex">
+                                                                <?php
+                                                                if ((float)($value->getchange_7d()) < 0) {
+                                                                ?>
+                                                                    <iconify-icon class="fs_14px down-price" icon="icon-park-solid:down-one"></iconify-icon>
+                                                                    <span class="down-price">${(Math.round((<?= $value->getchange_7d(); ?>) * 100) / 100).toFixed(2)}%</span>
+                                                                <?php
+                                                                } else {
+                                                                ?>
+                                                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
+                                                                    <span class="up-price">${(Math.round((<?= $value->getchange_7d(); ?>) * 100) / 100).toFixed(2)}%</span>
+                                                                <?php
+                                                                }; ?>
+                                                                </span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">$${formatNum(<?= (int)($value->getmarket_cap()); ?>)}</td>
+                                                        <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">
+                                                            <div class="ctn__list__td__totalVolume">
+                                                                <span>$${formatNum(<?= (int)($value->getvolume_24h()); ?>)}</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">
+                                                            <div class="flex f_column">
+                                                                <div>
+                                                                    <span class="m_inline_end_4px">${formatNum(<?= (int)($value->getcirculating_supply()); ?>)}</span><span><?= ($value->getSymbol()); ?></span>
+                                                                </div>
+                                                                <span class="gray-2nd-color">${formatNum(<?= (int)($value->getmax_supply()); ?>)}</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">Line chart</td>
+
+                                                    </tr>
+
+                                                <?php
+                                                }
+                                                ?>
+                                                `;
+                    </script>
                 </table>
             </div>
         </div>

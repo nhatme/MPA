@@ -1,8 +1,11 @@
 <?php
+include_once "./model/cryptoCurrency.php";
+
 extract($_REQUEST);
 if (isset($act)) {
     switch ($act) {
         case 'home':
+            $coinDetail = new Coin();
             $viewTitle = truncateText("MPA - Official");
             include_once 'view/header.php';
             include_once 'view/home.php';
@@ -43,7 +46,7 @@ if (isset($act)) {
     }
 }
 
-function truncateText($text, $length = 10)
+function truncateText($text, $length = 15)
 {
     $result = "";
     if (strlen($text) < $length)

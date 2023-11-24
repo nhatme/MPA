@@ -1,121 +1,27 @@
 <?php
-include_once "./getData.php";
+include_once "./model/connectDB.php";
+include_once "./model/entity.php";
 
-class CryptoCurrency
+class Coin
 {
-    private $id;
-    private $name;
-    private $logo;
-    private $symbol;
-    private $rank;
-    private $price;
-    private $change_1h;
-    private $change_24h;
-    private $change_7d;
-    private $market_cap;
-    private $volume_24h;
-    private $circulating_supply;
-    private $max_supply;
-    private $created_at;
-
-    public function getId()
+    public function __chart()
     {
-        return $this->id;
     }
 
-    public function getName()
+    public function getCoin()
     {
-        return $this->name;
-    }
+        $conn = connectDB();
+        $stmt = $conn->prepare("SELECT * FROM mpa_db.crypto;");
+        $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-    public function getLogo()
-    {
-        return $this->logo;
-    }
+        $coin_details = [];
 
-    public function getSymbol()
-    {
-        return $this->symbol;
-    }
-
-    public function getRank()
-    {
-        return $this->rank;
-    }
-
-    public function getPrice()
-    {
-        return $this->price;
-    }
-
-    public function getchange_1h()
-    {
-        return $this->change_1h;
-    }
-
-    public function getchange_7d()
-    {
-        return $this->change_7d;
-    }
-
-    public function getchange_24h()
-    {
-        return $this->change_24h;
-    }
-
-    public function getmarket_cap()
-    {
-        return $this->market_cap;
-    }
-
-    public function getvolume_24h()
-    {
-        return $this->volume_24h;
-    }
-
-    public function getcirculating_supply()
-    {
-        return $this->circulating_supply;
-    }
-    public function getmax_supply()
-    {
-        return $this->max_supply;
-    }
-    public function getcreated_at()
-    {
-        return $this->created_at;
-    }
-
-    public function __construct($id, $name, $logo, $symbol, $rank, $price, $change_1h, $change_24h, $change_7d, $market_cap, $circulating_supply, $max_supply, $created_at)
-    {
-        $this->id = $id;
-        $this->name = $name;
-        $this->logo = $logo;
-        $this->symbol = $symbol;
-        $this->rank = $rank;
-        $this->price = $price;
-        $this->change_1h = $change_1h;
-        $this->change_24h = $change_24h;
-        $this->change_7d = $change_7d;
-        $this->market_cap = $market_cap;
-        $this->circulating_supply = $circulating_supply;
-        $this->max_supply = $max_supply;
-        $this->created_at = $created_at;
-    }
-
-    public function __construct2($id, $name, $logo)
-    {
-        $this->id = $id;
-        $this->name = $name;
-        $this->logo = $logo;
+        foreach ($stmt->fetchAll() as $k => $v) {
+            $coin_detail = new CryptoCurrency(...$v);
+            $coin_details[$k] = $coin_detail;
+        }
+        return $coin_details;
     }
 }
 
-// $valueId = getId($getLatestList, $idStr, $limit);
-// foreach ($valueId as $key => $value) {
-//     print_r($value);
-//     echo "<br>";
-// }
-
-// $valueInfo = getInfo($getInfo, getId($getLatestList, $idStr, $limit));
-// print_r(count($valueInfo));

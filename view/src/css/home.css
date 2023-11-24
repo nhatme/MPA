@@ -283,8 +283,8 @@ thead tr {
     overflow-x: auto;
 }
 
-.lis-coin-detail:hover {
-    background-color: var(--color-gray-200);
+.list-coin-detail:hover {
+    background-color: var(--color-gray-100);
 }
 
 .ctn__list__th {
@@ -338,6 +338,7 @@ thead tr {
 
 .ctn__list__td__percentIndex {
     display: flex;
+    align-items: center;
     justify-content: right;
     gap: 4px;
 }

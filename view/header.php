@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="./view/src/css/scrollbar.css">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <title><?=$viewTitle?></title>
+    <title><?= $viewTitle ?></title>
 </head>
 
 <body>
@@ -84,8 +84,125 @@
                     </a>
                 </div>
                 <div class="flex g_8px">
-                    <a href="?mod=page&act=login" class="p_0px_16px fs-12px-fw-700 main-color lh-32px border_main radius-8px pointer">Log In</a>
-                    <a href="?mod=page&act=signup" class="p_0px_16px fs-12px-fw-700 text-white lh-32px main-color-bg radius-8px pointer">Sign up</a>
+
+                    <div class="btnModal p_0px_16px fs-12px-fw-700 main-color lh-32px border_main radius-8px pointer">Log In</div>
+
+                    <!-- modal sign in  -->
+                    <div class="modal container_signin p_20px radius-32px" style="width: 420px;">
+                        <iconify-icon class="x-close fs_24px pointer" icon="ph:x-bold"></iconify-icon>
+                        <div class="">
+                            <div class="flex flex_center mb_32px pt_8px g_32px">
+                                <div class="label-log fs-22px-fw-700 bb_main_4px pb_6px">Log In</div>
+                                <div class="label-sign fs-22px-fw-500 text-2nd-color ">Sign Up</div>
+                            </div>
+                            <form method="post" action="" class="">
+                                <div class="flex f_column mb_20px">
+                                    <p class="fs-12px-fw-700 mb_8px">Email Address</p>
+                                    <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="text" placeholder="Enter your email address...">
+                                </div>
+                                <div class="flex f_column mb_20px">
+                                    <p class="fs-12px-fw-700 mb_8px">Password</p>
+                                    <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="password" placeholder="Enter your password...">
+                                </div>
+                                <div class="fs-14px-fw-600 p_16px_24px main-color-bg text-white opacity_05 radius-12px center mb_24px" onmousedown="return false">Create an account</div>
+                            </form>
+                        </div>
+
+                        <div class="flex flex_center">
+                            <p class="fs-16px-fw-600 p_0_8px">OR</p>
+                        </div>
+
+                        <div class="mt_24px">
+                            <div class="flex flex_center g_12px border_300 p_12px radius-12px mb_16px">
+                                <iconify-icon icon="fa6-solid:g"></iconify-icon>
+                                <p class="fs-14px-fw-600">Continue with Google</p>
+                            </div>
+                            <div class="flex flex_center g_12px border_300 p_12px radius-12px mb_16px">
+                                <iconify-icon icon="ph:wallet-fill"></iconify-icon>
+                                <p class="fs-14px-fw-600">Continue with Wallet</p>
+                            </div>
+                            <div class="fs-12px-fw-600 center">By proceeding, you agree to OpenSea's Terms<br>of Use & Privacy Policy.</div>
+                        </div>
+
+                    </div>
+                    <div class="backdrops"></div>
+
+                    <!-- modal sign in  -->
+
+                    <div class="btnModal p_0px_16px fs-12px-fw-700 text-white lh-32px main-color-bg radius-8px pointer">Sign up</div>
+
+                    <!-- modal sign up  -->
+                    <!-- <div class="backdrops"></div> -->
+                    <div class="modal container_signup p_20px radius-32px" style="width: 420px;">
+                        <iconify-icon class="x-close fs_24px pointer" icon="ph:x-bold"></iconify-icon>
+                        <div class="">
+                            <div class="flex flex_center mb_32px pt_8px g_32px">
+                                <div class="label-log fs-22px-fw-500 text-2nd-color">Log In</div>
+                                <div class="label-sign fs-22px-fw-700 bb_main_4px pb_6px">Sign Up</div>
+                            </div>
+                            <div class="">
+                                <div class="flex f_column mb_20px">
+                                    <p class="fs-12px-fw-700 mb_8px">Email Address</p>
+                                    <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="text" placeholder="Enter your email address...">
+                                </div>
+                                <div class="flex f_column mb_20px">
+                                    <p class="fs-12px-fw-700 mb_8px">Username</p>
+                                    <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="text" placeholder="Enter your username...">
+                                </div>
+                                <div class="flex f_column mb_20px">
+                                    <p class="fs-12px-fw-700 mb_8px">Password</p>
+                                    <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="password" placeholder="Enter your password...">
+                                </div>
+                                <div class="flex f_column mb_20px">
+                                    <p class="fs-12px-fw-700 mb_8px">Re-type Password</p>
+                                    <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="password" placeholder="Re-type your password...">
+                                </div>
+                                <div class="flex align_top g_8px pt_8px mb_32px">
+                                    <input type="checkbox">
+                                    <p class="fs-15px-fw-500">Please keep me updated by email with the latest crypto news...</p>
+                                </div>
+                                <div class="fs-14px-fw-600 p_16px_24px main-color-bg text-white opacity_05 radius-12px center mb_24px" onmousedown="return false">Create an account</div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex_center">
+                            <p class="fs-16px-fw-600 p_0_8px">OR</p>
+                        </div>
+
+                        <div class="mt_24px">
+                            <div class="flex flex_center g_12px border_300 p_12px radius-12px mb_16px">
+                                <iconify-icon icon="fa6-solid:g"></iconify-icon>
+                                <p class="fs-14px-fw-600">Continue with Google</p>
+                            </div>
+                            <div class="flex flex_center g_12px border_300 p_12px radius-12px mb_16px">
+                                <iconify-icon icon="ph:wallet-fill"></iconify-icon>
+                                <p class="fs-14px-fw-600">Continue with Wallet</p>
+                            </div>
+                            <div class="fs-12px-fw-600 center">By proceeding, you agree to OpenSea's Terms<br>of Use & Privacy Policy.</div>
+                        </div>
+                    </div>
+
+
+                    <!-- modal sign up  -->
+
+                    <script>
+                        const btnModals = document.querySelectorAll('.btnModal');
+                        const modals = document.querySelectorAll('.modal');
+                        const xClose = document.querySelectorAll('.x-close');
+                        const backdrops = document.querySelector('.backdrops');
+
+
+                        btnModals.forEach((el, index) => {
+                            el.onclick = () => {
+                                modals[index].classList.add('active');
+                                backdrops.classList.add('modal-backdrop');
+                            }
+                            xClose[index].onclick = () => {
+                                modals[index].classList.remove('active');
+                                backdrops.classList.remove('modal-backdrop');
+                            }
+                        });
+                    </script>
                 </div>
             </div>
         </div>
@@ -93,7 +210,7 @@
         <div class="second-header">
             <div class="top-header-wrapper-left d_none">
                 <div class="fs-11px-fw-600">
-                    <span class="sign-left">Cryptos:</span> <span class="value">0</span>
+                    <span class="sign-left">Cryptos:</span><span class="value">0</span>
                 </div>
             </div>
             <div class="second-header-left">
