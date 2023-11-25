@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="./view/src/css/signin.css">
     <!-- signup  -->
     <link rel="stylesheet" href="./view/src/css/signup.css">
+    <!-- currency  -->
+    <link rel="stylesheet" href="./view/src/css/currency/currency.css">
+    <link rel="stylesheet" href="./view/src/css/currency/currency_rss.css">
     <!-- watchlist  -->
     <link rel="stylesheet" href="./view/src/css/watchlistNotLogin/watchlist.css">
     <link rel="stylesheet" href="./view/src/css/watchlistNotLogin/mobileapp.css">
@@ -85,47 +88,48 @@
                 </div>
                 <div class="flex g_8px">
 
-                    <div class="btnModal p_0px_16px fs-12px-fw-700 main-color lh-32px border_main radius-8px pointer">Log In</div>
+                    <div class="btnModal p_0px_16px fs-12px-fw-700 main-color lh-32px border_main radius-8px pointer" id="login">Log In</div>
 
                     <!-- modal sign in  -->
-                    <div class="modal container_signin p_20px radius-32px" style="width: 420px;">
-                        <iconify-icon class="x-close fs_24px pointer" icon="ph:x-bold"></iconify-icon>
-                        <div class="">
-                            <div class="flex flex_center mb_32px pt_8px g_32px">
-                                <div class="label-log fs-22px-fw-700 bb_main_4px pb_6px">Log In</div>
-                                <div class="label-sign fs-22px-fw-500 text-2nd-color ">Sign Up</div>
-                            </div>
-                            <form method="post" action="" class="">
-                                <div class="flex f_column mb_20px">
-                                    <p class="fs-12px-fw-700 mb_8px">Email Address</p>
-                                    <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="text" placeholder="Enter your email address...">
+                    <div id="wrapper123" class="modal-wrapper" style="">
+                        <div class="modal container_signin p_20px radius-32px" style="width: 420px;">
+                            <iconify-icon class="x-close fs_24px pointer" icon="ph:x-bold"></iconify-icon>
+                            <div class="">
+                                <div class="flex flex_center mb_32px pt_8px g_32px">
+                                    <div class="label-log fs-22px-fw-700 bb_main_4px pb_6px">Log In</div>
+                                    <div class="label-sign fs-22px-fw-500 text-2nd-color ">Sign Up</div>
                                 </div>
-                                <div class="flex f_column mb_20px">
-                                    <p class="fs-12px-fw-700 mb_8px">Password</p>
-                                    <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="password" placeholder="Enter your password...">
+                                <form method="post" action="" class="">
+                                    <div class="flex f_column mb_20px">
+                                        <p class="fs-12px-fw-700 mb_8px">Email Address</p>
+                                        <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="text" placeholder="Enter your email address...">
+                                    </div>
+                                    <div class="flex f_column mb_20px">
+                                        <p class="fs-12px-fw-700 mb_8px">Password</p>
+                                        <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="password" placeholder="Enter your password...">
+                                    </div>
+                                    <div class="fs-14px-fw-600 p_16px_24px main-color-bg text-white opacity_05 radius-12px center mb_24px" onmousedown="return false">Create an account</div>
+                                </form>
+                            </div>
+
+                            <div class="flex flex_center">
+                                <p class="fs-16px-fw-600 p_0_8px">OR</p>
+                            </div>
+
+                            <div class="mt_24px">
+                                <div class="flex flex_center g_12px border_300 p_12px radius-12px mb_16px">
+                                    <iconify-icon icon="fa6-solid:g"></iconify-icon>
+                                    <p class="fs-14px-fw-600">Continue with Google</p>
                                 </div>
-                                <div class="fs-14px-fw-600 p_16px_24px main-color-bg text-white opacity_05 radius-12px center mb_24px" onmousedown="return false">Create an account</div>
-                            </form>
-                        </div>
-
-                        <div class="flex flex_center">
-                            <p class="fs-16px-fw-600 p_0_8px">OR</p>
-                        </div>
-
-                        <div class="mt_24px">
-                            <div class="flex flex_center g_12px border_300 p_12px radius-12px mb_16px">
-                                <iconify-icon icon="fa6-solid:g"></iconify-icon>
-                                <p class="fs-14px-fw-600">Continue with Google</p>
+                                <div class="flex flex_center g_12px border_300 p_12px radius-12px mb_16px">
+                                    <iconify-icon icon="ph:wallet-fill"></iconify-icon>
+                                    <p class="fs-14px-fw-600">Continue with Wallet</p>
+                                </div>
+                                <div class="fs-12px-fw-600 center">By proceeding, you agree to OpenSea's Terms<br>of Use & Privacy Policy.</div>
                             </div>
-                            <div class="flex flex_center g_12px border_300 p_12px radius-12px mb_16px">
-                                <iconify-icon icon="ph:wallet-fill"></iconify-icon>
-                                <p class="fs-14px-fw-600">Continue with Wallet</p>
-                            </div>
-                            <div class="fs-12px-fw-600 center">By proceeding, you agree to OpenSea's Terms<br>of Use & Privacy Policy.</div>
-                        </div>
 
+                        </div>
                     </div>
-                    <div class="backdrops"></div>
 
                     <!-- modal sign in  -->
 
@@ -182,24 +186,32 @@
                         </div>
                     </div>
 
-
                     <!-- modal sign up  -->
 
                     <script>
                         const btnModals = document.querySelectorAll('.btnModal');
                         const modals = document.querySelectorAll('.modal');
                         const xClose = document.querySelectorAll('.x-close');
-                        const backdrops = document.querySelector('.backdrops');
 
+                        const login = document.getElementById('login')
+
+
+                        const wrapper123 = document.getElementById('wrapper123')
+                        const backdrops = document.querySelector('.modal-wrapper');
+
+                        login.onclick = () => {
+                            wrapper123.style = "display: flex !important;";
+                        }
 
                         btnModals.forEach((el, index) => {
                             el.onclick = () => {
                                 modals[index].classList.add('active');
-                                backdrops.classList.add('modal-backdrop');
+                                wrapper123.style = "display: flex !important;";
                             }
+
                             xClose[index].onclick = () => {
                                 modals[index].classList.remove('active');
-                                backdrops.classList.remove('modal-backdrop');
+                                wrapper123.style = "display: none !important;";
                             }
                         });
                     </script>

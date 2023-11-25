@@ -1,7 +1,5 @@
 @import "../css/defined.css";
 
-@media screen and (max-width: 1225px) {}
-
 @media screen and (max-width: 1280px) {
     .grid_table {
         grid-template-columns: clamp(330px, 23%, 480px) 1fr;
