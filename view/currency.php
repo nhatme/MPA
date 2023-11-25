@@ -305,7 +305,7 @@
                             <div class="chart_style flex g_8px">
                                 <div class="chart_type flex p_4px color_gray_200_bg radius-6px">
                                     <span class="fs-12px-fw-600 gray-2nd-color lh-24px bg_white p_0_8px radius-6px">Price</span>
-                                    <span class="fs-12px-fw-600 gray-2nd-color lh-24px p_0_8px radius-6px ml_4px">Market cap</span>
+                                    <span class="fs-12px-fw-600 gray-2nd-color lh-24px p_0_8px radius-6px ml_4px no_wrap">Market cap</span>
                                 </div>
                                 <div class="line_type flex color_gray_200_bg p_4px radius-6px">
                                     <iconify-icon class="fs_20px flex align_center second-color-body p_0_8px h_24px bg_white radius-6px" icon="material-symbols-light:show-chart-rounded"></iconify-icon>

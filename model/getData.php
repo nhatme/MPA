@@ -181,7 +181,6 @@ function execute($getLatestList, $getInfo)
             // Execute the statement
             $stmt->execute();
         }
-
     } else {
         print_r(connectDB());
     }

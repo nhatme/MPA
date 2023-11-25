@@ -226,9 +226,7 @@ hr {
 .container_signin {
     position: fixed;
     background-color: white;
-    top: 10%;
-    left: 38%;
-    z-index: 999;
+    overflow-y: scroll;
     visibility: hidden;
     opacity: 0;
     animation: anime .3s;
@@ -247,7 +245,7 @@ hr {
 }
 
 .container_signin.active {
-    top: 15%;
+    top: 5%;
     visibility: visible;
     opacity: 1;
 }
@@ -255,15 +253,14 @@ hr {
 .container_signup {
     position: fixed;
     background-color: white;
-    top: 8%;
-    left: 38%;
-    z-index: 999;
+    overflow-y: scroll;
     visibility: hidden;
     opacity: 0;
+    animation: anime .3s;
 }
 
 .container_signup.active {
-    top: 3.5%;
+    top: 4%;
     visibility: visible;
     opacity: 1;
 }
@@ -288,7 +285,7 @@ hr {
 }
 
 
-#wrapper123 {
+.modal-wrapper {
     display: none;
     justify-content: center;
     align-items: center;
@@ -297,5 +294,6 @@ hr {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: gray;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 999;
 }
