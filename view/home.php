@@ -338,12 +338,11 @@
                                 return formatter.format(number);
                             }
                         }
-                        tableCoin.innerHTML =   `
+                        tableCoin.innerHTML = `
                                                 <?php
                                                 foreach ($coinDetail->getCoin() as $key => $value) {
-                                                    // echo $value->getId();
                                                 ?>
-                                                    <tr class="list-coin-detail" style="cursor: pointer;">
+                                                    <tr onclick="window.location='?mod=page-detail&id=<?= $value->getId(); ?>';" class="list-coin-detail" style="cursor: pointer;">
 
                                                         <td class="ctn__list__td__star">
                                                             <img src="./view/src/img/svg/star-stroke.svg" alt="">
@@ -435,7 +434,12 @@
         </div>
 
     </div>
-
+    <script>
+        // const coindetails = document.querySelectorAll('.list-coin-detail');
+        // coindetails.forEach((el) => {
+        //     window.location = this.data('href');
+        // })
+    </script>
     <div class="pages__rows">
         <div class="pr__pages">
             <p class="pr__pages__p fs-12px-fw-400">Showing 1 - 20 out of 9056</p>

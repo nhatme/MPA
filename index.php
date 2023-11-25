@@ -8,6 +8,8 @@ if (isset($mod)) {
         case 'admin':
             include_once 'controller/admin.php';
             break;
+        case 'page-detail':
+            include_once 'controller/page-detail.php';
     }
 } else {
     header('location: ?mod=page&act=home');

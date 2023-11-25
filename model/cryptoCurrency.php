@@ -23,5 +23,14 @@ class Coin
         }
         return $coin_details;
     }
-}
 
+    public function getDetailCoin($id)
+    {
+        $conn = connectDB();
+        $stmt = $conn->prepare("SELECT * FROM mpa_db.crypto WHERE id = '$id' ");
+        $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+        return $stmt->fetch();
+    }
+}

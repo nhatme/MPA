@@ -1,5 +1,4 @@
 <?php
-
 include_once "./connectDB.php";
 // Create a stream
 
