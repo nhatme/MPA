@@ -1,6 +1,6 @@
 <?php
-include_once "./model/connectDB.php";
-include_once "./model/entityCoin.php";
+include_once "model/connectDB.php";
+include_once "model/entityCoin.php";
 
 class Coin
 {

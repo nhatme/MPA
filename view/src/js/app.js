@@ -46,13 +46,14 @@ $("#loginBtn").on("click", function () {
 
     $.ajax({
         type: "POST",
-        url: "./model/userAccount.php",
+        url: "?mod=request&act=apilogin",
         data: JSON.stringify({
             username: username,
             password: password
         }),
         success: function (res) {
             setTimeout(location.reload(), 2000)
+            console.log(JSON.parse(res));
         }
     })
 })

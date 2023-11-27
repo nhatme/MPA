@@ -1,4 +1,7 @@
 <?php
+session_start();
+include_once "./model/userAccount.php";
+$classUser = new UserAccount();
 extract($_REQUEST);
 if (isset($mod)) {
     switch ($mod) {
@@ -10,6 +13,8 @@ if (isset($mod)) {
             break;
         case 'page-detail':
             include_once 'controller/page-detail.php';
+        case 'request':
+            include_once 'controller/request.php';
     }
 } else {
     header('location: ?mod=page&act=home');

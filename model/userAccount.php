@@ -1,5 +1,5 @@
 <?php
-include_once "./connectDB.php";
+include_once "model/connectDB.php";
 
 class UserAccount
 {
@@ -21,25 +21,35 @@ class UserAccount
 
     public function reqLogin()
     {
-        session_start();
-        $classUser = new UserAccount();
         $entityBody = file_get_contents('php://input');
         $databody = json_decode($entityBody);
 
         if (isset($databody)) {
-            if (isset($databody->username)) {
-                $result = $classUser->login($databody->username, $databody->password);
-                // echo json_encode($databody, JSON_PRETTY_PRINT);
-                if ($result == true) {
-                    $_SESSION["username"] = $databody->username;
-                    $_SESSION["password"] = $databody->password;
-                    $_SESSION["role_user"] = $result["role_user"];
-                } else {
-                    unset($_SESSION["username"]);
-                    unset($_SESSION["password"]);
-                    unset($_SESSION["role_user"]);
+            if (isset(($databody->username))) {
+
+                $result = self::login($databody->username, $databody->password);
+                
+                if (empty($databody->username) || empty($databody->password)) {
+
+                    echo json_encode(["status" => false, "message" => "tk hoac mk k dc trong", "result" => "", "redirect" => ""], JSON_PRETTY_PRINT);
+                    return;
                 }
-                var_dump($result);
+
+                if ($result == false) {
+                    echo json_encode(["status" => false, "message" => "tk k ton tai", "result" => "", "redirect" => ""], JSON_PRETTY_PRINT);
+                    return;
+                }
+
+                $_SESSION["username"] = $databody->username;
+                $_SESSION["password"] = $databody->password;
+                $_SESSION["role_user"] = $result["role_user"];
+
+                echo json_encode(["status" => true, "message" => "dang nhap thanh cong", "result" => "", "redirect" => ""], JSON_PRETTY_PRINT);
+                return;
+
+
+                //echo json_encode($databody, JSON_PRETTY_PRINT);
+                // var_dump($_SESSION['password'] . "okok");
             }
         }
     }
@@ -49,8 +59,8 @@ class UserAccount
         unset($_SESSION["username"]);
         unset($_SESSION["password"]);
         unset($_SESSION["role_user"]);
+        header("Location: ./");
     }
 }
 
-$classUser = new UserAccount();
-$classUser->reqLogin();
+

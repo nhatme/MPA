@@ -1,8 +1,13 @@
 <?php
-session_start();
 $viewTitle = empty($viewTitle) ? "MPA - Official" : $viewTitle;
-?>
 
+?>
+<!-- logout -->
+<?php
+if (isset($_GET['action']) && $_GET['action'] == 'logout') {
+    $classUser->reqlogout();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -86,8 +91,39 @@ $viewTitle = empty($viewTitle) ? "MPA - Official" : $viewTitle;
 
                 <?php
 
-                if (empty($_SESSION["username"]) || empty($_SESSION["password"])) {
+                if ((isset($_SESSION["username"]) && !empty($_SESSION["username"]))) {
+
                 ?>
+                    <div class="header_profile flex align_center g_12px relative">
+                        <?php
+
+                        if ($_SESSION["role_user"] == 0) {
+                        ?>
+                            <a href="?mod=page&act=admin">
+                                <img src="./view/src/img/avatar/profile.png" alt="" width="28px">
+                            </a>
+                            <ul class="drop_profile d_none">
+                                <li onclick="window.location='?mod=page&act=admin' " class="pointer fs-12px-fw-600">Settings</li>
+                                <li onclick="window.location='?mod=page&act=home&action=logout' " class="pointer fs-12px-fw-600">Log out</li>
+                            </ul>
+                        <?php
+                        } else if ($_SESSION["role_user"] == 1) {
+                        ?>
+                            <a href="?mod=page&act=profile">
+                                <img src="./view/src/img/avatar/profile.png" alt="" width="28px">
+                            </a>
+                            <ul class="drop_profile d_none">
+                                <li onclick="window.location='?mod=page&act=profile' " class="pointer fs-12px-fw-600">Settings</li>
+                                <li onclick="window.location='?mod=page&act=home&action=logout' " class="pointer fs-12px-fw-600">Log out</li>
+                            </ul>
+                        <?php
+                        }
+                        ?>
+                    </div>
+
+                <?php } else {
+                ?>
+
                     <div class="flex g_8px">
                         <div class="btnAction p_0px_16px fs-12px-fw-700 main-color lh-32px border_main radius-8px pointer" id="login">Log In</div>
 
@@ -189,35 +225,6 @@ $viewTitle = empty($viewTitle) ? "MPA - Official" : $viewTitle;
                         </div>
 
                         <!-- modal sign up  -->
-                    </div>
-
-                <?php } else {
-                ?>
-                    <div class="header_profile flex align_center g_12px relative">
-                        <?php
-
-                        if ($_SESSION["role_user"] == 0) {
-                        ?>
-                            <a href="?mod=page&act=admin">
-                                <img src="./view/src/img/avatar/profile.png" alt="" width="28px">
-                            </a>
-                            <ul class="drop_profile d_none">
-                                <li onclick="window.location='?mod=page&act=admin' " class="pointer fs-12px-fw-600">Settings</li>
-                                <li onclick="window.location='?mod=page&act=logout' " class="pointer fs-12px-fw-600">Log out</li>
-                            </ul>
-                        <?php
-                        } else if ($_SESSION["role_user"] == 1) {
-                        ?>
-                            <a href="?mod=page&act=profile">
-                                <img src="./view/src/img/avatar/profile.png" alt="" width="28px">
-                            </a>
-                            <ul class="drop_profile d_none">
-                                <li onclick="window.location='?mod=page&act=profile' " class="pointer fs-12px-fw-600">Settings</li>
-                                <li onclick="window.location='?mod=page&act=logout' " class="pointer fs-12px-fw-600">Log out</li>
-                            </ul>
-                        <?php
-                        }
-                        ?>
                     </div>
                 <?php
                 } ?>

@@ -9,10 +9,8 @@
             <div class="coin_stats ">
                 <?php
                 $getIdCoin = $classCoin->getDetailCoin($id);
-                // print_r($getIdCoin["id"]);
                 if (isset($id) && $id == $getIdCoin["id"]) {
                 ?>
-
                     <div class="coin_stats_header p_24px">
                         <div class="csh__top grid">
 
