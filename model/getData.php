@@ -6,7 +6,7 @@ $getLatestList = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/l
 $getInfo = 'https://pro-api.coinmarketcap.com/v2/cryptocurrency/info';
 
 
-function getId($endpoint, $limit)
+function getSlug($endpoint, $limit)
 {
     $slugStr = "";
 
@@ -98,10 +98,10 @@ function getInfo($endpoint, $slug)
 // $coinOrigin = getCoinOrigin($getLatestList, 10);
 // print_r(($coinOrigin));
 
-// $valueId = getId($getLatestList, 5);
-// print_r($valueId);
+// $valueSlug = getSlug($getLatestList, 5);
+// print_r($valueSlug);
 
-// $valueInfos = getInfo($getInfo, getId($getLatestList, 5));
+// $valueInfos = getInfo($getInfo, getSlug($getLatestList, 5));
 // return logo 
 // print_r($valueInfos);
 
@@ -118,7 +118,7 @@ function execute($getLatestList, $getInfo)
         foreach (getCoinOrigin($getLatestList, 20) as $key => $value) {
             $id = $value["id"];
             $name = $value["name"];
-            $logo = getInfo($getInfo, getId($getLatestList, 20))[$key]["logo"];
+            $logo = getInfo($getInfo, getSlug($getLatestList, 20))[$key]["logo"];
             $symbol = $value["symbol"];
             $rank = $value["cmc_rank"];
             $price = $value["quote"]["USD"]["price"];

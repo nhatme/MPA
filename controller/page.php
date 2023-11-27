@@ -1,12 +1,16 @@
 <?php
 include_once "./model/cryptoCurrency.php";
+include_once "./model/userAccount.php";
 
 extract($_REQUEST);
+
 if (isset($act)) {
+
     switch ($act) {
         case 'home':
             $coinDetail = new Coin();
             $viewTitle = truncateText("MPA - Official");
+
             include_once 'view/header.php';
             include_once 'view/home.php';
             include_once 'view/footer.php';
@@ -25,6 +29,14 @@ if (isset($act)) {
             include_once 'view/watchlistNotLogin/faq.php';
             include_once 'view/footer.php';
             break;
+        case 'admin':
+            include_once 'view/header.php';
+            include_once 'view/admin.php';
+            include_once 'view/footer.php';
+        case 'logout':
+            $classUser = new UserAccount();
+            $classUser->reqlogout();
+            header("location: ./");
     }
 }
 

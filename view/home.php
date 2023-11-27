@@ -323,10 +323,8 @@
                         </tr>
 
                     </thead>
+                    <tbody class="list-coin"></tbody>
 
-                    <tbody class="list-coin">
-
-                    </tbody>
                     <script>
                         const tableCoin = document.querySelector('.list-coin');
 
@@ -349,10 +347,23 @@
                                                         </td>
                                                         <td class="ctn__list__td fs-14px-fw-600 fs-12px-fw-700 text-2nd-color"><?= $key + 1 ?></td>
                                                         <td class="ctn__list__td">
-                                                            <div class="ctn__list__td__info">
-                                                                <img style="border-radius: 50px;" src="<?= $value->getLogo(); ?>" alt="">
-                                                                <span class="fs-14px-fw-600"><?= $value->getName(); ?></span>
-                                                                <span class="fs-14px-fw-600 gray-2nd-color"><?= $value->getSymbol(); ?></span>
+                                                            <div>
+                                                                <div class="ctn__list__td__info">
+                                                                    <img style="border-radius: 50px;" src="<?= $value->getLogo(); ?>" alt="">
+                                                                    <span class="fs-14px-fw-600 no_wrap"><?= $value->getName(); ?></span>
+                                                                    <span class="fs-14px-fw-600 gray-2nd-color"><?= $value->getSymbol(); ?></span>
+                                                                </div>
+
+
+
+                                                                <div class="flex_sp_bt align_center p_8px_16px color_gray_200_bg radius-8px pointer mt_12px">
+                                                                    <div class="flex align_center g_8px">
+                                                                        <iconify-icon class="fs_16px flex gray-2nd-color" icon="lets-icons:order"></iconify-icon>
+                                                                        <span class="fs-12px-fw-700 gray-2nd-color">Add to Order</span>
+                                                                    </div>
+                                                                    <iconify-icon class="fs_16px gray-2nd-color" icon="ic:round-plus"></iconify-icon>
+                                                                </div>
+
                                                             </div>
                                                         </td>
                                                         <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">$<?= $value->getPrice(); ?></td>
@@ -420,7 +431,7 @@
                                                                 <span class="gray-2nd-color">${formatNum(<?= (int)($value->getmax_supply()); ?>)}</span>
                                                             </div>
                                                         </td>
-                                                        <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">Line chart</td>
+                                                        <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right no_wrap">Line chart</td>
 
                                                     </tr>
 
@@ -447,7 +458,7 @@
                 <img class="pc__count fs-15px-fw-600 pc__control" src="./view/src/img/svg/arrow-left.svg" alt="">
                 <div class="pagination" style="display: flex;">
                     <a href="#" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px">1</a>
-                    <div class="pc__count fs-15px-fw-600" page="">2</div>
+                    <a href="#" class="pc__count fs-15px-fw-600">2</a>
                     <a href="#" class="pc__count fs-15px-fw-600">3</a>
                     <a href="#" class="pc__count fs-15px-fw-600">4</a>
                     <a href="#" class="pc__count fs-15px-fw-600">5</a>

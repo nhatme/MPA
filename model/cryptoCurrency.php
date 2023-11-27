@@ -1,11 +1,12 @@
 <?php
 include_once "./model/connectDB.php";
-include_once "./model/entity.php";
+include_once "./model/entityCoin.php";
 
 class Coin
 {
     public function __chart()
     {
+        
     }
 
     public function getCoin()

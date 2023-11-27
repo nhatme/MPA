@@ -1,6 +1,31 @@
 @import "../css/defined.css";
 
 /* start header  */
+.drop_profile {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: white;
+    box-shadow: var(--box-shadow2);
+    padding: 12px;
+    list-style: none;
+    border-radius: 8px;
+}
+
+.drop_profile li {
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+.drop_profile li:hover {
+    background-color: var(--color-gray-200);
+}
+
+.header_profile:hover .drop_profile{
+    display: block;
+}
+
+
 /* start top header  */
 
 .sign-left {
@@ -213,10 +238,6 @@
     color: var(--color-gray-400);
 }
 
-hr {
-    background-color: var(--color-gray-200);
-}
-
 /* end menubar dropdown  */
 
 /* end header  */
@@ -229,23 +250,42 @@ hr {
     overflow-y: scroll;
     visibility: hidden;
     opacity: 0;
-    animation: anime .3s;
+    animation: animeOpenUp .45s;
 }
 
-@keyframes anime {
+@keyframes animeOpenUp {
     from {
         opacity: 0;
-        transform: scale(0);
+        transform: scaleY(0);
     }
 
     to {
         opacity: 1;
-        transform: scale(1);
+        transform: scaleY(1);
     }
 }
 
+/* .activeCloseModal {
+    display: none;
+    animation: animeOpenDown .45s;
+}
+
+
+@keyframes animeOpenDown {
+    from {
+        opacity: 0;
+        transform: scaleY(1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleY(0);
+    }
+} */
+
+
 .container_signin.active {
-    top: 5%;
+    top: 15%;
     visibility: visible;
     opacity: 1;
 }
@@ -256,11 +296,11 @@ hr {
     overflow-y: scroll;
     visibility: hidden;
     opacity: 0;
-    animation: anime .3s;
+    animation: animeOpenUp .45s;
 }
 
 .container_signup.active {
-    top: 4%;
+    top: 15%;
     visibility: visible;
     opacity: 1;
 }
@@ -271,21 +311,9 @@ hr {
     right: 0;
     padding: 8px;
     margin: 24px;
-
 }
 
-.modal-backdrop {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-
-.modal-wrapper {
+.backdrop-wrapper {
     display: none;
     justify-content: center;
     align-items: center;
@@ -296,4 +324,47 @@ hr {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 999;
+}
+
+/* toast message  */
+
+#toastMessage {
+    visibility: hidden;
+    background-color: gray;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    top: 30px;
+    right: 50%;
+    font-size: 20px;
+}
+
+#toastMessage.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.8s;
+}
+
+@keyframes fadein {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        top: 30px;
+        opacity: 1;
+    }
+
+    to {
+        top: 0;
+        opacity: 0;
+    }
 }

@@ -1,4 +1,7 @@
-<?php $viewTitle = empty($viewTitle) ? "MPA - Official" : $viewTitle ?>
+<?php
+session_start();
+$viewTitle = empty($viewTitle) ? "MPA - Official" : $viewTitle;
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -80,134 +83,144 @@
                 </div>
                 <div class="top-header-right-line-straight"></div>
                 <img src="./view/src/img/svg/diamond-icon 1.svg" alt="">
-                <div class="align_center g_12px d_none">
-                    <img src="./view/src/img/svg/notice.svg" alt="">
-                    <a href="?mod=page&act=profile">
-                        <img src="./view/src/img/avatar/profile.png" alt="" width="28px">
-                    </a>
-                </div>
-                <div class="flex g_8px">
 
-                    <div class="btnModal p_0px_16px fs-12px-fw-700 main-color lh-32px border_main radius-8px pointer" id="login">Log In</div>
+                <?php
 
-                    <!-- modal sign in  -->
-                    <div id="wrapperModal" class="modal-wrapper">
-                        <div class="modal container_signin p_20px radius-32px" style="width: 420px; height: 520px;">
-                            <iconify-icon class="x-close fs_24px pointer" icon="ph:x-bold"></iconify-icon>
-                            <div>
-                                <div class="flex flex_center mb_32px pt_8px g_32px">
-                                    <div class="label-log fs-22px-fw-700 bb_main_4px pb_6px">Log In</div>
-                                    <div class="label-sign fs-22px-fw-500 text-2nd-color ">Sign Up</div>
-                                </div>
-                                <form method="post" action="" class="">
-                                    <div class="flex f_column mb_20px">
-                                        <p class="fs-12px-fw-700 mb_8px">Email Address</p>
-                                        <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="text" placeholder="Enter your email address...">
+                if (empty($_SESSION["username"]) || empty($_SESSION["password"])) {
+                ?>
+                    <div class="flex g_8px">
+                        <div class="btnAction p_0px_16px fs-12px-fw-700 main-color lh-32px border_main radius-8px pointer" id="login">Log In</div>
+
+                        <!-- modal sign in  -->
+                        <div id="wrapperModal" class="backdrop-wrapper">
+                            <div class="modal active container_signin p_20px radius-16px" style="width: 420px;">
+                                <iconify-icon class="x-close fs_24px pointer" icon="ph:x-bold"></iconify-icon>
+                                <div>
+                                    <div class="flex flex_center mb_32px pt_8px g_32px">
+                                        <div class="label-log fs-22px-fw-700 bb_main_4px pb_6px">Log In</div>
+                                        <div class="label-sign fs-22px-fw-500 text-2nd-color ">Sign Up</div>
                                     </div>
-                                    <div class="flex f_column mb_20px">
-                                        <p class="fs-12px-fw-700 mb_8px">Password</p>
-                                        <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="password" placeholder="Enter your password...">
+                                    <div>
+                                        <div class="flex f_column mb_20px">
+                                            <p class="fs-12px-fw-700 mb_8px">Username</p>
+                                            <input id="login_username" class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" name="username" spellcheck="false" type="text" placeholder="Enter your username...">
+                                        </div>
+                                        <div class="flex f_column mb_20px">
+                                            <p class="fs-12px-fw-700 mb_8px">Password</p>
+                                            <input id="login_password" class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" name="password" spellcheck="false" type="password" placeholder="Enter your password...">
+                                        </div>
+                                        <input id="loginBtn" type="submit" value="Create an account" class="fs-14px-fw-600 p_16px_24px main-color-bg text-white opacity_05 radius-12px center mb_24px" onmousedown="return false">
                                     </div>
-                                    <div class="fs-14px-fw-600 p_16px_24px main-color-bg text-white opacity_05 radius-12px center mb_24px" onmousedown="return false">Create an account</div>
-                                </form>
-                            </div>
-
-                            <div class="flex flex_center">
-                                <p class="fs-16px-fw-600 p_0_8px">OR</p>
-                            </div>
-
-                            <div class="mt_24px">
-                                <div class="flex flex_center g_12px border_300 p_12px radius-12px mb_16px">
-                                    <iconify-icon icon="fa6-solid:g"></iconify-icon>
-                                    <p class="fs-14px-fw-600">Continue with Google</p>
                                 </div>
-                                <div class="flex flex_center g_12px border_300 p_12px radius-12px mb_16px">
-                                    <iconify-icon icon="ph:wallet-fill"></iconify-icon>
-                                    <p class="fs-14px-fw-600">Continue with Wallet</p>
+
+                                <div class="flex flex_center">
+                                    <p class="fs-16px-fw-600 p_0_8px">OR</p>
                                 </div>
-                                <div class="fs-12px-fw-600 center">By proceeding, you agree to OpenSea's Terms<br>of Use & Privacy Policy.</div>
-                            </div>
 
-                        </div>
-                    </div>
-
-                    <!-- modal sign in  -->
-
-                    <div class="btnModal p_0px_16px fs-12px-fw-700 text-white lh-32px main-color-bg radius-8px pointer">Sign up</div>
-
-                    <!-- modal sign up  -->
-                    <div id="wrapperModal" class="modal-wrapper">
-                        <div class="modal container_signup p_20px radius-32px" style="width: 420px; height: 520px;">
-                            <iconify-icon class="x-close fs_24px pointer" icon="ph:x-bold"></iconify-icon>
-                            <div>
-                                <div class="flex flex_center mb_32px pt_8px g_32px">
-                                    <div class="label-log fs-22px-fw-500 text-2nd-color">Log In</div>
-                                    <div class="label-sign fs-22px-fw-700 bb_main_4px pb_6px">Sign Up</div>
-                                </div>
-                                <div class="">
-                                    <div class="flex f_column mb_20px">
-                                        <p class="fs-12px-fw-700 mb_8px">Email Address</p>
-                                        <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="text" placeholder="Enter your email address...">
+                                <div class="mt_24px">
+                                    <div class="flex flex_center g_12px border_300 p_12px radius-12px mb_16px">
+                                        <iconify-icon icon="fa6-solid:g"></iconify-icon>
+                                        <p class="fs-14px-fw-600">Continue with Google</p>
                                     </div>
-                                    <div class="flex f_column mb_20px">
-                                        <p class="fs-12px-fw-700 mb_8px">Username</p>
-                                        <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="text" placeholder="Enter your username...">
+                                    <div class="flex flex_center g_12px border_300 p_12px radius-12px mb_16px">
+                                        <iconify-icon icon="ph:wallet-fill"></iconify-icon>
+                                        <p class="fs-14px-fw-600">Continue with Wallet</p>
                                     </div>
-                                    <div class="flex f_column mb_20px">
-                                        <p class="fs-12px-fw-700 mb_8px">Password</p>
-                                        <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="password" placeholder="Enter your password...">
-                                    </div>
-                                    <div class="flex f_column mb_20px">
-                                        <p class="fs-12px-fw-700 mb_8px">Re-type Password</p>
-                                        <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="password" placeholder="Re-type your password...">
-                                    </div>
-                                    <div class="flex align_top g_8px pt_8px mb_32px">
-                                        <input type="checkbox">
-                                        <p class="fs-15px-fw-500">Please keep me updated by email with the latest crypto news...</p>
-                                    </div>
-                                    <div class="fs-14px-fw-600 p_16px_24px main-color-bg text-white opacity_05 radius-12px center mb_24px" onmousedown="return false">Create an account</div>
+                                    <div class="fs-12px-fw-600 center">By proceeding, you agree to OpenSea's Terms<br>of Use & Privacy Policy.</div>
                                 </div>
-                            </div>
 
-                            <div class="flex flex_center">
-                                <p class="fs-16px-fw-600 p_0_8px">OR</p>
-                            </div>
-
-                            <div class="mt_24px">
-                                <div class="flex flex_center g_12px border_300 p_12px radius-12px mb_16px">
-                                    <iconify-icon icon="fa6-solid:g"></iconify-icon>
-                                    <p class="fs-14px-fw-600">Continue with Google</p>
-                                </div>
-                                <div class="flex flex_center g_12px border_300 p_12px radius-12px mb_16px">
-                                    <iconify-icon icon="ph:wallet-fill"></iconify-icon>
-                                    <p class="fs-14px-fw-600">Continue with Wallet</p>
-                                </div>
-                                <div class="fs-12px-fw-600 center">By proceeding, you agree to OpenSea's Terms<br>of Use & Privacy Policy.</div>
                             </div>
                         </div>
+
+                        <!-- modal sign in  -->
+
+                        <div class="btnAction p_0px_16px fs-12px-fw-700 text-white lh-32px main-color-bg radius-8px pointer">Sign up</div>
+
+                        <!-- modal sign up  -->
+                        <div id="wrapperModal" class="backdrop-wrapper">
+                            <div class="modal container_signup p_20px radius-16px" style="width: 420px; height: 600px;">
+                                <iconify-icon class="x-close fs_24px pointer" icon="ph:x-bold"></iconify-icon>
+                                <div>
+                                    <div class="flex flex_center mb_32px pt_8px g_32px">
+                                        <div class="label-log fs-22px-fw-500 text-2nd-color">Log In</div>
+                                        <div class="label-sign fs-22px-fw-700 bb_main_4px pb_6px">Sign Up</div>
+                                    </div>
+                                    <form method="post" class="">
+                                        <div class="flex f_column mb_20px">
+                                            <p class="fs-12px-fw-700 mb_8px">Email Address</p>
+                                            <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="text" placeholder="Enter your email address...">
+                                        </div>
+                                        <div class="flex f_column mb_20px">
+                                            <p class="fs-12px-fw-700 mb_8px">Username</p>
+                                            <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="text" placeholder="Enter your username...">
+                                        </div>
+                                        <div class="flex f_column mb_20px">
+                                            <p class="fs-12px-fw-700 mb_8px">Password</p>
+                                            <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="password" placeholder="Enter your password...">
+                                        </div>
+                                        <div class="flex f_column mb_20px">
+                                            <p class="fs-12px-fw-700 mb_8px">Re-type Password</p>
+                                            <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="password" placeholder="Re-type your password...">
+                                        </div>
+                                        <div class="flex align_top g_8px pt_8px mb_32px">
+                                            <input type="checkbox">
+                                            <p class="fs-15px-fw-500">Please keep me updated by email with the latest crypto news...</p>
+                                        </div>
+                                        <input id="signupbtn" type="submit" value="Create an account" class="fs-14px-fw-600 p_16px_24px main-color-bg text-white opacity_05 radius-12px center mb_24px" onmousedown="return false">
+                                    </form>
+                                </div>
+
+                                <div class="flex flex_center">
+                                    <p class="fs-16px-fw-600 p_0_8px">OR</p>
+                                </div>
+
+                                <div class="mt_24px">
+                                    <div class="flex flex_center g_12px border_300 p_12px radius-12px mb_16px">
+                                        <iconify-icon icon="fa6-solid:g"></iconify-icon>
+                                        <p class="fs-14px-fw-600">Continue with Google</p>
+                                    </div>
+                                    <div class="flex flex_center g_12px border_300 p_12px radius-12px mb_16px">
+                                        <iconify-icon icon="ph:wallet-fill"></iconify-icon>
+                                        <p class="fs-14px-fw-600">Continue with Wallet</p>
+                                    </div>
+                                    <div class="fs-12px-fw-600 center">By proceeding, you agree to OpenSea's Terms<br>of Use & Privacy Policy.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- modal sign up  -->
                     </div>
 
-                    <!-- modal sign up  -->
+                <?php } else {
+                ?>
+                    <div class="header_profile flex align_center g_12px relative">
+                        <?php
 
-                    <script>
-                        const btnModals = document.querySelectorAll('.btnModal');
-                        const modals = document.querySelectorAll('.modal');
-                        const xClose = document.querySelectorAll('.x-close');
-                        const backdrops = document.querySelectorAll('.modal-wrapper');
-
-                        btnModals.forEach((el, index) => {
-                            el.onclick = () => {
-                                modals[index].classList.add('active');
-                                backdrops[index].style = "display: flex !important;";
-                            }
-
-                            xClose[index].onclick = () => {
-                                modals[index].classList.remove('active');
-                                backdrops[index].style = "display: none !important;";
-                            }
-                        });
-                    </script>
-                </div>
+                        if ($_SESSION["role_user"] == 0) {
+                        ?>
+                            <a href="?mod=page&act=admin">
+                                <img src="./view/src/img/avatar/profile.png" alt="" width="28px">
+                            </a>
+                            <ul class="drop_profile d_none">
+                                <li onclick="window.location='?mod=page&act=admin' " class="pointer fs-12px-fw-600">Settings</li>
+                                <li onclick="window.location='?mod=page&act=logout' " class="pointer fs-12px-fw-600">Log out</li>
+                            </ul>
+                        <?php
+                        } else if ($_SESSION["role_user"] == 1) {
+                        ?>
+                            <a href="?mod=page&act=profile">
+                                <img src="./view/src/img/avatar/profile.png" alt="" width="28px">
+                            </a>
+                            <ul class="drop_profile d_none">
+                                <li onclick="window.location='?mod=page&act=profile' " class="pointer fs-12px-fw-600">Settings</li>
+                                <li onclick="window.location='?mod=page&act=logout' " class="pointer fs-12px-fw-600">Log out</li>
+                            </ul>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                <?php
+                } ?>
             </div>
         </div>
         <div class="line-header"></div>

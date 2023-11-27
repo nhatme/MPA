@@ -1,5 +1,4 @@
 <?php
-include_once "./model/connectDB.php";
 
 class CryptoCurrency
 {

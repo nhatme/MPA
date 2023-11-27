@@ -59,22 +59,14 @@
                     <div class="coin_stats_detail flex f_column g_32px">
 
                         <div>
-                            <div>
-                                <div class="flex_sp_bt align_center p_8px_16px color_gray_200_bg radius-8px">
-                                    <div class="flex align_center g_8px">
-                                        <iconify-icon class="fs_16px flex gray-2nd-color" icon="ph:star-bold"></iconify-icon>
-                                        <span class="fs-12px-fw-700 gray-2nd-color">Add to My First Watchlist</span>
-                                    </div>
-                                    <iconify-icon class="fs_16px gray-2nd-color" icon="ic:round-plus"></iconify-icon>
+                            <div class="flex_sp_bt align_center p_8px_16px color_gray_200_bg radius-8px pointer">
+                                <div class="flex align_center g_8px">
+                                    <iconify-icon class="fs_32px flex gray-2nd-color" icon="lets-icons:order"></iconify-icon>
+                                    <span class="fs-32px-fw-700 gray-2nd-color">Add to Order</span>
                                 </div>
-                                <div class="flex_sp_bt align_center p_8px_16px color_gray_200_bg radius-8px mt_12px">
-                                    <div class="flex align_center g_8px">
-                                        <iconify-icon class="fs_16px flex gray-2nd-color" icon="ph:star-bold"></iconify-icon>
-                                        <span class="fs-12px-fw-700 gray-2nd-color">Track in portfolio</span>
-                                    </div>
-                                    <iconify-icon class="fs_16px gray-2nd-color" icon="ic:round-plus"></iconify-icon>
-                                </div>
+                                <iconify-icon class="fs_32px gray-2nd-color" icon="ic:round-plus"></iconify-icon>
                             </div>
+
                         </div>
 
                         <div class="flex f_column g_24px">
@@ -121,21 +113,6 @@
 
                                 <!-- ================================================== -->
 
-                                <!-- <div>
-                                    <div class="flex_sp_bt align_center">
-                                        <div class="flex align_center">
-                                            <span class="fs-12px-fw-700 second-color-body mr_4px">Volume/Market cap (24h)</span>
-                                            <iconify-icon class="flex fs_16px color_gray_400" icon="material-symbols:info-outline"></iconify-icon>
-                                        </div>
-                                        <div class="m_inline_start_8px">
-                                            <div class="">
-                                                <span class="fs-12px-fw-600">2.88%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
-
-                                <!-- ================================================== -->
                                 <div>
                                     <div class="flex_sp_bt align_center">
                                         <div class="flex align_center">
@@ -144,7 +121,7 @@
                                         </div>
                                         <div class="g_8px m_inline_start_8px">
                                             <div class="">
-                                                <span class="fs-12px-fw-600"><?= $getIdCoin["circulating_supply"] ?> <?= $getIdCoin["symbol"] ?></span>
+                                                <span class="fs-12px-fw-600"><?= $getIdCoin["circulating_supply"] ?> <span><?= $getIdCoin["symbol"] ?></span></span>
                                             </div>
                                         </div>
                                     </div>
@@ -169,21 +146,6 @@
 
                                 <!-- ================================================== -->
 
-                                <!-- <div>
-                                    <div class="flex_sp_bt align_center">
-                                        <div class="flex align_center">
-                                            <span class="fs-12px-fw-700 second-color-body mr_4px">Fully diluted market cap</span>
-                                            <iconify-icon class="flex fs_16px color_gray_400" icon="material-symbols:info-outline"></iconify-icon>
-                                        </div>
-                                        <div class="m_inline_start_8px">
-                                            <div class="">
-                                                <span class="fs-12px-fw-600">$777,296,893,202</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
-
-                                <!-- ================================================== -->
                             </div>
 
                             <div>
@@ -259,11 +221,11 @@
                             <div class="toUSDConvert grid color_gray_200_bg radius-8px mt_12px p_4px ">
                                 <div class="toUSDConvertLeft bg_white flex_sp_bt p_5px_8px">
                                     <span class="w_30pc fs-12px-fw-600 second-color-body">BTC</span>
-                                    <input class="w_60pc border_none outline_none" type="text" name="" id="" placeholder="0" value="1" dir="rtl">
+                                    <input class="w_60pc border_none outline_none" type="text" name="" id="" placeholder="0" value="0" dir="rtl">
                                 </div>
                                 <div class="toUSDConvertRight bg_white flex_sp_bt p_5px_8px">
                                     <span class="w_30pc fs-12px-fw-600 second-color-body">USD</span>
-                                    <input class="w_60pc border_none outline_none" type="text" name="" id="" placeholder="0" value="1" dir="rtl">
+                                    <input class="w_60pc border_none outline_none" type="text" name="" id="" placeholder="0" value="0" dir="rtl">
                                 </div>
                             </div>
                         </div>

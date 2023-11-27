@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        #toastMessage {
+            visibility: hidden;
+            background-color: gray;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            top: 30px;
+            right: 50%;
+            font-size: 20px;
+        }
+
+        #toastMessage.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.8s;
+        }
+
+        @keyframes fadein {
+            from {
+                top: 0;
+                opacity: 0;
+            }
+
+            to {
+                top: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                top: 30px;
+                opacity: 1;
+            }
+
+            to {
+                top: 0;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toastBtn">Show toast message</div>
+    <div id="toastMessage">This is toast message</div>
+    <script>
+
+        $(".toastBtn").click(function () {
+            let x = document.querySelector('#toastMessage')
+            x.className = "show"
+            setTimeout(function () {
+                x.className = x.className.replace("show", "")
+            }, 3000)
+        })
+
+    </script>
+</body>
+
+</html>

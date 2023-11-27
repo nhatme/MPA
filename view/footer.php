@@ -66,7 +66,6 @@
 
  
  <script src="./view/src/js/app.js"></script>
- <!-- <script src="./view/src/js/data.js"></script> -->
  </body>
 
  </html>
