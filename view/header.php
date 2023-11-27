@@ -35,6 +35,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 
 
     <!-- all  -->
+    <link rel="stylesheet" href="./view/src/css/defined.css">
     <link rel="stylesheet" href="./view/src/css/my-style.css">
     <link rel="stylesheet" href="./view/src/css/header.css">
     <link rel="stylesheet" href="./view/src/css/footer.css">
@@ -103,7 +104,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                 <img src="./view/src/img/avatar/profile.png" alt="" width="28px">
                             </a>
                             <ul class="drop_profile d_none">
-                                <li onclick="window.location='?mod=page&act=admin' " class="pointer fs-12px-fw-600">Settings</li>
+                                <li onclick="window.location='?mod=page&act=admin' " class="pointer fs-12px-fw-600 no_wrap">Admin Settings</li>
                                 <li onclick="window.location='?mod=page&act=home&action=logout' " class="pointer fs-12px-fw-600">Log out</li>
                             </ul>
                         <?php
@@ -181,29 +182,26 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                         <div class="label-log fs-22px-fw-500 text-2nd-color">Log In</div>
                                         <div class="label-sign fs-22px-fw-700 bb_main_4px pb_6px">Sign Up</div>
                                     </div>
-                                    <form method="post" class="">
+                                    <div class="">
                                         <div class="flex f_column mb_20px">
                                             <p class="fs-12px-fw-700 mb_8px">Email Address</p>
-                                            <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="text" placeholder="Enter your email address...">
+                                            <input id="signup_email" class="signup_field fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="text" placeholder="Enter your email address...">
                                         </div>
                                         <div class="flex f_column mb_20px">
                                             <p class="fs-12px-fw-700 mb_8px">Username</p>
-                                            <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="text" placeholder="Enter your username...">
+                                            <input id="signup_username" class="signup_field fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="text" placeholder="Enter your username...">
                                         </div>
                                         <div class="flex f_column mb_20px">
                                             <p class="fs-12px-fw-700 mb_8px">Password</p>
-                                            <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="password" placeholder="Enter your password...">
+                                            <input id="signup_password" class="signup_field fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="password" placeholder="Enter your password...">
                                         </div>
                                         <div class="flex f_column mb_20px">
                                             <p class="fs-12px-fw-700 mb_8px">Re-type Password</p>
-                                            <input class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="password" placeholder="Re-type your password...">
-                                        </div>
-                                        <div class="flex align_top g_8px pt_8px mb_32px">
-                                            <input type="checkbox">
-                                            <p class="fs-15px-fw-500">Please keep me updated by email with the latest crypto news...</p>
+                                            <input id="signup_retypepass" class="signup_field fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="password" placeholder="Re-type your password...">
+                                            <span id="error-text" class="mt_8px" style="color: red;"></span>
                                         </div>
                                         <input id="signupbtn" type="submit" value="Create an account" class="fs-14px-fw-600 p_16px_24px main-color-bg text-white opacity_05 radius-12px center mb_24px" onmousedown="return false">
-                                    </form>
+                                    </div>
                                 </div>
 
                                 <div class="flex flex_center">

@@ -23,22 +23,22 @@
 
     <script>
         // $(document).ready(function () {
-            $("#submitBtn").on("click", function () {
-                let username = $(".username").val()
-                let password = $(".password").val()
+        $("#submitBtn").on("click", function () {
+            let username = $(".username").val()
+            let password = $(".password").val()
 
-                $.ajax({
-                    type: "POST",
-                    url: "./ajax.php",
-                    data: JSON.stringify({ name: username, password: password }),
-                    success: function (res) {
-                        // console.log("Success:", JSON.parse(res));
-                    },
-                    error: function (err) {
-                        // console.error("Error:", err);
-                    }
-                })
+            $.ajax({
+                type: "POST",
+                url: "./ajax.php",
+                data: JSON.stringify({ name: username, password: password }),
+                success: function (res) {
+                    console.log("Success:", JSON.parse(res));
+                },
+                error: function (err) {
+                    // console.error("Error:", err);
+                }
             })
+        })
         // })
     </script>
 </body>

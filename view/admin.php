@@ -19,18 +19,6 @@
                         <iconify-icon class="fs_24px" icon="uil:chart"></iconify-icon>
                         <span class="fs-14px-fw-600">Chart</span>
                     </div>
-                    <div class="nav-home flex align_center g_24px">
-                        <iconify-icon class="fs_24px" icon="tabler:home-2"></iconify-icon>
-                        <span class="fs-14px-fw-600">Home</span>
-                    </div>
-                    <div class="nav-assets flex align_center g_24px">
-                        <iconify-icon class="fs_24px" icon="tabler:asset"></iconify-icon>
-                        <span class="fs-14px-fw-600">Assets</span>
-                    </div>
-                    <div class="nav-chart flex align_center g_24px">
-                        <iconify-icon class="fs_24px" icon="uil:chart"></iconify-icon>
-                        <span class="fs-14px-fw-600">Chart</span>
-                    </div>
                 </div>
             </div>
         </div>

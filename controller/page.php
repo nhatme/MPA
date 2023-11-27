@@ -1,14 +1,15 @@
 <?php
 include_once "./model/cryptoCurrency.php";
 
-// $classUser = new UserAccount();
-// $classUser->reqLogin();
+$classUser = new UserAccount();
+$classUser->getUsers();
+
 extract($_REQUEST);
 
 if (isset($act)) {
 
     switch ($act) {
-        
+
         case 'home':
             $coinDetail = new Coin();
             $viewTitle = truncateText("MPA - Official");

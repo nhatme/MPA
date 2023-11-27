@@ -21,7 +21,7 @@ eachMenubars.forEach((el, index) => {
 })
 
 
-/*  login signup */
+/*  login */
 
 const btnActions = document.querySelectorAll('.btnAction');
 const modals = document.querySelectorAll('.modal');
@@ -56,4 +56,65 @@ $("#loginBtn").on("click", function () {
             console.log(JSON.parse(res));
         }
     })
+})
+
+
+/*  signup */
+
+
+$("#signup_retypepass").on('blur', function () {
+    let password = $("#signup_password").val()
+    let retypepass = $("#signup_retypepass").val()
+
+    if (retypepass !== password) {
+        $(this).css({
+            "border": "1px solid red",
+            'box-shadow': "0 0 5px red"
+        });
+        $("#error-text").text("Password is not correct");
+    } else {
+        $(this).css({
+            border: "",
+            'box-shadow': ""
+        });
+        $("#error-text").text("");
+    }
+});
+
+const submitBtn = $("#signupbtn")
+submitBtn.click(function (e) {
+
+    let currentDate = new Date();
+    let year = currentDate.getFullYear();
+    let month = currentDate.getMonth() + 1;
+    let day = currentDate.getDate();
+    let hours = currentDate.getHours();
+    let minutes = currentDate.getMinutes();
+    let seconds = currentDate.getSeconds();
+
+    let email = $("#signup_email").val()
+    let username = $("#signup_username").val()
+    let password = $("#signup_password").val()
+    let retypepass = $("#signup_retypepass").val()
+    let currentDateTime = `${year}-${month}-${day} -- ${hours}:${minutes}:${seconds}`
+
+    e.preventDefault()
+
+    if ((retypepass === password)) {
+        $.ajax({
+            type: "POST",
+            url: "?mod=request&act=apisignup",
+            data: JSON.stringify({
+                email: email,
+                username: username,
+                password: password,
+                retypepass: retypepass,
+                currentdateTime: currentDateTime
+            }),
+            success: function (res) {
+                console.log(JSON.parse(res))
+            }
+        })
+    }
+
 })

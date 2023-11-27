@@ -307,7 +307,8 @@
                         </div>
                     </div>
                     <div class="chart_detail" style="width: 100%; height: 100%;">
-                        <canvas width="919" height="370"></canvas>
+                        <!-- <canvas width="919" height="370"></canvas> -->
+                        <img src="./view/src/img/png/BTC_1D_graph_coinmarketcap.png" alt="" width="100%">
                     </div>
                 </div>
             </div>

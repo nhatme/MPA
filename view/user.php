@@ -3,11 +3,15 @@
         <div class="flex">
             <div class="w_16pc mr_32px">
                 <div class="flex align_center g_16px p_16px color_gray_200_bg radius-8px mb_6px pointer">
-                    <iconify-icon class="fs_20px" icon="iconamoon:profile-fill"></iconify-icon>
+                    <iconify-icon class="fs_20px" icon="iconamoon:profile-light"></iconify-icon>
                     <span class="fs-15px-fw-700">Profile</span>
                 </div>
                 <div class="flex align_center g_16px p_16px pointer">
-                    <iconify-icon class="fs_20px" icon="iconoir:settings-profiles"></iconify-icon>
+                    <iconify-icon class="fs_20px" icon="solar:wallet-line-duotone"></iconify-icon>
+                    <span class="fs-15px-fw-500">My Wallet</span>
+                </div>
+                <div class="flex align_center g_16px p_16px pointer">
+                    <iconify-icon class="fs_20px" icon="solar:lock-broken"></iconify-icon>
                     <span class="fs-15px-fw-500">Account Security</span>
                 </div>
             </div>
