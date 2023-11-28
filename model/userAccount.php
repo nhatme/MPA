@@ -4,7 +4,7 @@ include_once "model/user.php";
 
 class UserAccount
 {
-    public function login($username, $password_user)
+    public function querylogin($username, $password_user)
     {
         $conn = connectDB();
         $valueUser = $conn->prepare("SELECT * FROM users WHERE username = :username AND password_user = :password_user");
@@ -20,6 +20,26 @@ class UserAccount
         }
     }
 
+    public function queryUsername($username)
+    {
+        $conn = connectDB();
+        $valueUsername = $conn->prepare("SELECT * FROM users WHERE username = '$username'");
+        $valueUsername->execute();
+        $result = $valueUsername->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+
+    public function queryPassword($password)
+    {
+        $conn = connectDB();
+        $valuePassword = $conn->prepare("SELECT * FROM users WHERE password_user = '$password'");
+        $valuePassword->execute();
+        $result = $valuePassword->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+
     public function reqLogin()
     {
         $entityBody = file_get_contents('php://input');
@@ -28,26 +48,38 @@ class UserAccount
         if (isset($databody)) {
             if (isset(($databody->username))) {
 
-                $password_hashmd5 = md5($databody->password);
-                $result = self::login($databody->username, $password_hashmd5);
+                $password_hashmd5 = md5(strtolower($databody->password));
+                
+                $result = self::querylogin($databody->username, $password_hashmd5);
+                $resultUsername = self::queryUsername($databody->username);
+                $resultPassword = self::queryPassword($password_hashmd5);
 
                 if (empty($databody->username) || empty($password_hashmd5)) {
-
                     echo json_encode(["status" => false, "message" => "tk hoac mk k dc trong", "result" => "", "redirect" => ""], JSON_PRETTY_PRINT);
-                    return;
+                    exit;
                 }
+
+
 
                 if ($result == false) {
                     echo json_encode(["status" => false, "message" => "tk k ton tai", "result" => "", "redirect" => ""], JSON_PRETTY_PRINT);
-                    return;
+                    exit;
+                } else if ($resultUsername == false) {
+                    echo json_encode(["status" => false, "message" => "Tk hoac mk khong chinh xac", "detailLogin" => "username k chinh xac"], JSON_PRETTY_PRINT);
+                    exit;
+                } else if ($resultPassword == false) {
+                    echo json_encode(["status" => false, "message" => "Tk hoac mk khong chinh xac", "detailLogin" => "password k chinh xac"], JSON_PRETTY_PRINT);
+                    exit;
                 }
+
+
 
                 $_SESSION["username"] = $databody->username;
                 $_SESSION["password"] = $password_hashmd5;
                 $_SESSION["role_user"] = $result["role_user"];
 
                 echo json_encode(["status" => true, "message" => "dang nhap thanh cong", "result" => "", "redirect" => ""], JSON_PRETTY_PRINT);
-                return;
+                exit;
 
                 //echo json_encode($databody, JSON_PRETTY_PRINT);
                 // var_dump($_SESSION['password'] . "okok");
@@ -65,7 +97,6 @@ class UserAccount
 
     public function signup()
     {
-        // $user = new User();
         $conn = connectDB();
 
         $entityBody = file_get_contents('php://input');
@@ -78,24 +109,25 @@ class UserAccount
                 $password_hashmd5 = md5($databody->password);
 
                 $getUser = $conn->prepare("SELECT * FROM users where users.username = '$databody->username' ");
-                // $conn->exec($getUser);
                 $getUser->execute();
 
                 $result = $getUser->fetch(PDO::FETCH_ASSOC);
-                echo "[";
-                echo json_encode(["status" => false, "message" => $result], JSON_PRETTY_PRINT);
-                echo ",";
+
                 if ($result != false) {
-                    echo json_encode(["status" => false, "message" => "username da ton tai"], JSON_PRETTY_PRINT); echo "]";
+                    echo json_encode(["status" => false, "message" => "username da ton tai"], JSON_PRETTY_PRINT);
+                    exit;
+                } else {
+                    echo json_encode(["status" => true, "message" => "sign up successful"], JSON_PRETTY_PRINT);
+
+                    $sql = "INSERT INTO users ( id, email, username, password_user, avatar, role_user, created_at)
+                        VALUES ('$id', '$databody->email', '$databody->username', '$password_hashmd5', '', 1, '$databody->currentdateTime')";
+                    $conn->exec($sql);
+                    echo "<br>";
+                    var_dump("INSERT INTO DB COMPLETE");
+                    echo "<br>";
+                    echo json_encode($databody, JSON_PRETTY_PRINT);
                     exit;
                 }
-
-                $sql = "INSERT INTO users ( id, email, username, password_user, avatar, role_user, created_at)
-                    VALUES ('$id', '$databody->email', '$databody->username', '$password_hashmd5', '', 1, '$databody->currentdateTime')";
-                $conn->exec($sql);
-                var_dump("INSERT INTO DB COMPLETE");
-                echo json_encode($databody, JSON_PRETTY_PRINT);
-                exit;
             }
         }
     }
