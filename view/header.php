@@ -92,7 +92,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 
                 <?php
 
-                if ((isset($_SESSION["username"]) && !empty($_SESSION["username"]))) {
+                if ((isset($_SESSION["username"]) && !empty($_SESSION["username"])) && (isset($_SESSION["password"]) && !empty($_SESSION["password"]))) {
 
                 ?>
                     <div class="header_profile flex align_center g_12px relative">
@@ -131,11 +131,15 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                         <!-- modal sign in  -->
                         <div id="wrapperModal" class="backdrop-wrapper">
                             <div class="modal active container_signin p_20px radius-16px" style="width: 420px;">
-                                <iconify-icon class="x-close fs_24px pointer" icon="ph:x-bold"></iconify-icon>
                                 <div>
-                                    <div class="flex flex_center mb_32px pt_8px g_32px">
-                                        <div class="label-log fs-22px-fw-700 bb_main_4px pb_6px">Log In</div>
-                                        <div class="label-sign fs-22px-fw-500 text-2nd-color ">Sign Up</div>
+                                    <div class="mb_32px flex">
+                                        <div class="flex flex_center w_100pc">
+                                            <div class="flex flex_center pt_8px g_32px">
+                                                <div class="label-log fs-22px-fw-700 bb_main_4px pb_6px">Log In</div>
+                                                <div class="label-sign fs-22px-fw-500 text-2nd-color ">Sign Up</div>
+                                            </div>
+                                        </div>
+                                        <iconify-icon class="x-close fs_24px pointer" icon="ph:x-bold"></iconify-icon>
                                     </div>
                                     <div>
                                         <div class="flex f_column mb_20px">
@@ -176,16 +180,22 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                         <!-- modal sign up  -->
                         <div id="wrapperModal" class="backdrop-wrapper">
                             <div class="modal container_signup p_20px radius-16px" style="width: 420px; height: 600px;">
-                                <iconify-icon class="x-close fs_24px pointer" icon="ph:x-bold"></iconify-icon>
+
                                 <div>
-                                    <div class="flex flex_center mb_32px pt_8px g_32px">
-                                        <div class="label-log fs-22px-fw-500 text-2nd-color">Log In</div>
-                                        <div class="label-sign fs-22px-fw-700 bb_main_4px pb_6px">Sign Up</div>
+                                    <div class="mb_32px flex">
+                                        <div class="flex flex_center w_100pc">
+                                            <div class="flex flex_center pt_8px g_32px">
+                                                <div class="label-log fs-22px-fw-700 pb_6px">Log In</div>
+                                                <div class="label-sign fs-22px-fw-500 bb_main_4px  text-2nd-color ">Sign Up</div>
+                                            </div>
+                                        </div>
+                                        <iconify-icon class="x-close fs_24px pointer" icon="ph:x-bold"></iconify-icon>
                                     </div>
-                                    <div class="">
+                                    <div>
                                         <div class="flex f_column mb_20px">
                                             <p class="fs-12px-fw-700 mb_8px">Email Address</p>
                                             <input id="signup_email" class="signup_field fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="text" placeholder="Enter your email address...">
+                                            <span class="fs-11px-fw-400 mt_8px second-text-color">Optional</span>
                                         </div>
                                         <div class="flex f_column mb_20px">
                                             <p class="fs-12px-fw-700 mb_8px">Username</p>

@@ -54,36 +54,32 @@ class UserAccount
                 $resultUsername = self::queryUsername($databody->username);
                 $resultPassword = self::queryPassword($password_hashmd5);
 
+                // echo " this is result: <br>";
+                // echo json_encode($result, JSON_PRETTY_PRINT);
+                // echo "<br>";
+
                 if (empty($databody->username) || empty($password_hashmd5)) {
-                    echo json_encode(["status" => false, "message" => "tk hoac mk k dc trong", "result" => "", "redirect" => ""], JSON_PRETTY_PRINT);
+                    echo json_encode(["status" => false, "message" => "Do not empty your fields", "result" => "", "redirect" => ""], JSON_PRETTY_PRINT);
                     exit;
                 }
 
-                // if ($result == false) {
-                //     echo json_encode(["status" => false, "message" => "tk k ton tai", "result" => "", "redirect" => ""], JSON_PRETTY_PRINT);
-                //     exit;
-                // }
+                if (($resultUsername != false) && ($resultPassword != false)) {
 
-                if ($resultUsername == false) {
-                    echo json_encode(["status" => false, "message" => "Tk hoac mk khong chinh xac", "detailLogin" => "username k chinh xac"], JSON_PRETTY_PRINT);
-                    exit;
-                } else if ($resultPassword == false) {
-                    echo json_encode(["status" => false, "message" => "Tk hoac mk khong chinh xac", "detailLogin" => "password k chinh xac"], JSON_PRETTY_PRINT);
-                    exit;
-                } else {
                     $_SESSION["username"] = $databody->username;
                     $_SESSION["password"] = $password_hashmd5;
                     $_SESSION["role_user"] = $result["role_user"];
 
-                    echo json_encode(["status" => true, "message" => "dang nhap thanh cong", "result" => "", "redirect" => ""], JSON_PRETTY_PRINT);
+                    echo json_encode(["status" => true, "message" => "Login is sucessfully", "result" => "", "redirect" => "Homepage"], JSON_PRETTY_PRINT);
                     exit;
+                } else {
+                    if ($resultUsername == false) {
+                        echo json_encode(["status" => false, "message" => "Username or Password is incorrect !", "detailLogin" => "username k chinh xac (Tk khong ton tai)"], JSON_PRETTY_PRINT);
+                        exit;
+                    } else if ($resultPassword == false) {
+                        echo json_encode(["status" => false, "message" => "Username or Password is incorrect !", "detailLogin" => "password k chinh xac"], JSON_PRETTY_PRINT);
+                        exit;
+                    }
                 }
-
-
-
-
-                //echo json_encode($databody, JSON_PRETTY_PRINT);
-                // var_dump($_SESSION['password'] . "okok");
             }
         }
     }
@@ -93,6 +89,7 @@ class UserAccount
         unset($_SESSION["username"]);
         unset($_SESSION["password"]);
         unset($_SESSION["role_user"]);
+        sleep(1);
         header("Location: ./");
     }
 
@@ -115,7 +112,7 @@ class UserAccount
                 $result = $getUser->fetch(PDO::FETCH_ASSOC);
 
                 if ($result != false) {
-                    echo json_encode(["status" => false, "message" => "username da ton tai"], JSON_PRETTY_PRINT);
+                    echo json_encode(["status" => false, "message" => "An existed username"], JSON_PRETTY_PRINT);
                     exit;
                 } else {
                     echo json_encode(["status" => true, "message" => "sign up successful"], JSON_PRETTY_PRINT);

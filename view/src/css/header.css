@@ -21,7 +21,7 @@
     background-color: var(--color-gray-200);
 }
 
-.header_profile:hover .drop_profile{
+.header_profile:hover .drop_profile {
     display: block;
 }
 
@@ -245,7 +245,6 @@
 
 /* modal log in and sign up  */
 .container_signin {
-    position: fixed;
     background-color: white;
     overflow-y: scroll;
     visibility: hidden;
@@ -291,7 +290,6 @@
 }
 
 .container_signup {
-    position: fixed;
     background-color: white;
     overflow-y: scroll;
     visibility: hidden;
@@ -306,11 +304,8 @@
 }
 
 .x-close {
-    position: absolute;
-    top: 0;
-    right: 0;
+    
     padding: 8px;
-    margin: 24px;
 }
 
 .backdrop-wrapper {

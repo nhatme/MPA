@@ -52,8 +52,13 @@ $("#loginBtn").on("click", function () {
             password: password
         }),
         success: function (res) {
-            // setTimeout(location.reload(), 2000)
-            console.log(JSON.parse(res));
+            setTimeout(function () {
+                location.reload()
+            }, 1300)
+            let json_data = JSON.parse(res);
+
+            console.log(json_data.status);
+            console.log(json_data.message);
         }
     })
 })
@@ -62,7 +67,7 @@ $("#loginBtn").on("click", function () {
 /*  signup */
 
 
-$("#signup_retypepass").on('blur', function () {
+$("#signup_retypepass").on('change', function () {
     let password = $("#signup_password").val()
     let retypepass = $("#signup_retypepass").val()
 
@@ -71,7 +76,7 @@ $("#signup_retypepass").on('blur', function () {
             "border": "1px solid red",
             'box-shadow': "0 0 5px red"
         });
-        $("#error-text").text("Password is not correct");
+        $("#error-text").text("retype-password is not correct");
     } else {
         $(this).css({
             border: "",
