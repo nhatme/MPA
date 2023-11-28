@@ -49,7 +49,7 @@ class UserAccount
             if (isset(($databody->username))) {
 
                 $password_hashmd5 = md5(strtolower($databody->password));
-                
+
                 $result = self::querylogin($databody->username, $password_hashmd5);
                 $resultUsername = self::queryUsername($databody->username);
                 $resultPassword = self::queryPassword($password_hashmd5);
@@ -59,27 +59,28 @@ class UserAccount
                     exit;
                 }
 
+                // if ($result == false) {
+                //     echo json_encode(["status" => false, "message" => "tk k ton tai", "result" => "", "redirect" => ""], JSON_PRETTY_PRINT);
+                //     exit;
+                // }
 
-
-                if ($result == false) {
-                    echo json_encode(["status" => false, "message" => "tk k ton tai", "result" => "", "redirect" => ""], JSON_PRETTY_PRINT);
-                    exit;
-                } else if ($resultUsername == false) {
+                if ($resultUsername == false) {
                     echo json_encode(["status" => false, "message" => "Tk hoac mk khong chinh xac", "detailLogin" => "username k chinh xac"], JSON_PRETTY_PRINT);
                     exit;
                 } else if ($resultPassword == false) {
                     echo json_encode(["status" => false, "message" => "Tk hoac mk khong chinh xac", "detailLogin" => "password k chinh xac"], JSON_PRETTY_PRINT);
                     exit;
+                } else {
+                    $_SESSION["username"] = $databody->username;
+                    $_SESSION["password"] = $password_hashmd5;
+                    $_SESSION["role_user"] = $result["role_user"];
+
+                    echo json_encode(["status" => true, "message" => "dang nhap thanh cong", "result" => "", "redirect" => ""], JSON_PRETTY_PRINT);
+                    exit;
                 }
 
 
 
-                $_SESSION["username"] = $databody->username;
-                $_SESSION["password"] = $password_hashmd5;
-                $_SESSION["role_user"] = $result["role_user"];
-
-                echo json_encode(["status" => true, "message" => "dang nhap thanh cong", "result" => "", "redirect" => ""], JSON_PRETTY_PRINT);
-                exit;
 
                 //echo json_encode($databody, JSON_PRETTY_PRINT);
                 // var_dump($_SESSION['password'] . "okok");
