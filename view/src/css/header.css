@@ -304,7 +304,7 @@
 }
 
 .x-close {
-    
+
     padding: 8px;
 }
 
@@ -321,45 +321,125 @@
     z-index: 999;
 }
 
-/* toast message  */
 
-#toastMessage {
-    visibility: hidden;
-    background-color: gray;
-    color: white;
-    padding: 20px;
-    text-align: center;
+/* ======= Toast message ======== */
+
+#toast {
     position: fixed;
-    top: 30px;
-    right: 50%;
+    top: 32px;
+    right: 32px;
+    z-index: 999999;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 20px 0;
+    min-width: 400px;
+    max-width: 450px;
+    border-left: 4px solid;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+    transition: all linear 0.3s;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% + 32px));
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+.toast--success {
+    border-color: #47d864;
+}
+
+.toast--success .toast__icon {
+    color: #47d864;
+}
+
+.toast--info {
+    border-color: #2f86eb;
+}
+
+.toast--info .toast__icon {
+    color: #2f86eb;
+}
+
+.toast--warning {
+    border-color: #ffc021;
+}
+
+.toast--warning .toast__icon {
+    color: #ffc021;
+}
+
+.toast--error {
+    border-color: #ff623d;
+}
+
+.toast--error .toast__icon {
+    color: #ff623d;
+}
+
+.toast+.toast {
+    margin-top: 24px;
+}
+
+.toast__icon {
+    font-size: 24px;
+}
+
+.toast__icon,
+.toast__close {
+    padding: 0 16px;
+}
+
+.toast__body {
+    flex-grow: 1;
+}
+
+.toast__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.toast__msg {
+    font-size: 14px;
+    color: #888;
+    margin-top: 6px;
+    line-height: 1.5;
+}
+
+.toast__close {
     font-size: 20px;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
-#toastMessage.show {
-    visibility: visible;
-    animation: fadein 0.5s, fadeout 0.5s 2.8s;
+
+/* active form  */
+.body-form {
+    display: none;
 }
 
-@keyframes fadein {
-    from {
-        top: 0;
-        opacity: 0;
-    }
-
-    to {
-        top: 30px;
-        opacity: 1;
-    }
+.body-form.active-form {
+    display: block;
 }
 
-@keyframes fadeout {
-    from {
-        top: 30px;
-        opacity: 1;
-    }
-
-    to {
-        top: 0;
-        opacity: 0;
-    }
+.label-bottom.active {
+    border-bottom: 3px solid var(--main-color);
 }

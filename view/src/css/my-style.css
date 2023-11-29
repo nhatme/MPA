@@ -542,6 +542,11 @@
     padding-bottom: 6px;
 }
 
+.pb_12px {
+    padding-bottom: 12px;
+}
+
+
 .pb_16px {
     padding-bottom: 16px;
 }
@@ -577,6 +582,10 @@
 
 .p_0px_16px {
     padding: 0px 16px;
+}
+
+.p_16px_0px {
+    padding: 16px 0;
 }
 
 .p_8px_16px {
@@ -707,6 +716,10 @@
 
 .ml_4px {
     margin-left: 4px;
+}
+
+.ml_16px {
+    margin-left: 16px;
 }
 
 .m_right_8px {

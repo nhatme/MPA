@@ -21,22 +21,30 @@ eachMenubars.forEach((el, index) => {
 })
 
 
+// format number currency
+
+
+// format number currency
+
+
 /*  login */
 
 const btnActions = document.querySelectorAll('.btnAction');
-const modals = document.querySelectorAll('.modal');
+const modals = document.querySelector('.modal');
 const xClose = document.querySelectorAll('.x-close');
-const backdrops = document.querySelectorAll('.backdrop-wrapper');
+const backdrops = document.querySelector('.backdrop-wrapper');
 
 btnActions.forEach((el, index) => {
     el.onclick = () => {
-        modals[index].classList.add('active');
-        backdrops[index].style = "display: flex";
+        modals.classList.add('active');
+        backdrops.style = "display: flex";
     }
 
-    xClose[index].onclick = () => {
-        modals[index].classList.remove('active');
-        backdrops[index].style = "display: none";
+    if (xClose[index]) {
+        xClose[index].onclick = () => {
+            modals.classList.remove('active');
+            backdrops.style = "display: none";
+        }
     }
 });
 
@@ -52,13 +60,30 @@ $("#loginBtn").on("click", function () {
             password: password
         }),
         success: function (res) {
-            setTimeout(function () {
-                location.reload()
-            }, 1300)
+
             let json_data = JSON.parse(res);
 
-            console.log(json_data.status);
-            console.log(json_data.message);
+            if (json_data.status == true) {
+                toast({
+                    title: "Success!",
+                    message: json_data.message,
+                    type: "success",
+                    duration: 3000
+                });
+
+                setTimeout(function () {
+                    location.reload()
+                }, 3000)
+
+            } else {
+                toast({
+                    title: "Failed",
+                    message: json_data.message,
+                    type: "error",
+                    duration: 3000
+                });
+            }
+            console.log(json_data);
         }
     })
 })
@@ -117,9 +142,136 @@ submitBtn.click(function (e) {
                 currentdateTime: currentDateTime
             }),
             success: function (res) {
-                console.log(JSON.parse(res))
+
+                let json_data = JSON.parse(res);
+
+                if (json_data.status == true) {
+                    toast({
+                        title: "Success!",
+                        message: json_data.message,
+                        type: "success",
+                        duration: 3000
+                    });
+
+                    setTimeout(function () {
+                        location.reload()
+                    }, 3000)
+
+                } else {
+                    toast({
+                        title: "Failed",
+                        message: json_data.message,
+                        type: "error",
+                        duration: 3000
+                    });
+                }
+                console.log(json_data);
             }
         })
     }
 
+})
+
+
+//toast message
+
+// Toast function
+function toast({ title = "", message = "", type = "info", duration = 3000 }) {
+    const main = document.getElementById("toast");
+    if (main) {
+        const toast = document.createElement("div");
+
+        // Auto remove toast
+        const autoRemoveId = setTimeout(function () {
+            main.removeChild(toast);
+        }, duration + 1000);
+
+        // Remove toast when clicked
+        toast.onclick = function (e) {
+            if (e.target.closest(".toast__close")) {
+                main.removeChild(toast);
+                clearTimeout(autoRemoveId);
+            }
+        };
+
+        const icons = {
+            success: "fas fa-check-circle",
+            info: "fas fa-info-circle",
+            warning: "fas fa-exclamation-circle",
+            error: "fas fa-exclamation-circle"
+        };
+        const icon = icons[type];
+        const delay = (duration / 1000).toFixed(2);
+
+        toast.classList.add("toast", `toast--${type}`);
+        toast.style.animation = `slideInLeft ease .3s, fadeOut linear 1s ${delay}s forwards`;
+
+        toast.innerHTML = `
+                      <div class="toast__icon">
+                          <i class="${icon}"></i>
+                      </div>
+                      <div class="toast__body">
+                          <h3 class="toast__title">${title}</h3>
+                          <p class="toast__msg">${message}</p>
+                      </div>
+                      <div class="toast__close">
+                          <i class="fas fa-times"></i>
+                      </div>
+                  `;
+        main.appendChild(toast);
+    }
+}
+
+
+// modal switch 
+
+$(".switchform").click(function () {
+
+    const type = $(this).attr("btn-type")
+
+    $(".body-form").each(function () {
+        $(this).removeClass("active-form")
+    })
+
+    $("." + type).addClass("active-form")
+    $(".switchform").each(function () {
+        $(this).removeClass("active")
+    })
+
+    $(this).addClass("active")
+    $(".label-bottom." + type).addClass("active")
+
+    console.log(type)
+})
+
+function formatNum(number) {
+    const formatter = new Intl.NumberFormat('en-US');
+    if (number == 0) {
+        return "";
+    } else {
+        return formatter.format(number);
+    }
+}
+
+$("#inputcrypto").on('input', function () {
+    const type_value = $("#inputUSD").attr("coinPrice-value")
+
+    let cryptoValue = $(this).val()
+    if (cryptoValue == "" || isNaN(cryptoValue)) {
+        cryptoValue = 0
+    }
+
+    let convertToUSD = parseFloat(cryptoValue) * parseFloat(type_value)
+    $("#inputUSD").val(formatNum(convertToUSD.toFixed(2)))
+})
+
+$("#inputUSD").on('input', function () {
+    const type_value = $("#inputUSD").attr("coinPrice-value")
+
+    let valueUSD = $(this).val()
+    if (valueUSD == "" || isNaN(valueUSD)) {
+        valueUSD = 0
+    }
+
+    $("#inputcrypto").val(formatNum((parseFloat(valueUSD) / parseFloat(type_value)).toFixed(2)))
 })

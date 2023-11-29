@@ -27,7 +27,7 @@
                             </button>
                         </div>
                         <div class="csh__bottom flex align_center mt_12px g_8px">
-                            <span class="fs-32px-fw-700">$<?= $getIdCoin["price"] ?></span>
+                            <span class="fs-32px-fw-700">$<?= number_format($getIdCoin["price"], 2) ?></span>
                             <div>
                                 <div class="fs-16px-fw-600 flex align_center g_4px">
                                     <?php
@@ -57,6 +57,20 @@
                     <div class="coin_stats_detail flex f_column g_32px">
 
                         <div>
+                            <span class="flex fs-12px-fw-700">Amount</span>
+                            <div class="toUSDConvert grid color_gray_200_bg radius-8px mt_12px p_4px">
+                                <div class="toUSDConvertLeft bg_white flex_sp_bt p_5px_8px">
+                                    <span class="w_30pc fs-12px-fw-600 second-color-body"><?= $getIdCoin["symbol"] ?></span>
+                                    <input class="w_60pc border_none outline_none" type="text" name="" id="inputcrypto" placeholder="0" value="1" dir="rtl" spellcheck="false">
+                                </div>
+                                <div class="toUSDConvertRight bg_white flex_sp_bt p_5px_8px">
+                                    <span class="w_30pc fs-12px-fw-600 second-color-body">USD</span>
+                                    <input class="w_60pc border_none outline_none" type="text" name="" id="inputUSD" placeholder="0" coinPrice-value="<?= (float)($getIdCoin["price"]) ?>" value="<?= (float)($getIdCoin["price"]) ?>" dir="rtl" spellcheck="false">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
                             <div class="flex_sp_bt align_center p_8px_16px color_gray_200_bg radius-8px pointer">
                                 <div class="flex align_center g_8px">
                                     <iconify-icon class="fs_32px flex gray-2nd-color" icon="lets-icons:order"></iconify-icon>
@@ -64,7 +78,6 @@
                                 </div>
                                 <iconify-icon class="fs_32px gray-2nd-color" icon="ic:round-plus"></iconify-icon>
                             </div>
-
                         </div>
 
                         <div class="flex f_column g_24px">
@@ -82,7 +95,7 @@
                                                 <iconify-icon class="fs_12px up-price" icon="icon-park-solid:up-one"></iconify-icon>
                                                 <span class="fs-11px-fw-600 up-price">1.29%</span>
                                             </div>
-                                            <div class="fs-12px-fw-600">$<?= $getIdCoin["market_cap"] ?></div>
+                                            <div class="fs-12px-fw-600">$<?= number_format($getIdCoin["market_cap"], 2) ?></div>
                                         </div>
                                     </div>
 
@@ -103,7 +116,7 @@
                                                 <iconify-icon class="fs_12px down-price" icon="icon-park-solid:down-one"></iconify-icon>
                                                 <span class="fs-11px-fw-600 down-price">37.83%</span>
                                             </div>
-                                            <div class="fs-12px-fw-600">$<?= $getIdCoin["volume_24h"] ?></div>
+                                            <div class="fs-12px-fw-600">$<?= number_format($getIdCoin["volume_24h"], 2) ?></div>
                                         </div>
                                     </div>
 
@@ -119,7 +132,7 @@
                                         </div>
                                         <div class="g_8px m_inline_start_8px">
                                             <div class="">
-                                                <span class="fs-12px-fw-600"><?= $getIdCoin["circulating_supply"] ?> <span><?= $getIdCoin["symbol"] ?></span></span>
+                                                <span class="fs-12px-fw-600"><?= number_format($getIdCoin["circulating_supply"], 2) ?> <span><?= $getIdCoin["symbol"] ?></span></span>
                                             </div>
                                         </div>
                                     </div>
@@ -214,19 +227,6 @@
                             </div>
                         </div>
 
-                        <div>
-                            <span class="flex fs-12px-fw-700">BTC to USD Converter</span>
-                            <div class="toUSDConvert grid color_gray_200_bg radius-8px mt_12px p_4px ">
-                                <div class="toUSDConvertLeft bg_white flex_sp_bt p_5px_8px">
-                                    <span class="w_30pc fs-12px-fw-600 second-color-body">BTC</span>
-                                    <input class="w_60pc border_none outline_none" type="text" name="" id="" placeholder="0" value="0" dir="rtl">
-                                </div>
-                                <div class="toUSDConvertRight bg_white flex_sp_bt p_5px_8px">
-                                    <span class="w_30pc fs-12px-fw-600 second-color-body">USD</span>
-                                    <input class="w_60pc border_none outline_none" type="text" name="" id="" placeholder="0" value="0" dir="rtl">
-                                </div>
-                            </div>
-                        </div>
                         <div>
                             <span class="flex fs-12px-fw-700">Tags</span>
                             <div class="mt_12px flex g_8px align_center">

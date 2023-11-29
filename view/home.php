@@ -336,6 +336,7 @@
                                 return formatter.format(number);
                             }
                         }
+
                         tableCoin.innerHTML = `
                                                 <?php
                                                 foreach ($coinDetail->getCoin() as $key => $value) {
@@ -366,7 +367,7 @@
 
                                                             </div>
                                                         </td>
-                                                        <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">$<?= $value->getPrice(); ?></td>
+                                                        <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">$<?= number_format($value->getPrice(), 2) ?></td>
                                                         <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">
                                                             <div class="ctn__list__td__percentIndex">
                                                                 <?php

@@ -25,6 +25,12 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
     <link rel="stylesheet" href="./view/src/css/signin.css">
     <!-- signup  -->
     <link rel="stylesheet" href="./view/src/css/signup.css">
+    <!-- orders  -->
+    <link rel="stylesheet" href="./view/src/css/orders.css">
+    <!-- funds  -->
+    <link rel="stylesheet" href="./view/src/css/funds.css">
+    <!-- transaction history  -->
+    <link rel="stylesheet" href="./view/src/css/transaction.css">
     <!-- currency  -->
     <link rel="stylesheet" href="./view/src/css/currency/currency.css">
     <link rel="stylesheet" href="./view/src/css/currency/currency_rss.css">
@@ -41,6 +47,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
     <link rel="stylesheet" href="./view/src/css/footer.css">
     <link rel="stylesheet" href="./view/src/css/responsive.css">
     <link rel="stylesheet" href="./view/src/css/scrollbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title><?= $viewTitle ?></title>
@@ -126,92 +133,61 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                 ?>
 
                     <div class="flex g_8px">
-                        <div class="btnAction p_0px_16px fs-12px-fw-700 main-color lh-32px border_main radius-8px pointer" id="login">Log In</div>
 
-                        <!-- modal sign in  -->
+                        <div class="btnAction p_0px_16px fs-12px-fw-700 main-color lh-32px border_main radius-8px pointer switchform" btn-type="body-form-login">Log In</div>
+                        <div class="btnAction p_0px_16px fs-12px-fw-700 text-white lh-32px main-color-bg radius-8px pointer switchform" btn-type="body-form-signup">Sign up</div>
+
+                        <!-- modal login / signin  -->
+
                         <div id="wrapperModal" class="backdrop-wrapper">
-                            <div class="modal active container_signin p_20px radius-16px" style="width: 420px;">
-                                <div>
+                            <div class="modal active container_signin p_20px radius-16px" style="width: 420px; max-height: 58%;">
+                                <div class="">
                                     <div class="mb_32px flex">
                                         <div class="flex flex_center w_100pc">
                                             <div class="flex flex_center pt_8px g_32px">
-                                                <div class="label-log fs-22px-fw-700 bb_main_4px pb_6px">Log In</div>
-                                                <div class="label-sign fs-22px-fw-500 text-2nd-color ">Sign Up</div>
+                                                <div class="switchform label-bottom active fs-22px-fw-700 text-2nd-color pb_12px pointer body-form-login" btn-type="body-form-login">Log In</div>
+                                                <div class="switchform label-bottom fs-22px-fw-700 text-2nd-color pointer body-form-signup" btn-type="body-form-signup">Sign Up</div>
                                             </div>
                                         </div>
                                         <iconify-icon class="x-close fs_24px pointer" icon="ph:x-bold"></iconify-icon>
                                     </div>
-                                    <div>
+
+                                    <!-- login  -->
+                                    <div class="body-form body-form-login">
                                         <div class="flex f_column mb_20px">
                                             <p class="fs-12px-fw-700 mb_8px">Username</p>
-                                            <input id="login_username" class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" name="username" spellcheck="false" type="text" placeholder="Enter your username...">
+                                            <input id="login_username" class="fs-14px-fw-500 border_300 p_20px radius-8px outline_none" name="username" spellcheck="false" type="text" placeholder="Enter your username...">
                                         </div>
                                         <div class="flex f_column mb_20px">
                                             <p class="fs-12px-fw-700 mb_8px">Password</p>
-                                            <input id="login_password" class="fs-14px-fw-500 border_300 p_20px radius-12px outline_none" name="password" spellcheck="false" type="password" placeholder="Enter your password...">
+                                            <input id="login_password" class="fs-14px-fw-500 border_300 p_20px radius-8px outline_none" name="password" spellcheck="false" type="password" placeholder="Enter your password...">
                                         </div>
-                                        <input id="loginBtn" type="submit" value="Create an account" class="fs-14px-fw-600 p_16px_24px main-color-bg text-white opacity_05 radius-12px center mb_24px" onmousedown="return false">
+                                        <div id="loginBtn" class="fs-14px-fw-600 p_16px_24px main-color-bg text-white center radius-8px mb_24px" onmousedown="return false">Log in</div>
                                     </div>
-                                </div>
 
-                                <div class="flex flex_center">
-                                    <p class="fs-16px-fw-600 p_0_8px">OR</p>
-                                </div>
-
-                                <div class="mt_24px">
-                                    <div class="flex flex_center g_12px border_300 p_12px radius-12px mb_16px">
-                                        <iconify-icon icon="fa6-solid:g"></iconify-icon>
-                                        <p class="fs-14px-fw-600">Continue with Google</p>
-                                    </div>
-                                    <div class="flex flex_center g_12px border_300 p_12px radius-12px mb_16px">
-                                        <iconify-icon icon="ph:wallet-fill"></iconify-icon>
-                                        <p class="fs-14px-fw-600">Continue with Wallet</p>
-                                    </div>
-                                    <div class="fs-12px-fw-600 center">By proceeding, you agree to OpenSea's Terms<br>of Use & Privacy Policy.</div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- modal sign in  -->
-
-                        <div class="btnAction p_0px_16px fs-12px-fw-700 text-white lh-32px main-color-bg radius-8px pointer">Sign up</div>
-
-                        <!-- modal sign up  -->
-                        <div id="wrapperModal" class="backdrop-wrapper">
-                            <div class="modal container_signup p_20px radius-16px" style="width: 420px; height: 600px;">
-
-                                <div>
-                                    <div class="mb_32px flex">
-                                        <div class="flex flex_center w_100pc">
-                                            <div class="flex flex_center pt_8px g_32px">
-                                                <div class="label-log fs-22px-fw-700 pb_6px">Log In</div>
-                                                <div class="label-sign fs-22px-fw-500 bb_main_4px  text-2nd-color ">Sign Up</div>
-                                            </div>
-                                        </div>
-                                        <iconify-icon class="x-close fs_24px pointer" icon="ph:x-bold"></iconify-icon>
-                                    </div>
-                                    <div>
+                                    <!-- signup  -->
+                                    <div class="body-form body-form-signup">
                                         <div class="flex f_column mb_20px">
                                             <p class="fs-12px-fw-700 mb_8px">Email Address</p>
-                                            <input id="signup_email" class="signup_field fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="text" placeholder="Enter your email address...">
+                                            <input id="signup_email" class="signup_field fs-14px-fw-500 border_300 p_20px radius-8px outline_none" spellcheck="false" type="text" placeholder="Enter your email address...">
                                             <span class="fs-11px-fw-400 mt_8px second-text-color">Optional</span>
                                         </div>
                                         <div class="flex f_column mb_20px">
                                             <p class="fs-12px-fw-700 mb_8px">Username</p>
-                                            <input id="signup_username" class="signup_field fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="text" placeholder="Enter your username...">
+                                            <input id="signup_username" class="signup_field fs-14px-fw-500 border_300 p_20px radius-8px outline_none" spellcheck="false" type="text" placeholder="Enter your username...">
                                         </div>
                                         <div class="flex f_column mb_20px">
                                             <p class="fs-12px-fw-700 mb_8px">Password</p>
-                                            <input id="signup_password" class="signup_field fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="password" placeholder="Enter your password...">
+                                            <input id="signup_password" class="signup_field fs-14px-fw-500 border_300 p_20px radius-8px outline_none" spellcheck="false" type="password" placeholder="Enter your password...">
                                         </div>
                                         <div class="flex f_column mb_20px">
                                             <p class="fs-12px-fw-700 mb_8px">Re-type Password</p>
-                                            <input id="signup_retypepass" class="signup_field fs-14px-fw-500 border_300 p_20px radius-12px outline_none" spellcheck="false" type="password" placeholder="Re-type your password...">
+                                            <input id="signup_retypepass" class="signup_field fs-14px-fw-500 border_300 p_20px radius-8px outline_none" spellcheck="false" type="password" placeholder="Re-type your password...">
                                             <span id="error-text" class="mt_8px" style="color: red;"></span>
                                         </div>
-                                        <input id="signupbtn" type="submit" value="Create an account" class="fs-14px-fw-600 p_16px_24px main-color-bg text-white opacity_05 radius-12px center mb_24px" onmousedown="return false">
+                                        <div id="signupbtn" class="fs-14px-fw-600 p_16px_24px main-color-bg text-white radius-8px center mb_24px" onmousedown="return false">Create an account</div>
                                     </div>
+
                                 </div>
 
                                 <div class="flex flex_center">
@@ -219,24 +195,35 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                 </div>
 
                                 <div class="mt_24px">
-                                    <div class="flex flex_center g_12px border_300 p_12px radius-12px mb_16px">
+                                    <div class="flex flex_center g_12px border_300 p_12px radius-8px mb_16px">
                                         <iconify-icon icon="fa6-solid:g"></iconify-icon>
                                         <p class="fs-14px-fw-600">Continue with Google</p>
                                     </div>
-                                    <div class="flex flex_center g_12px border_300 p_12px radius-12px mb_16px">
+                                    <div class="flex flex_center g_12px border_300 p_12px radius-8px mb_16px">
                                         <iconify-icon icon="ph:wallet-fill"></iconify-icon>
                                         <p class="fs-14px-fw-600">Continue with Wallet</p>
                                     </div>
-                                    <div class="fs-12px-fw-600 center">By proceeding, you agree to OpenSea's Terms<br>of Use & Privacy Policy.</div>
+                                    <div class="fs-12px-fw-600 center">By proceeding, you agree to MarketPlaceAsset's Terms<br>of Use & Privacy Policy.</div>
                                 </div>
+
                             </div>
                         </div>
 
-                        <!-- modal sign up  -->
+
+
+                        <!-- modal login / signin  -->
+
                     </div>
                 <?php
                 } ?>
             </div>
+
+            <!-- toast message  -->
+
+            <div id="toast"></div>
+
+            <!-- toast message  -->
+
         </div>
         <div class="line-header"></div>
         <div class="second-header">
@@ -402,7 +389,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                     </div>
                     <div class="second-header-right-item">
                         <iconify-icon class="fs_16px color_gray_400" icon="fa6-solid:chart-pie"></iconify-icon>
-                        <a href="?mod=page&act=watchlistNotLogin" class="fs-12px-fw-400">Portfolio</a>
+                        <a href="?mod=page&act=orders" class="fs-12px-fw-400">Orders History</a>
                     </div>
                 </div>
                 <div class="second-header-right-searchbar">

@@ -29,7 +29,6 @@ class UserAccount
         return $result;
     }
 
-
     public function queryPassword($password)
     {
         $conn = connectDB();
@@ -38,7 +37,6 @@ class UserAccount
         $result = $valuePassword->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
-
 
     public function reqLogin()
     {
@@ -101,7 +99,7 @@ class UserAccount
         $databody = json_decode($entityBody);
 
         if (isset($databody)) {
-            if (isset(($databody->email))) {
+            if (isset(($databody->username))) {
 
                 $id = uniqid();
                 $password_hashmd5 = md5($databody->password);
@@ -115,15 +113,16 @@ class UserAccount
                     echo json_encode(["status" => false, "message" => "An existed username"], JSON_PRETTY_PRINT);
                     exit;
                 } else {
-                    echo json_encode(["status" => true, "message" => "sign up successful"], JSON_PRETTY_PRINT);
 
                     $sql = "INSERT INTO users ( id, email, username, password_user, avatar, role_user, created_at)
-                        VALUES ('$id', '$databody->email', '$databody->username', '$password_hashmd5', '', 1, '$databody->currentdateTime')";
+                        VALUES ('$id', '', '$databody->username', '$password_hashmd5', '', 1, '$databody->currentdateTime')";
                     $conn->exec($sql);
-                    echo "<br>";
-                    var_dump("INSERT INTO DB COMPLETE");
-                    echo "<br>";
-                    echo json_encode($databody, JSON_PRETTY_PRINT);
+
+                    echo json_encode(["status" => true, "message" => "sign up successful"], JSON_PRETTY_PRINT);
+                    // echo "<br>";
+                    // var_dump("INSERT INTO DB COMPLETE");
+                    // echo "<br>";
+                    // echo json_encode($databody, JSON_PRETTY_PRINT);
                     exit;
                 }
             }

@@ -6,6 +6,7 @@ extract($_REQUEST);
 if (isset($id)) {
     $classCoin = new Coin();
     $infoCoin = $classCoin->getDetailCoin($id);
+    // var_dump($infoCoin);
     if (($infoCoin) != false) {
         $classCoin = new Coin();
         include_once 'view/header.php';
