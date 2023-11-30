@@ -61,22 +61,22 @@
                             <div class="toUSDConvert grid color_gray_200_bg radius-8px mt_12px p_4px">
                                 <div class="toUSDConvertLeft bg_white flex_sp_bt p_5px_8px">
                                     <span class="w_30pc fs-12px-fw-600 second-color-body"><?= $getIdCoin["symbol"] ?></span>
-                                    <input class="w_60pc border_none outline_none" type="text" name="" id="inputcrypto" placeholder="0" value="1" dir="rtl" spellcheck="false">
+                                    <input class="w_60pc border_none outline_none" name="inputcrypto" type="text" name="" id="inputcrypto" placeholder="0" value="1" dir="rtl" spellcheck="false">
                                 </div>
                                 <div class="toUSDConvertRight bg_white flex_sp_bt p_5px_8px">
                                     <span class="w_30pc fs-12px-fw-600 second-color-body">USD</span>
-                                    <input class="w_60pc border_none outline_none" type="text" name="" id="inputUSD" placeholder="0" coinPrice-value="<?= (float)($getIdCoin["price"]) ?>" value="<?= (float)($getIdCoin["price"]) ?>" dir="rtl" spellcheck="false">
+                                    <input class="w_60pc border_none outline_none" name="inputUSD" type="text" name="" id="inputUSD" placeholder="0" coinPrice-value="<?= (float)($getIdCoin["price"]) ?>" value="<?= (float)($getIdCoin["price"]) ?>" dir="rtl" spellcheck="false">
                                 </div>
                             </div>
                         </div>
 
                         <div>
-                            <div class="flex_sp_bt align_center p_8px_16px color_gray_200_bg radius-8px pointer">
+                            <div class="flex_sp_bt align_center p_8px_16px main-color-bg radius-8px pointer">
                                 <div class="flex align_center g_8px">
-                                    <iconify-icon class="fs_32px flex gray-2nd-color" icon="lets-icons:order"></iconify-icon>
-                                    <span class="fs-32px-fw-700 gray-2nd-color">Add to Order</span>
+                                    <iconify-icon class="fs_32px flex text-white" icon="lets-icons:order"></iconify-icon>
+                                    <span class="fs-32px-fw-700 text-white">Add to Order</span>
                                 </div>
-                                <iconify-icon class="fs_32px gray-2nd-color" icon="ic:round-plus"></iconify-icon>
+                                <iconify-icon class="fs_32px text-white" icon="ic:round-plus"></iconify-icon>
                             </div>
                         </div>
 

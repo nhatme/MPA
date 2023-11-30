@@ -275,3 +275,5 @@ $("#inputUSD").on('input', function () {
 
     $("#inputcrypto").val(formatNum((parseFloat(valueUSD) / parseFloat(type_value)).toFixed(2)))
 })
+
+

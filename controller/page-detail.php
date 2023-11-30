@@ -1,14 +1,19 @@
 <?php
 include_once "./model/cryptoCurrency.php";
+include_once "./model/openOrders.php";
 
 extract($_REQUEST);
 
 if (isset($id)) {
     $classCoin = new Coin();
     $infoCoin = $classCoin->getDetailCoin($id);
-    // var_dump($infoCoin);
     if (($infoCoin) != false) {
-        $classCoin = new Coin();
+        $order = new openOrder();
+        var_dump($_POST["inputcrypto"]);
+        
+        $order->insertToOrder($id, $amount);
+        var_dump($id);
+
         include_once 'view/header.php';
         include_once 'view/currency.php';
         include_once 'view/footer.php';

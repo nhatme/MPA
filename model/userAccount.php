@@ -115,7 +115,7 @@ class UserAccount
                 } else {
 
                     $sql = "INSERT INTO users ( id, email, username, password_user, avatar, role_user, created_at)
-                        VALUES ('$id', '', '$databody->username', '$password_hashmd5', '', 1, '$databody->currentdateTime')";
+                        VALUES ('$id', '', '$databody->username', '$password_hashmd5', '', 1, now())";
                     $conn->exec($sql);
 
                     echo json_encode(["status" => true, "message" => "sign up successful"], JSON_PRETTY_PRINT);

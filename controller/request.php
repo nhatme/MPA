@@ -17,18 +17,3 @@ if (isset($act)) {
             break;
     }
 }
-
-function truncateText($text, $length = 15)
-{
-    $result = "";
-    if (strlen($text) < $length)
-        return $text;
-    for ($i = 0; $i < strlen($text); $i++) {
-        $result .= $text[$i];
-        if ($i == $length) {
-            $result .= "...";
-            break;
-        }
-    }
-    return $result;
-}

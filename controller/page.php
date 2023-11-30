@@ -1,5 +1,7 @@
 <?php
 include_once "./model/cryptoCurrency.php";
+include_once "./model/openOrders.php";
+
 
 $classUser = new UserAccount();
 $classUser->getUsers();
