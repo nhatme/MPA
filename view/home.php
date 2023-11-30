@@ -234,11 +234,11 @@
                 <div class="ctn__lfl__cur__categ">
                     <div class="ctn__lflcc__cur">
                         <img src="./view/src/img/svg/cryptocurrency.svg" alt="">
-                        <span class="fs-12px-fw-600 ctn__lflccc__currency">Leslie Alexander</span>
+                        <a href="#" class="fs-12px-fw-600 ctn__lflccc__currency">Cryptocurrencies</a>
                     </div>
                     <div class="ctn__lflcc__categ">
                         <img src="./view/src/img/svg/category.svg" alt="">
-                        <span class="fs-12px-fw-600 ctn__lflccc__category text-2nd-color">Darrell Steward</span>
+                        <a href="#" class="fs-12px-fw-600 ctn__lflccc__category text-2nd-color">Categories</a>
                     </div>
                 </div>
 

@@ -9,40 +9,49 @@ class Orders
     private $type;
     private $isDelete;
     private $created_at;
+    private $updated_at;
 
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
-    public function getid_crypto() {
+    public function getid_crypto()
+    {
         return $this->id_crypto;
     }
 
-    public function getid_user() {
+    public function getid_user()
+    {
         return $this->id_user;
     }
 
-    public function getamount() {
+    public function getamount()
+    {
         return $this->amount;
     }
 
-    public function getstatus() {
+    public function getstatus()
+    {
         return $this->status;
     }
 
-    public function gettype() {
+    public function gettype()
+    {
         return $this->type;
     }
 
-    public function getisDelete() {
+    public function getisDelete()
+    {
         return $this->isDelete;
     }
 
-    public function getcreated_at() {
-        return $this->created_at;
+    public function getupdated_at()
+    {
+        return $this->updated_at;
     }
 
-    public function __construct($id, $id_crypto, $id_user, $amount, $status, $type, $isDelete, $created_at)
+    public function __construct($id, $id_crypto, $id_user, $amount, $status, $type, $isDelete, $created_at, $updated_at)
     {
         $this->id = $id;
         $this->id_crypto = $id_crypto;
@@ -52,5 +61,6 @@ class Orders
         $this->type = $type;
         $this->isDelete = $isDelete;
         $this->created_at = $created_at;
+        $this->updated_at = $updated_at;
     }
 }

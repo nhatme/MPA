@@ -9,10 +9,13 @@ if (isset($id)) {
     $infoCoin = $classCoin->getDetailCoin($id);
     if (($infoCoin) != false) {
         $order = new openOrder();
-        var_dump($_POST["inputcrypto"]);
-        
-        $order->insertToOrder($id, $amount);
-        var_dump($id);
+
+        if (isset($_POST["inputcrypto"]) && $_POST["inputcrypto"]) {
+            var_dump($_POST["inputcrypto"]);
+        }
+
+        // $order->insertToOrder($id, $amount);
+        // var_dump($id);
 
         include_once 'view/header.php';
         include_once 'view/currency.php';
