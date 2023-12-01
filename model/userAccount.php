@@ -63,9 +63,11 @@ class UserAccount
 
                 if (($resultUsername != false) && ($resultPassword != false)) {
 
+                    $_SESSION["id"] = $result["id"];
                     $_SESSION["username"] = $databody->username;
                     $_SESSION["password"] = $password_hashmd5;
                     $_SESSION["role_user"] = $result["role_user"];
+                    $_SESSION["avatar"] = $result["avatar"];
 
                     echo json_encode(["status" => true, "message" => "Login is sucessfully", "result" => "", "redirect" => "Homepage"], JSON_PRETTY_PRINT);
                     exit;
@@ -84,6 +86,7 @@ class UserAccount
 
     public function reqlogout()
     {
+        unset($_SESSION["id"]);
         unset($_SESSION["username"]);
         unset($_SESSION["password"]);
         unset($_SESSION["role_user"]);
@@ -145,5 +148,116 @@ class UserAccount
             $user_details[$k] = $user_detail;
         }
         return $user_details;
+    }
+
+
+
+    public function editAdminProfile($file = null, $username = "", $currentPassword = "", $newPassword = "")
+    {
+        $u_img = "";
+        $u_username = "";
+        $u_pass = "";
+
+
+
+        $queryUpdate = "";
+        $message = "";
+        $allowed = array("jpg", "jpeg", "png", "pdf");
+        if (isset($file) && $file['error'] == 0) {
+            $fileName = $file["name"];
+            $fileTmpName = $file["tmp_name"];
+            $fileSize = $file["size"];
+            $fileError = $file["error"];
+            $fileType = $file["type"];
+
+            $fileExt = explode(".", $fileName);
+            $fileActualExt = strtolower(end($fileExt));
+            if (in_array($fileActualExt, $allowed)) {
+                if ($fileError === 0) {
+                    if ($fileSize < 1000000) {
+                        $fileNameNew = uniqid("", true) . "." . $fileActualExt;
+                        if (!file_exists("./view/src/img/uploads/")) {
+                            mkdir("./view/src/img/uploads/");
+                        }
+                        $fileDestination = "./view/src/img/uploads/" . $fileNameNew;
+                        move_uploaded_file($fileTmpName, $fileDestination);
+                        $queryUpdate .= "avatar = '" . $fileNameNew . "',";
+                        $u_img = $fileNameNew;
+                    } else {
+                        $message = "your file is too big!";
+                    }
+                } else {
+                    $message =  "there was an error uploading your file!";
+                }
+            } else {
+                $message = "You cannot upload files of this type!";
+            }
+        }
+
+        if (!empty($message)) {
+            return $message;
+        }
+
+        $idUser = $_SESSION["id"];
+        if ($username != "") {
+            $queryUpdate .= "username = '" . $username . "',";
+            $u_username = $username;
+        }
+        // pass
+        if ($currentPassword != "" && $newPassword != "") {
+            if (md5($currentPassword) != $_SESSION["password"]) {
+                return "Password does not match";
+            } else {
+                $password_hashmd5 = md5($newPassword);
+                $u_pass = $password_hashmd5;
+                $queryUpdate .= "password_user = '" . $password_hashmd5 . "',";
+            }
+        }
+
+        // update user
+        $queryUpdate = rtrim($queryUpdate, ",");
+        $conn = connectDB();
+        $sql = "UPDATE users SET
+                    $queryUpdate
+                    WHERE (id = '$idUser');";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        if ($stmt == false) {
+            return "Error: ";
+        } else {
+            if(!empty($u_img)) $_SESSION["avatar"] = $u_img;
+            if(!empty($u_username)) $_SESSION["username"] = $u_username;
+            if(!empty($u_pass)) $_SESSION["password"] = $$u_pass;
+            
+            return "Success";
+        }
+
+        // if (md5($currentPassword) != $_SESSION["password"]) {
+        //     return "Password does not match";
+        // } else {
+
+
+
+        //     $conn = connectDB();
+        //     $sql = "UPDATE users SET
+        //             username = '$username',
+        //             password_user = '$password_hashmd5',
+        //             avatar = '$fileNameNew'
+        //             WHERE (id = '$idUser');";
+
+        //     $stmt = $conn->prepare($sql);
+        //     $stmt->execute();
+
+        //     if ($stmt == false) {
+        //         return "Error: ";
+        //     } else {
+        //         $_SESSION[""];
+        //         $_SESSION["username"] = $username;
+        //         $_SESSION["password"] = $password_hashmd5;
+        //         return "Success";
+        //     }
+        // }
     }
 }

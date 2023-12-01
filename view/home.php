@@ -350,7 +350,7 @@
                                                         <td class="ctn__list__td">
                                                             <div>
                                                                 <div class="ctn__list__td__info">
-                                                                    <img style="border-radius: 50px;" src="<?= $value->getLogo(); ?>" alt="">
+                                                                    <img style="border-radius: 50px;" src="" alt="">
                                                                     <span class="fs-14px-fw-600 no_wrap"><?= $value->getName(); ?></span>
                                                                     <span class="fs-14px-fw-600 gray-2nd-color"><?= $value->getSymbol(); ?></span>
                                                                 </div>

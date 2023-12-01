@@ -18,10 +18,67 @@
     border-right: 1px solid var(--color-gray-200);
 }
 
-.activity-detail {
-
-}
+.activity-detail {}
 
 .activity-detail-each {
     padding: 0 16px 16px 16px;
+}
+
+/* modal edit admin  */
+
+.styleModalAdmin {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.modal_edit_admin_main {
+    background-color: white;
+    overflow-y: scroll;
+    visibility: hidden;
+    opacity: 0;
+    animation: animeOpenUp .45s;
+}
+
+@keyframes animeOpenUp {
+    from {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+
+.modal_edit_admin_main.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.x-close {
+    padding: 8px;
+}
+
+.backdrop_modal_admin {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+/* end modal edit admin  */
+
+.input_edit_profile_admin {
+    border: 1px solid var(--color-gray-300);
+    height: 32px;
+    border-radius: 6px;
 }

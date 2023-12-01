@@ -108,7 +108,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                         if ($_SESSION["role_user"] == 0) {
                         ?>
                             <a href="?mod=page&act=admin">
-                                <img src="./view/src/img/avatar/profile.png" alt="" width="28px">
+                                <img src="./view/src/img/avatar/" alt="" width="28px">
                             </a>
                             <ul class="drop_profile d_none">
                                 <li onclick="window.location='?mod=page&act=admin' " class="pointer fs-12px-fw-600 no_wrap">Admin Settings</li>
@@ -118,7 +118,13 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                         } else if ($_SESSION["role_user"] == 1) {
                         ?>
                             <a href="?mod=page&act=profile">
-                                <img src="./view/src/img/avatar/profile.png" alt="" width="28px">
+                                <img src="./view/src/img/uploads/<?php
+                                                                    if (isset($_SESSION["avatar"]) && $_SESSION["avatar"]) {
+                                                                        echo $_SESSION["avatar"];
+                                                                    } else {
+                                                                        echo "profile.png";
+                                                                    }
+                                                                    ?>" alt="" width="28px">
                             </a>
                             <ul class="drop_profile d_none">
                                 <li onclick="window.location='?mod=page&act=profile' " class="pointer fs-12px-fw-600">Settings</li>
@@ -208,8 +214,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 
                             </div>
                         </div>
-
-
 
                         <!-- modal login / signin  -->
 

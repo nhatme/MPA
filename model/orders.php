@@ -9,7 +9,6 @@ class Orders
     private $type;
     private $isDelete;
     private $created_at;
-    private $updated_at;
 
     public function getId()
     {
@@ -46,12 +45,12 @@ class Orders
         return $this->isDelete;
     }
 
-    public function getupdated_at()
+    public function getcreated_at()
     {
-        return $this->updated_at;
+        return $this->created_at;
     }
 
-    public function __construct($id, $id_crypto, $id_user, $amount, $status, $type, $isDelete, $created_at, $updated_at)
+    public function __construct($id, $id_crypto, $id_user, $amount, $status, $type, $isDelete, $created_at)
     {
         $this->id = $id;
         $this->id_crypto = $id_crypto;
@@ -61,6 +60,6 @@ class Orders
         $this->type = $type;
         $this->isDelete = $isDelete;
         $this->created_at = $created_at;
-        $this->updated_at = $updated_at;
     }
 }
+

@@ -277,3 +277,49 @@ $("#inputUSD").on('input', function () {
 })
 
 
+//////////////////////////// modal edit profile admin /////////////////////
+
+const btnAdminEdit = document.querySelector('.edit_admin_btn');
+const modalAdmin = document.querySelector('.modal_admin');
+const closeModalAdmin = document.querySelector('.closeModalAdmin');
+const backdropModalAdmin = document.querySelector('.backdrop_modal_admin');
+
+btnAdminEdit.onclick = () => {
+    modalAdmin.classList.add('active');
+    backdropModalAdmin.style = "display: flex";
+    if (closeModalAdmin) {
+        closeModalAdmin.onclick = () => {
+            modalAdmin.classList.remove('active');
+            backdropModalAdmin.style = "display: none";
+        }
+    }
+}
+
+
+
+///////////////////////////// modal edit admin handling //////////////////
+// $("#form").submit(function (e) {
+//     e.preventDefault()
+//     // console.log($(this));
+//     const formData = new FormData($("#form")[0])
+//     console.log(formData)
+//     $.ajax({
+//         type: 'POST',
+//         url: '/your-server-endpoint', // Replace with your actual server endpoint
+//         data: (formData),
+//         cache: false,
+//         contentType: false,
+//         processData: false,
+
+//         success: function (response) {
+//             // Handle the successful response from the server
+//             console.log(response);
+//         },
+//         error: function (error) {
+//             // Handle errors
+//             console.error('Error:', error);
+//         }
+//     });
+// })
+
+

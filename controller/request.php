@@ -15,5 +15,9 @@ if (isset($act)) {
             $classUser = new UserAccount();
             $classUser->signup();
             break;
+        case 'editAdmin':
+            $classUser = new UserAccount();
+            $classUser->editAdminProfile();
+            break;
     }
 }

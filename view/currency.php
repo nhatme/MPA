@@ -14,7 +14,7 @@
                     <div class="coin_stats_header p_24px">
                         <div class="csh__top grid">
 
-                            <img src="<?= $getIdCoin["logo"] ?>" width="24px" height="24px" alt="img_coin">
+                            <img src="" width="24px" height="24px" alt="img_coin">
                             <div class="">
                                 <span class="m_right_8px fs-18px-fw-700"><?= $getIdCoin["name_product"] ?></span>
                                 <span class="fs-12px-fw-500 second-text-color"><?= $getIdCoin["symbol"] ?></span>

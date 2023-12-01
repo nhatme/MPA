@@ -3,21 +3,25 @@
     <div class="navbar w_15pc p_24px">
         <div class="navbar-right">
             <div class="logo mb_48px">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/1200px-Ethereum-icon-purple.svg.png" alt="" width="32px">
+                <p class="fs-22px-fw-700">Admin Settings</p>
             </div>
             <div class="navigation flex f_column">
                 <div class="flex f_column g_32px">
-                    <div class="nav-home flex align_center g_24px">
+                    <div class="nav-home flex align_center g_24px p_12px_24px radius-8px up_priceBg">
                         <iconify-icon class="fs_24px" icon="tabler:home-2"></iconify-icon>
-                        <span class="fs-14px-fw-600">Home</span>
+                        <a href="#" class="fs-14px-fw-600 ">Home</a>
                     </div>
                     <div class="nav-assets flex align_center g_24px">
-                        <iconify-icon class="fs_24px" icon="tabler:asset"></iconify-icon>
-                        <span class="fs-14px-fw-600">Assets</span>
+                        <iconify-icon class="fs_24px" icon="carbon:currency"></iconify-icon>
+                        <a href="#" class="fs-14px-fw-600">Currency</a>
                     </div>
                     <div class="nav-chart flex align_center g_24px">
-                        <iconify-icon class="fs_24px" icon="uil:chart"></iconify-icon>
-                        <span class="fs-14px-fw-600">Chart</span>
+                        <iconify-icon class="fs_24px" icon="carbon:category"></iconify-icon>
+                        <a href="#" class="fs-14px-fw-600">Category</a>
+                    </div>
+                    <div class="nav-chart flex align_center g_24px">
+                        <iconify-icon class="fs_24px" icon="fluent-mdl2:account-management"></iconify-icon>
+                        <a href="#" class="fs-14px-fw-600">User Manager</a>
                     </div>
                 </div>
             </div>
@@ -88,7 +92,7 @@
 
 
             <div class="border_main radius-8px">
-                <div class="activity-detail  p_16px " style="display: grid; grid-template-columns: 35% 15% 15% 15% 20%;">
+                <div class="activity-detail  p_16px " style="display: grid; grid-template-columns: 30% 15% 15% 10% 15% 15%;">
                     <div>
                         <div class="border-bottom pb_16px fs-14px-fw-700">Transactions</div>
                         <div class="flex align_center g_8px pt_16px">
@@ -105,6 +109,10 @@
                         <div class="pt_16px">$10.00</div>
                     </div>
                     <div>
+                        <div class="border-bottom pb_16px fs-14px-fw-700">Type</div>
+                        <div class="pt_16px">Buy</div>
+                    </div>
+                    <div>
                         <div class="border-bottom pb_16px fs-14px-fw-700">Status</div>
                         <div class="pt_16px">Pending</div>
                     </div>
@@ -114,18 +122,21 @@
                     </div>
                 </div>
 
-                <div class="activity-detail-each" style="display: grid; grid-template-columns: 35% 15% 15% 15% 20%;">
+                <div class="activity-detail  p_16px " style="display: grid; grid-template-columns: 30% 15% 15% 10% 15% 15%;">
                     <div>
                         <div class="flex align_center g_8px pt_16px">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png" alt="" width="32px">
-                            <div class="fs-14px-fw-600">Bitcoin Purchased</div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/1200px-Ethereum-icon-purple.svg.png" alt="" width="32px">
+                            <div class="fs-14px-fw-600">Ethereum Purchased</div>
                         </div>
                     </div>
                     <div>
-                        <div class="pt_16px">0.0154 BTC</div>
+                        <div class="pt_16px">0.0154 ETH</div>
                     </div>
                     <div>
                         <div class="pt_16px">$10.00</div>
+                    </div>
+                    <div>
+                        <div class="pt_16px">Buy</div>
                     </div>
                     <div>
                         <div class="pt_16px">Pending</div>
@@ -135,18 +146,21 @@
                     </div>
                 </div>
 
-                <div class="activity-detail-each" style="display: grid; grid-template-columns: 35% 15% 15% 15% 20%;">
+                <div class="activity-detail  p_16px " style="display: grid; grid-template-columns: 30% 15% 15% 10% 15% 15%;">
                     <div>
                         <div class="flex align_center g_8px pt_16px">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/1200px-Ethereum-icon-purple.svg.png" alt="" width="32px">
-                            <div class="fs-14px-fw-600">Bitcoin Purchased</div>
+                            <div class="fs-14px-fw-600">Ethereum Purchased</div>
                         </div>
                     </div>
                     <div>
-                        <div class="pt_16px">0.0154 BTC</div>
+                        <div class="pt_16px">0.0154 ETH</div>
                     </div>
                     <div>
                         <div class="pt_16px">$10.00</div>
+                    </div>
+                    <div>
+                        <div class="pt_16px">Buy</div>
                     </div>
                     <div>
                         <div class="pt_16px">Pending</div>
@@ -155,18 +169,54 @@
                         <div class="pt_16px">February 21, 2023</div>
                     </div>
                 </div>
+
+
             </div>
         </div>
     </div>
     <div class="line_straight"></div>
-    <div class="profile w_15pc mt_48px">
-        <div>
-            <p class="fs-18px-fw-600 center">User Profile</p>
-            <img src="" alt="">
-            <p></p>
-            <a href="">Edit Profile</a>
+    <div class="profile w_15pc mt_48px flex f_column g_32px">
+        <div class="flex f_column flex_center g_24px">
+            <p class="fs-18px-fw-600 center">Overview</p>
+            <div style="display: flex; justify-content: center;">
+                <img src="./view/src/img/avatar/admin.png" alt="" width="150px" height="150px" style="box-shadow: 0 0 0 10px rgba(0,0,0,0.3); border-radius: 50%; object-fit: cover;">
+            </div>
+            <p class="flex flex_center align_center fs_24px">Admin<iconify-icon class="ml_16px" icon="material-symbols-light:star-outline"></iconify-icon></p>
+            <div class="center p_12px_24px main-color-bg radius-8px text-white pointer edit_admin_btn">Edit Profile</div>
         </div>
-        <div>
+
+        <!-- modal edit admin  -->
+        <div class="modal_edit_admin backdrop_modal_admin">
+            <div class="styleModalAdmin modal_edit_admin_main border_300 p_16px radius-8px modal_admin">
+                <div style="display: flex; justify-content: end;">
+                    <iconify-icon class="closeModalAdmin fs_24px pointer" icon="ph:x-bold"></iconify-icon>
+                </div>
+                <form enctype="multipart/form-data" action="" method="post" class="flex f_column g_16px">
+                    <div class="flex f_column g_16px">
+                        <label for="">Update avatar</label>
+                        <input id="uploadfileavatar" class="pointer" type="file" name="avatar">
+                    </div>
+                    <div class="flex f_column g_16px">
+                        <label for="">Update Username</label>
+                        <input id="usernameAdmin" class="input_edit_profile_admin" type="text" name="username">
+                    </div>
+                    <div class="flex f_column g_16px">
+                        <label for="">Current password</label>
+                        <input id="currentPasswordAdmin" class="input_edit_profile_admin" type="text" name="currentpassword">
+                    </div>
+                    <div class="flex f_column g_16px">
+                        <label for="">New Password</label>
+                        <input id="newPasswordAdmin" class="input_edit_profile_admin" type="text" name="newpassword">
+                    </div>
+                    <div class="flex">
+                        <input type="submit" name="submit" value="Update" id="updateAdminProfile" class="p_12px_24px main-color-bg radius-8px text-white pointer">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="flex f_column g_16px">
             <p>Account</p>
             <div>
                 <span>Joined</span>
@@ -177,30 +227,7 @@
                 <span>$1,328,240,00</span>
             </div>
         </div>
-        <div>
-            <p>Assets</p>
-            <div>
-                <span>Bitcoin</span>
-                <span>23.5 BTC</span>
-            </div>
-            <div>
-                <span>Bitcoin</span>
-                <span>23.5 BTC</span>
-            </div>
-            <div>
-                <span>Bitcoin</span>
-                <span>23.5 BTC</span>
-            </div>
-            <div>
-                <span>Bitcoin</span>
-                <span>23.5 BTC</span>
-            </div>
-            <div>
-                <span>Bitcoin</span>
-                <span>23.5 BTC</span>
-            </div>
 
-        </div>
     </div>
 
 </div>

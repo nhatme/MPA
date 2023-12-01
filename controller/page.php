@@ -50,6 +50,13 @@ if (isset($act)) {
             include_once 'view/footer.php';
             break;
         case 'admin':
+            include_once "./model/userAccount.php";
+            $user = new UserAccount();
+            if (isset($_POST["submit"]) && $_POST["submit"]) {
+                $value = $user->editAdminProfile($_FILES["avatar"], $_POST["username"], $_POST["currentpassword"], $_POST["newpassword"]);
+                echo $value;
+                var_dump($_SESSION["avatar"]);
+            }
             include_once 'view/header.php';
             include_once 'view/admin.php';
             include_once 'view/footer.php';
