@@ -54,9 +54,13 @@ if (isset($act)) {
             $user = new UserAccount();
             if (isset($_POST["submit"]) && $_POST["submit"]) {
                 $value = $user->editAdminProfile($_FILES["avatar"], $_POST["username"], $_POST["currentpassword"], $_POST["newpassword"]);
-                echo $value;
-                var_dump($_SESSION["avatar"]);
+                // echo $value;
+                // var_dump($_SESSION["avatar"]);
+                // var_dump($_SESSION["username"]);
+                // var_dump($_SESSION["password"]);
             }
+
+            // $user->reqlogout();
             include_once 'view/header.php';
             include_once 'view/admin.php';
             include_once 'view/footer.php';

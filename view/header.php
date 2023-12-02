@@ -108,7 +108,13 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                         if ($_SESSION["role_user"] == 0) {
                         ?>
                             <a href="?mod=page&act=admin">
-                                <img src="./view/src/img/avatar/" alt="" width="28px">
+                                <img src="./view/src/img/uploads/<?php
+                                                                    if (isset($_SESSION["avatar"]) && $_SESSION["avatar"]) {
+                                                                        echo $_SESSION["avatar"];
+                                                                    } else {
+                                                                        echo "default.png";
+                                                                    }
+                                                                    ?>" alt="" width="28px">
                             </a>
                             <ul class="drop_profile d_none">
                                 <li onclick="window.location='?mod=page&act=admin' " class="pointer fs-12px-fw-600 no_wrap">Admin Settings</li>
@@ -122,7 +128,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                                                     if (isset($_SESSION["avatar"]) && $_SESSION["avatar"]) {
                                                                         echo $_SESSION["avatar"];
                                                                     } else {
-                                                                        echo "profile.png";
+                                                                        echo "default.png";
                                                                     }
                                                                     ?>" alt="" width="28px">
                             </a>
@@ -168,7 +174,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                             <p class="fs-12px-fw-700 mb_8px">Password</p>
                                             <input id="login_password" class="fs-14px-fw-500 border_300 p_20px radius-8px outline_none" name="password" spellcheck="false" type="password" placeholder="Enter your password...">
                                         </div>
-                                        <div id="loginBtn" class="fs-14px-fw-600 p_16px_24px main-color-bg text-white center radius-8px mb_24px" onmousedown="return false">Log in</div>
+                                        <div id="loginBtn" class="fs-14px-fw-600 p_16px_24px main-color-bg text-white center radius-8px mb_24px pointer" onmousedown="return false">Log in</div>
                                     </div>
 
                                     <!-- signup  -->
@@ -191,7 +197,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                             <input id="signup_retypepass" class="signup_field fs-14px-fw-500 border_300 p_20px radius-8px outline_none" spellcheck="false" type="password" placeholder="Re-type your password...">
                                             <span id="error-text" class="mt_8px" style="color: red;"></span>
                                         </div>
-                                        <div id="signupbtn" class="fs-14px-fw-600 p_16px_24px main-color-bg text-white radius-8px center mb_24px" onmousedown="return false">Create an account</div>
+                                        <div id="signupbtn" class="fs-14px-fw-600 p_16px_24px main-color-bg text-white radius-8px center mb_24px pointer" onmousedown="return false">Create an account</div>
                                     </div>
 
                                 </div>

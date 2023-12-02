@@ -3,7 +3,7 @@
 /* start header  */
 .drop_profile {
     position: absolute;
-    top: 30px;
+    top: 20px;
     right: 0;
     background-color: white;
     box-shadow: var(--box-shadow2);
@@ -362,11 +362,11 @@
 }
 
 .toast--success {
-    border-color: #47d864;
+    border-color: #3861FB;
 }
 
 .toast--success .toast__icon {
-    color: #47d864;
+    color: #3861FB;
 }
 
 .toast--info {

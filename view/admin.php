@@ -179,9 +179,9 @@
         <div class="flex f_column flex_center g_24px">
             <p class="fs-18px-fw-600 center">Overview</p>
             <div style="display: flex; justify-content: center;">
-                <img src="./view/src/img/avatar/admin.png" alt="" width="150px" height="150px" style="box-shadow: 0 0 0 10px rgba(0,0,0,0.3); border-radius: 50%; object-fit: cover;">
+                <img src="./view/src/img/uploads/<?php if(isset($_SESSION["avatar"])) echo ($_SESSION["avatar"])?>" alt="" width="150px" height="150px" style="box-shadow: 0 0 0 10px rgba(0,0,0,0.3); border-radius: 50%; object-fit: cover;">
             </div>
-            <p class="flex flex_center align_center fs_24px">Admin<iconify-icon class="ml_16px" icon="material-symbols-light:star-outline"></iconify-icon></p>
+            <p class="flex flex_center align_center fs_24px"><?php if(isset($_SESSION["username"])) echo ($_SESSION["username"])?><iconify-icon class="ml_16px" icon="material-symbols-light:star-outline"></iconify-icon></p>
             <div class="center p_12px_24px main-color-bg radius-8px text-white pointer edit_admin_btn">Edit Profile</div>
         </div>
 

@@ -159,7 +159,6 @@ class UserAccount
         $u_pass = "";
 
 
-
         $queryUpdate = "";
         $message = "";
         $allowed = array("jpg", "jpeg", "png", "pdf");
@@ -203,6 +202,7 @@ class UserAccount
             $queryUpdate .= "username = '" . $username . "',";
             $u_username = $username;
         }
+
         // pass
         if ($currentPassword != "" && $newPassword != "") {
             if (md5($currentPassword) != $_SESSION["password"]) {
@@ -229,7 +229,7 @@ class UserAccount
         } else {
             if(!empty($u_img)) $_SESSION["avatar"] = $u_img;
             if(!empty($u_username)) $_SESSION["username"] = $u_username;
-            if(!empty($u_pass)) $_SESSION["password"] = $$u_pass;
+            if(!empty($u_pass)) $_SESSION["password"] = $u_pass;
             
             return "Success";
         }
