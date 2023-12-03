@@ -44,41 +44,42 @@ class UserAccount
         $databody = json_decode($entityBody);
 
         if (isset($databody)) {
-            if (isset(($databody->username))) {
+            if (isset($databody->username)) {
 
-                $password_hashmd5 = md5(strtolower($databody->password));
+                $password = strtolower($databody->password);
 
-                $result = self::querylogin($databody->username, $password_hashmd5);
                 $resultUsername = self::queryUsername($databody->username);
-                $resultPassword = self::queryPassword($password_hashmd5);
+                $resultPassword = self::queryPassword($password);
 
                 // echo " this is result: <br>";
                 // echo json_encode($result, JSON_PRETTY_PRINT);
                 // echo "<br>";
 
-                if (empty($databody->username) || empty($password_hashmd5)) {
+                if (empty($databody->username) || empty($password)) {
                     echo json_encode(["status" => false, "message" => "Do not empty your fields", "result" => "", "redirect" => ""], JSON_PRETTY_PRINT);
                     exit;
                 }
 
                 if (($resultUsername != false) && ($resultPassword != false)) {
+                    $result = self::querylogin($databody->username, $password);
 
                     $_SESSION["id"] = $result["id"];
                     $_SESSION["username"] = $databody->username;
-                    $_SESSION["password"] = $password_hashmd5;
+                    $_SESSION["password"] = $password;
                     $_SESSION["role_user"] = $result["role_user"];
                     $_SESSION["avatar"] = $result["avatar"];
 
                     echo json_encode(["status" => true, "message" => "Login is sucessfully", "result" => "", "redirect" => "Homepage"], JSON_PRETTY_PRINT);
                     exit;
+                } else if (($resultUsername == false) && ($resultPassword != false)) {
+                    echo json_encode(["status" => false, "message" => "Username or Password is incorrect !", "detailLogin" => "username k chinh xac (Tk khong ton tai)"], JSON_PRETTY_PRINT);
+                    exit;
+                } else if (($resultUsername != false) && ($resultPassword == false)) {
+                    echo json_encode(["status" => false, "message" => "Username or Password is incorrect !", "detailLogin" => "password k chinh xac"], JSON_PRETTY_PRINT);
+                    exit;
                 } else {
-                    if ($resultUsername == false) {
-                        echo json_encode(["status" => false, "message" => "Username or Password is incorrect !", "detailLogin" => "username k chinh xac (Tk khong ton tai)"], JSON_PRETTY_PRINT);
-                        exit;
-                    } else if ($resultPassword == false) {
-                        echo json_encode(["status" => false, "message" => "Username or Password is incorrect !", "detailLogin" => "password k chinh xac"], JSON_PRETTY_PRINT);
-                        exit;
-                    }
+                    echo json_encode(["status" => false, "message" => "Username or Password is incorrect !", "detailLogin" => "username va password k chinh xac"], JSON_PRETTY_PRINT);
+                    exit;
                 }
             }
         }
@@ -105,7 +106,7 @@ class UserAccount
             if (isset(($databody->username))) {
 
                 $id = uniqid();
-                $password_hashmd5 = md5($databody->password);
+                $password = strtolower($databody->password);
 
                 $getUser = $conn->prepare("SELECT * FROM users where users.username = '$databody->username' ");
                 $getUser->execute();
@@ -117,8 +118,8 @@ class UserAccount
                     exit;
                 } else {
 
-                    $sql = "INSERT INTO users ( id, email, username, password_user, avatar, role_user, created_at)
-                        VALUES ('$id', '', '$databody->username', '$password_hashmd5', '', 1, now())";
+                    $sql = "INSERT INTO users ( id, email, username, password_user, avatar, bio, role_user, created_at)
+                        VALUES ('$id', '$databody->email', '$databody->username', '$password', '', 'This is your bio', 1, now())";
                     $conn->exec($sql);
 
                     echo json_encode(["status" => true, "message" => "sign up successful"], JSON_PRETTY_PRINT);
@@ -134,33 +135,30 @@ class UserAccount
 
 
 
-    public function getUsers()
+    public function getUsers($id)
     {
         $conn = connectDB();
-        $stmt = $conn->prepare("SELECT * FROM mpa_db.users;");
+        $stmt = $conn->prepare("SELECT * FROM users where id = '$id';");
         $stmt->execute();
-        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        $user_details = [];
-
-        foreach ($stmt->fetchAll() as $k => $v) {
-            $user_detail = new User(...$v);
-            $user_details[$k] = $user_detail;
+        if ($result != false) {
+            $user_detail = new User(...$result);
+            return $user_detail;
         }
-        return $user_details;
     }
 
 
 
-    public function editAdminProfile($file = null, $username = "", $currentPassword = "", $newPassword = "")
+    public function userEditProfile($file = null, $username = "", $bio = "", $currentPassword = "", $newPassword = "")
     {
         $u_img = "";
         $u_username = "";
         $u_pass = "";
 
-
         $queryUpdate = "";
         $message = "";
+        
         $allowed = array("jpg", "jpeg", "png", "pdf");
         if (isset($file) && $file['error'] == 0) {
             $fileName = $file["name"];
@@ -198,6 +196,7 @@ class UserAccount
         }
 
         $idUser = $_SESSION["id"];
+
         if ($username != "") {
             $queryUpdate .= "username = '" . $username . "',";
             $u_username = $username;
@@ -205,12 +204,12 @@ class UserAccount
 
         // pass
         if ($currentPassword != "" && $newPassword != "") {
-            if (md5($currentPassword) != $_SESSION["password"]) {
+            if (strtolower($currentPassword) != $_SESSION["password"]) {
                 return "Password does not match";
             } else {
-                $password_hashmd5 = md5($newPassword);
-                $u_pass = $password_hashmd5;
-                $queryUpdate .= "password_user = '" . $password_hashmd5 . "',";
+                $password = strtolower($newPassword);
+                $u_pass = $password;
+                $queryUpdate .= "password_user = '" . $password . "',";
             }
         }
 
@@ -227,37 +226,11 @@ class UserAccount
         if ($stmt == false) {
             return "Error: ";
         } else {
-            if(!empty($u_img)) $_SESSION["avatar"] = $u_img;
-            if(!empty($u_username)) $_SESSION["username"] = $u_username;
-            if(!empty($u_pass)) $_SESSION["password"] = $u_pass;
-            
+            if (!empty($u_img)) $_SESSION["avatar"] = $u_img;
+            if (!empty($u_username)) $_SESSION["username"] = $u_username;
+            if (!empty($u_pass)) $_SESSION["password"] = $u_pass;
+
             return "Success";
         }
-
-        // if (md5($currentPassword) != $_SESSION["password"]) {
-        //     return "Password does not match";
-        // } else {
-
-
-
-        //     $conn = connectDB();
-        //     $sql = "UPDATE users SET
-        //             username = '$username',
-        //             password_user = '$password_hashmd5',
-        //             avatar = '$fileNameNew'
-        //             WHERE (id = '$idUser');";
-
-        //     $stmt = $conn->prepare($sql);
-        //     $stmt->execute();
-
-        //     if ($stmt == false) {
-        //         return "Error: ";
-        //     } else {
-        //         $_SESSION[""];
-        //         $_SESSION["username"] = $username;
-        //         $_SESSION["password"] = $password_hashmd5;
-        //         return "Success";
-        //     }
-        // }
     }
 }

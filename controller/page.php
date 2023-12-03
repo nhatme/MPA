@@ -1,11 +1,9 @@
 <?php
-include_once "./model/cryptoCurrency.php";
+include_once "./model/coin.php";
 include_once "./model/openOrders.php";
+include_once "./model/userAccount.php";
 
-
-$classUser = new UserAccount();
-$classUser->getUsers();
-
+$user = new UserAccount();
 extract($_REQUEST);
 
 if (isset($act)) {
@@ -22,6 +20,9 @@ if (isset($act)) {
             break;
         case 'profile':
             $viewTitle = truncateText("Profile User");
+            if (isset($_POST["submitEditProfile"]) && $_POST["submitEditProfile"]) {
+                $value = $user->userEditProfile($_FILES["avatar"], $_POST["username"], $_POST["textareaBio"], $_POST["currentpassword"], $_POST["newpassword"]);
+            }
             include_once 'view/header.php';
             include_once 'view/user.php';
             include_once 'view/footer.php';
@@ -50,17 +51,13 @@ if (isset($act)) {
             include_once 'view/footer.php';
             break;
         case 'admin':
-            include_once "./model/userAccount.php";
-            $user = new UserAccount();
             if (isset($_POST["submit"]) && $_POST["submit"]) {
-                $value = $user->editAdminProfile($_FILES["avatar"], $_POST["username"], $_POST["currentpassword"], $_POST["newpassword"]);
+                $value = $user->userEditProfile($_FILES["avatar"], $_POST["username"],  $_POST["textareaBio"], $_POST["currentpassword"], $_POST["newpassword"]);
                 // echo $value;
                 // var_dump($_SESSION["avatar"]);
                 // var_dump($_SESSION["username"]);
                 // var_dump($_SESSION["password"]);
             }
-
-            // $user->reqlogout();
             include_once 'view/header.php';
             include_once 'view/admin.php';
             include_once 'view/footer.php';

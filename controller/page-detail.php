@@ -1,5 +1,5 @@
 <?php
-include_once "./model/cryptoCurrency.php";
+include_once "./model/coin.php";
 include_once "./model/openOrders.php";
 
 extract($_REQUEST);

@@ -168,11 +168,11 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                     <div class="body-form body-form-login">
                                         <div class="flex f_column mb_20px">
                                             <p class="fs-12px-fw-700 mb_8px">Username</p>
-                                            <input id="login_username" class="fs-14px-fw-500 border_300 p_20px radius-8px outline_none" name="username" spellcheck="false" type="text" placeholder="Enter your username...">
+                                            <input id="login_username" class="fs-14px-fw-500 border_300 p_20px radius-8px outline_main" name="username" spellcheck="false" type="text" placeholder="Enter your username...">
                                         </div>
                                         <div class="flex f_column mb_20px">
                                             <p class="fs-12px-fw-700 mb_8px">Password</p>
-                                            <input id="login_password" class="fs-14px-fw-500 border_300 p_20px radius-8px outline_none" name="password" spellcheck="false" type="password" placeholder="Enter your password...">
+                                            <input id="login_password" class="fs-14px-fw-500 border_300 p_20px radius-8px outline_main" name="password" spellcheck="false" type="password" placeholder="Enter your password...">
                                         </div>
                                         <div id="loginBtn" class="fs-14px-fw-600 p_16px_24px main-color-bg text-white center radius-8px mb_24px pointer" onmousedown="return false">Log in</div>
                                     </div>
@@ -181,20 +181,20 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                     <div class="body-form body-form-signup">
                                         <div class="flex f_column mb_20px">
                                             <p class="fs-12px-fw-700 mb_8px">Email Address</p>
-                                            <input id="signup_email" class="signup_field fs-14px-fw-500 border_300 p_20px radius-8px outline_none" spellcheck="false" type="text" placeholder="Enter your email address...">
+                                            <input id="signup_email" class="signup_field fs-14px-fw-500 border_300 p_20px radius-8px outline_main" spellcheck="false" type="text" placeholder="Enter your email address...">
                                             <span class="fs-11px-fw-400 mt_8px second-text-color">Optional</span>
                                         </div>
                                         <div class="flex f_column mb_20px">
                                             <p class="fs-12px-fw-700 mb_8px">Username</p>
-                                            <input id="signup_username" class="signup_field fs-14px-fw-500 border_300 p_20px radius-8px outline_none" spellcheck="false" type="text" placeholder="Enter your username...">
+                                            <input id="signup_username" class="signup_field fs-14px-fw-500 border_300 p_20px radius-8px outline_main" spellcheck="false" type="text" placeholder="Enter your username...">
                                         </div>
                                         <div class="flex f_column mb_20px">
                                             <p class="fs-12px-fw-700 mb_8px">Password</p>
-                                            <input id="signup_password" class="signup_field fs-14px-fw-500 border_300 p_20px radius-8px outline_none" spellcheck="false" type="password" placeholder="Enter your password...">
+                                            <input id="signup_password" class="signup_field fs-14px-fw-500 border_300 p_20px radius-8px outline_main" spellcheck="false" type="password" placeholder="Enter your password...">
                                         </div>
                                         <div class="flex f_column mb_20px">
                                             <p class="fs-12px-fw-700 mb_8px">Re-type Password</p>
-                                            <input id="signup_retypepass" class="signup_field fs-14px-fw-500 border_300 p_20px radius-8px outline_none" spellcheck="false" type="password" placeholder="Re-type your password...">
+                                            <input id="signup_retypepass" class="signup_field fs-14px-fw-500 border_300 p_20px radius-8px outline_main" spellcheck="false" type="password" placeholder="Re-type your password...">
                                             <span id="error-text" class="mt_8px" style="color: red;"></span>
                                         </div>
                                         <div id="signupbtn" class="fs-14px-fw-600 p_16px_24px main-color-bg text-white radius-8px center mb_24px pointer" onmousedown="return false">Create an account</div>

@@ -1,3 +1,11 @@
+<?php
+$user = new UserAccount();
+$result = $user->getUsers($_SESSION["id"]);
+
+var_dump($_SESSION["id"]);
+var_dump($_SESSION["avatar"]);
+?>
+
 <div class="container">
     <div class="user_main pt_32px border-bottom">
         <div class="flex">
@@ -24,49 +32,47 @@
                         <div class="mb_16px">
                             <span class="fs-20px-fw-700">About me</span>
                         </div>
-                        <div class="mb_16px">
-                            <div class="flex mb_6px">
-                                <span class="fs-12px-fw-700">Your Avatar</span>
-                            </div>
-                            <div class="flex_sp_bt align_center">
-                                <div class="border_300 color_gray_100_bg radius_50 of_hidden" style="width: 80px; height: 80px;">
-                                    <img src="https://thecoindesk.com/wp-content/uploads/2022/09/Solana-3.jpg" width="100px" height="100px" alt="">
+                        <form enctype="multipart/form-data" method="post">
+                            <div class="mb_16px">
+                                <div class="flex mb_6px">
+                                    <span class="fs-12px-fw-700">Your Avatar</span>
                                 </div>
-                                <div>
-                                    <div class="fs-14px-fw-600 text-white main-color-bg p_12px_24px radius-8px pointer">Edit Avatar</div>
+                                <div class="flex_sp_bt align_center">
+                                    <div class="border_300 color_gray_100_bg radius_50 of_hidden" style="width: 80px; height: 80px;">
+                                        <img src="./view/src/img/uploads/<?php if (isset($_SESSION["avatar"])) echo ($_SESSION["avatar"]) ?>" width="100px" height="100px" alt="">
+                                    </div>
+                                    <div>
+                                        <input id="inputFileUser" type="file" name="avatar" placeholder="Upload" value="Edit Avatar" class="fs-14px-fw-600 p_12px_24px radius-8px pointer">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="user_main_cuustom flex f_column g_16px">
-                            <div class="flex f_column">
-                                <span class="fs-12px-fw-700 mb_8px">Display name</span>
-                                <input class="fs-14px-fw-500 border_300 p_20px radius-8px outline_none" type="text" placeholder="Choose your own nickname" value="my-nickname">
-                            </div>
-                            <div class="flex f_column">
-                                <span class="fs-12px-fw-700 mb_8px">Username</span>
-                                <input class="fs-14px-fw-500 border_300 p_20px radius-8px outline_none mb_4px" type="text" placeholder="Choose your own username" value="my-username">
-                                <span class="fs-12px-fw-700 gray-2nd-color">* Username can only be changed once per 7 days</span>
-                            </div>
+                            <div class="user_main_cuustom flex f_column g_16px mb_16px">
+                                <div class="flex f_column">
+                                    <span class="fs-12px-fw-700 mb_8px">Username</span>
+                                    <input name="username" class="fs-14px-fw-500 border_300 p_20px radius-8px outline_main mb_4px" type="text" placeholder="<?= $result->getUsername() ?>">
+                                    <span class="fs-12px-fw-700 gray-2nd-color">* Username can only be changed once per 7 days</span>
+                                </div>
 
-                            <div class="flex f_column">
-                                <span class="fs-12px-fw-700 mb_8px">Bio</span>
-                                <textarea class="fs-14px-fw-500 border_300 p_20px radius-8px outline_none mb_4px resize_none" style="height: 80px;" placeholder="A short introduction about yourself" value="my-username" spellcheck="false"></textarea>
-                            </div>
+                                <div class="flex f_column">
+                                    <span class="fs-12px-fw-700 mb_8px">Bio</span>
+                                    <textarea name="textareaBio" class="fs-14px-fw-500 border_300 p_20px radius-8px mb_4px resize_none outline_main" style="height: 80px;" placeholder="<?= $result->getbio(); ?>" spellcheck="false"></textarea>
+                                </div>
 
-                            <div class="flex f_column">
-                                <span class="fs-12px-fw-700 mb_8px">Birthday</span>
-                                <input class="fs-14px-fw-500 border_300 p_20px radius-8px outline_none" type="date" placeholder="Choose your own nickname" value="my-nickname">
+                                <div class="flex f_column">
+                                    <span class="fs-12px-fw-700 mb_8px">Current password</span>
+                                    <input name="currentpassword" class="fs-14px-fw-500 border_300 p_20px radius-8px outline_main" type="text" placeholder="Choose your own nickname">
+                                </div>
+                                <div class="flex f_column">
+                                    <span class="fs-12px-fw-700 mb_8px">New password</span>
+                                    <input name="newpassword" class="fs-14px-fw-500 border_300 p_20px radius-8px outline_main" type="text" placeholder="Choose your own nickname">
+                                </div>
                             </div>
                             <div class="flex f_column">
-                                <span class="fs-12px-fw-700 mb_8px">Website</span>
-                                <input class="fs-14px-fw-500 border_300 p_20px radius-8px outline_none" type="text" placeholder="Choose your own nickname" value="my-website">
-                            </div>
-                            <div class="flex f_column">
-                                <div class="fs-14px-fw-600 text-white main-color-bg p_12px_24px radius-8px fit_cont pointer">
+                                <button type="submit" name="submitEditProfile" class="fs-14px-fw-600 text-white border_none main-color-bg p_12px_24px radius-8px fit_cont pointer">
                                     Save
-                                </div>
+                                </button>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

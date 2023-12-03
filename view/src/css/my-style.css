@@ -137,6 +137,10 @@
     outline: none;
 }
 
+.outline_main {
+    outline-color: var(--main-color);
+}
+
 /* radius  */
 
 .radius-4px {

@@ -5,3 +5,7 @@
     max-width: 1252px;
     margin: 0 auto;
 }
+
+#inputFileUser {
+    border: 1px dashed var(--main-color);
+}

@@ -114,19 +114,10 @@ $("#signup_retypepass").on('change', function () {
 const submitBtn = $("#signupbtn")
 submitBtn.click(function (e) {
 
-    let currentDate = new Date();
-    let year = currentDate.getFullYear();
-    let month = currentDate.getMonth() + 1;
-    let day = currentDate.getDate();
-    let hours = currentDate.getHours();
-    let minutes = currentDate.getMinutes();
-    let seconds = currentDate.getSeconds();
-
     let email = $("#signup_email").val()
     let username = $("#signup_username").val()
     let password = $("#signup_password").val()
     let retypepass = $("#signup_retypepass").val()
-    let currentDateTime = `${year}-${month}-${day} -- ${hours}:${minutes}:${seconds}`
 
     e.preventDefault()
 
@@ -139,7 +130,6 @@ submitBtn.click(function (e) {
                 username: username,
                 password: password,
                 retypepass: retypepass,
-                currentdateTime: currentDateTime
             }),
             success: function (res) {
 

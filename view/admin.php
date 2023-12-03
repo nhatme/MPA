@@ -1,3 +1,7 @@
+<?php
+$result = $user->getUsers($_SESSION["id"]);
+?>
+
 <div class="container_admin flex w_100pc">
 
     <div class="navbar w_15pc p_24px">
@@ -179,37 +183,42 @@
         <div class="flex f_column flex_center g_24px">
             <p class="fs-18px-fw-600 center">Overview</p>
             <div style="display: flex; justify-content: center;">
-                <img src="./view/src/img/uploads/<?php if(isset($_SESSION["avatar"])) echo ($_SESSION["avatar"])?>" alt="" width="150px" height="150px" style="box-shadow: 0 0 0 10px rgba(0,0,0,0.3); border-radius: 50%; object-fit: cover;">
+                <img src="./view/src/img/uploads/<?php if (isset($_SESSION["avatar"])) echo ($_SESSION["avatar"]) ?>" alt="" width="150px" height="150px" style="box-shadow: 0 0 0 10px rgba(0,0,0,0.3); border-radius: 50%; object-fit: cover;">
             </div>
-            <p class="flex flex_center align_center fs_24px"><?php if(isset($_SESSION["username"])) echo ($_SESSION["username"])?><iconify-icon class="ml_16px" icon="material-symbols-light:star-outline"></iconify-icon></p>
+            <p class="flex flex_center align_center fs_24px"><?php if (isset($_SESSION["username"])) echo ($_SESSION["username"]) ?><iconify-icon class="ml_16px" icon="material-symbols-light:star-outline"></iconify-icon></p>
             <div class="center p_12px_24px main-color-bg radius-8px text-white pointer edit_admin_btn">Edit Profile</div>
         </div>
 
         <!-- modal edit admin  -->
         <div class="modal_edit_admin backdrop_modal_admin">
-            <div class="styleModalAdmin modal_edit_admin_main border_300 p_16px radius-8px modal_admin">
+            <div class="styleModalAdmin modal_edit_admin_main border_300 p_16px radius-8px modal_admin" style="width: 35%;">
                 <div style="display: flex; justify-content: end;">
                     <iconify-icon class="closeModalAdmin fs_24px pointer" icon="ph:x-bold"></iconify-icon>
                 </div>
                 <form enctype="multipart/form-data" action="" method="post" class="flex f_column g_16px">
                     <div class="flex f_column g_16px">
                         <label for="">Update avatar</label>
-                        <input id="uploadfileavatar" class="pointer" type="file" name="avatar">
+                        <input id="avatar" class="pointer p_left_16px" type="file" name="avatar">
                     </div>
                     <div class="flex f_column g_16px">
-                        <label for="">Update Username</label>
-                        <input id="usernameAdmin" class="input_edit_profile_admin" type="text" name="username">
+                        <label for="">Username</label>
+                        <input id="usernameAdmin" class="input_edit_profile_admin p_left_16px" type="text" name="username" placeholder="<?= $result->getUsername() ?>">
+                    </div>
+
+                    <div class="flex f_column g_16px">
+                        <label for="">Bio</label>
+                        <textarea id="usernameAdmin" name="textareaBio" class="input_edit_profile_admin p_left_16px" style="height: 80px; padding-top: 12px;" type="text" name="username" placeholder="<? $result->getbio(); ?>"></textarea>
                     </div>
                     <div class="flex f_column g_16px">
                         <label for="">Current password</label>
-                        <input id="currentPasswordAdmin" class="input_edit_profile_admin" type="text" name="currentpassword">
+                        <input id="currentPasswordAdmin" class="input_edit_profile_admin p_left_16px" type="text" name="currentpassword">
                     </div>
                     <div class="flex f_column g_16px">
                         <label for="">New Password</label>
-                        <input id="newPasswordAdmin" class="input_edit_profile_admin" type="text" name="newpassword">
+                        <input id="newPasswordAdmin" class="input_edit_profile_admin p_left_16px" type="text" name="newpassword">
                     </div>
                     <div class="flex">
-                        <input type="submit" name="submit" value="Update" id="updateAdminProfile" class="p_12px_24px main-color-bg radius-8px text-white pointer">
+                        <input type="submit" name="submit" value="Update" id="updateAdminProfile" class="p_12px_24px main-color-bg radius-8px text-white pointer border_none">
                     </div>
                 </form>
             </div>
@@ -217,15 +226,16 @@
 
 
         <div class="flex f_column g_16px">
-            <p>Account</p>
             <div>
-                <span>Joined</span>
-                <span>June 22, 2020</span>
+                <span class="">Joined</span>
+                <span class="fs-14px-fw-600"><?= $result->getCreatedDate(); ?>
+                </span>
             </div>
             <div>
                 <span>Assets Value</span>
                 <span>$1,328,240,00</span>
             </div>
+
         </div>
 
     </div>
