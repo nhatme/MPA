@@ -158,7 +158,7 @@ class UserAccount
 
         $queryUpdate = "";
         $message = "";
-        
+
         $allowed = array("jpg", "jpeg", "png", "pdf");
         if (isset($file) && $file['error'] == 0) {
             $fileName = $file["name"];
