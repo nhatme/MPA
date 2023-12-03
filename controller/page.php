@@ -21,7 +21,7 @@ if (isset($act)) {
         case 'profile':
             $viewTitle = truncateText("Profile User");
             if (isset($_POST["submitEditProfile"]) && $_POST["submitEditProfile"]) {
-                $value = $user->userEditProfile($_FILES["avatar"], $_POST["username"], $_POST["textareaBio"], $_POST["currentpassword"], $_POST["newpassword"]);
+                $value = $user->userEditProfile($_FILES["avatar"], $_POST["username"], $_POST["currentpassword"], $_POST["newpassword"]);
             }
             include_once 'view/header.php';
             include_once 'view/user.php';
@@ -52,7 +52,7 @@ if (isset($act)) {
             break;
         case 'admin':
             if (isset($_POST["submit"]) && $_POST["submit"]) {
-                $value = $user->userEditProfile($_FILES["avatar"], $_POST["username"],  $_POST["textareaBio"], $_POST["currentpassword"], $_POST["newpassword"]);
+                $value = $user->userEditProfile($_FILES["avatar"], $_POST["username"], $_POST["currentpassword"], $_POST["newpassword"]);
                 // echo $value;
                 // var_dump($_SESSION["avatar"]);
                 // var_dump($_SESSION["username"]);

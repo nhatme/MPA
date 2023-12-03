@@ -206,10 +206,6 @@ $result = $user->getUsers($_SESSION["id"]);
                     </div>
 
                     <div class="flex f_column g_16px">
-                        <label for="">Bio</label>
-                        <textarea id="usernameAdmin" name="textareaBio" class="input_edit_profile_admin p_left_16px" style="height: 80px; padding-top: 12px;" type="text" name="username" placeholder="<? $result->getbio(); ?>"></textarea>
-                    </div>
-                    <div class="flex f_column g_16px">
                         <label for="">Current password</label>
                         <input id="currentPasswordAdmin" class="input_edit_profile_admin p_left_16px" type="text" name="currentpassword">
                     </div>

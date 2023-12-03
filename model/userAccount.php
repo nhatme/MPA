@@ -150,7 +150,7 @@ class UserAccount
 
 
 
-    public function userEditProfile($file = null, $username = "", $bio = "", $currentPassword = "", $newPassword = "")
+    public function userEditProfile($file = null, $username = "", $currentPassword = "", $newPassword = "")
     {
         $u_img = "";
         $u_username = "";

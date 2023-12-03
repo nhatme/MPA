@@ -54,11 +54,6 @@ var_dump($_SESSION["avatar"]);
                                 </div>
 
                                 <div class="flex f_column">
-                                    <span class="fs-12px-fw-700 mb_8px">Bio</span>
-                                    <textarea name="textareaBio" class="fs-14px-fw-500 border_300 p_20px radius-8px mb_4px resize_none outline_main" style="height: 80px;" placeholder="<?= $result->getbio(); ?>" spellcheck="false"></textarea>
-                                </div>
-
-                                <div class="flex f_column">
                                     <span class="fs-12px-fw-700 mb_8px">Current password</span>
                                     <input name="currentpassword" class="fs-14px-fw-500 border_300 p_20px radius-8px outline_main" type="text" placeholder="Choose your own nickname">
                                 </div>
@@ -68,9 +63,7 @@ var_dump($_SESSION["avatar"]);
                                 </div>
                             </div>
                             <div class="flex f_column">
-                                <button type="submit" name="submitEditProfile" class="fs-14px-fw-600 text-white border_none main-color-bg p_12px_24px radius-8px fit_cont pointer">
-                                    Save
-                                </button>
+                                <input type="submit" name="submitEditProfile" value="Save" class="fs-14px-fw-600 text-white border_none main-color-bg p_12px_24px radius-8px fit_cont pointer">
                             </div>
                         </form>
                     </div>
