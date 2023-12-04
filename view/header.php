@@ -33,6 +33,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
     <link rel="stylesheet" href="./view/src/css/transaction.css">
     <!-- category  -->
     <link rel="stylesheet" href="./view/src/css/category.css">
+    <!-- add new currency  -->
+    <link rel="stylesheet" href="./view/src/css/addNewCurrency.css">
     <!-- currency  -->
     <link rel="stylesheet" href="./view/src/css/currency/currency.css">
     <link rel="stylesheet" href="./view/src/css/currency/currency_rss.css">
@@ -119,7 +121,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                                                     ?>" alt="" width="28px">
                             </a>
                             <ul class="drop_profile d_none">
-                                <li onclick="window.location='?mod=page&act=admin' " class="pointer fs-12px-fw-600 no_wrap">Admin Settings</li>
+                                <li onclick="window.location='?mod=admin&act=admin-home' " class="pointer fs-12px-fw-600 no_wrap">Admin Settings</li>
                                 <li onclick="window.location='?mod=page&act=home&action=logout' " class="pointer fs-12px-fw-600">Log out</li>
                             </ul>
                         <?php
@@ -399,10 +401,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                         <iconify-icon class="fs_16px color_gray_400" icon="clarity:star-solid"></iconify-icon>
                         <a href="?mod=page&act=watchlistNotLogin" class="fs-12px-fw-400">Watchlist</a>
                     </div>
-                    <div class="second-header-right-item">
+                    <a href="?mod=page&act=orders" class="second-header-right-item">
                         <iconify-icon class="fs_16px color_gray_400" icon="fa6-solid:chart-pie"></iconify-icon>
-                        <a href="?mod=page&act=orders" class="fs-12px-fw-400">Orders History</a>
-                    </div>
+                        <div class="fs-12px-fw-400">Orders History</div>
+                    </a>
                 </div>
                 <div class="second-header-right-searchbar">
                     <iconify-icon class="fs_20px color_gray_400" icon="iconamoon:search"></iconify-icon>

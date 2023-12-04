@@ -62,16 +62,7 @@ if (isset($act)) {
             include_once 'view/footer.php';
             break;
         case 'admin':
-            if (isset($_POST["submit"]) && $_POST["submit"]) {
-                $value = $user->userEditProfile($_FILES["avatar"], $_POST["username"], $_POST["currentpassword"], $_POST["newpassword"]);
-                // echo $value;
-                // var_dump($_SESSION["avatar"]);
-                // var_dump($_SESSION["username"]);
-                // var_dump($_SESSION["password"]);
-            }
-            include_once 'view/header.php';
-            include_once 'view/admin.php';
-            include_once 'view/footer.php';
+            include_once 'controller/admin.php';
             break;
         case 'categories':
             include_once 'view/category.php';

@@ -78,6 +78,12 @@
                                 </div>
                                 <iconify-icon class="fs_32px text-white" icon="ic:round-plus"></iconify-icon>
                             </div>
+
+                            <a href="?mod=page&act=orders" class="second-header-right-item" style="margin-top: 20px;">
+                                <iconify-icon class="fs_16px color_gray_400" icon="fa6-solid:chart-pie"></iconify-icon>
+                                <div class="fs-12px-fw-400">Orders History</div>
+                            </a>
+
                         </div>
 
                         <div class="flex f_column g_24px">

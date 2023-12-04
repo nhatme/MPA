@@ -233,4 +233,15 @@ class UserAccount
             return "Success";
         }
     }
+
+    public function addNewCurr()
+    {
+        $id = uniqid();
+        $conn = connectDB();
+        $stmt = $conn->prepare("INSERT INTO `mpa_db`.`crypto_currency` (`id`, `name_product`, `symbol`, `cmc_rank`, `price`, `circulating_supply`, `max_supply`)
+        VALUES ('$id', '432', 'rwe', '43', '6556', '765', '6756');");
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        return  $stmt->execute();
+    }
 }

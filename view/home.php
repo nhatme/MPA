@@ -232,12 +232,12 @@
         <div class="ctn__lists__filter no_wrap scroll_x" draggable="true">
             <div class="ctn__lf__left">
                 <div class="ctn__lfl__cur__categ">
-                    <div class="ctn__lflcc__cur">
-                        <img src="./view/src/img/svg/cryptocurrency.svg" alt="">
+                    <div class="ctn__lflcc__cur active">
+                        <iconify-icon class="main-color" icon="material-symbols:lists-rounded"></iconify-icon>
                         <a href="?mod=page&act=home" class="fs-12px-fw-600 ctn__lflccc__currency">Cryptocurrencies</a>
                     </div>
-                    <div class="ctn__lflcc__categ">
-                        <img src="./view/src/img/svg/category.svg" alt="">
+                    <div class="ctn__lflcc__cur">
+                        <iconify-icon icon="carbon:category"></iconify-icon>
                         <a href="?mod=category&act=list-category" class="fs-12px-fw-600 ctn__lflccc__category text-2nd-color">Categories</a>
                     </div>
                 </div>
@@ -486,8 +486,6 @@
                         } else {
                             for ($i = 0; $i < ceil($listCoin['total'] / 20); $i++) { ?>
                                 <a href="?mod=page&act=home'.$category.'&page=<?= $i + 1 ?>" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px"><?= $i + 1 ?></a>
-
-
                         <?php  }
                         } ?>
                     <?php }

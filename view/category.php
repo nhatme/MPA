@@ -1,16 +1,15 @@
 <div class="container_category">
     <div class="ctn__lists">
 
-
         <div class="ctn__lists__filter no_wrap scroll_x" draggable="true">
             <div class="ctn__lf__left">
-                <div class="ctn__lfl__cur__categ">
-                    <div class="ctn__lflcc__cur">
-                        <img src="./view/src/img/svg/cryptocurrency.svg" alt="">
+                <div class="ctn__lfl__cur__categ ctn__lflcc__categ">
+                    <div class="ctn__lflcc__cur ">
+                        <iconify-icon icon="material-symbols:lists-rounded"></iconify-icon>
                         <a href="?mod=page&act=home" class="fs-12px-fw-600 ctn__lflccc__currency">Cryptocurrencies</a>
                     </div>
-                    <div class="ctn__lflcc__categ">
-                        <img src="./view/src/img/svg/category.svg" alt="">
+                    <div class="ctn__lflcc__cur active">
+                        <iconify-icon class="main-color" icon="carbon:category"></iconify-icon>
                         <a href="?mod=category&act=list-category" class="fs-12px-fw-600 ctn__lflccc__category text-2nd-color">Categories</a>
                     </div>
                 </div>

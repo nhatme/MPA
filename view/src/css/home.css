@@ -162,8 +162,6 @@
     cursor: grabbing; */
 }
 
-
-
 .ctn__lf__left {
     display: flex;
     width: 100%;
@@ -176,12 +174,16 @@
 .ctn__lfl__cur__categ {
     display: flex;
     gap: 4px;
+    padding: 4px 12px;
 }
 
 .ctn__lflcc__cur {
     display: flex;
-    gap: 4px;
     align-items: center;
+    gap: 4px;
+}
+
+.ctn__lflcc__cur.active {
     padding: 5px 14px;
     border-radius: 8px;
     background-color: var(--btn-blue);
@@ -191,7 +193,7 @@
     display: flex;
     padding: 5px 14px;
     align-items: center;
-    gap: 4px;
+    gap: 8px;
 }
 
 .ctn__lfl__lineStraight {

@@ -13,28 +13,29 @@ $result = $user->getUsers($_SESSION["id"]);
                 <div class="flex f_column g_32px">
                     <div class="nav-home flex align_center g_24px p_12px_24px radius-8px up_priceBg">
                         <iconify-icon class="fs_24px" icon="tabler:home-2"></iconify-icon>
-                        <a href="#" class="fs-14px-fw-600 ">Home</a>
+                        <a href="?mod=admin&act=admin-home" class="fs-14px-fw-600 ">Home</a>
                     </div>
                     <div class="nav-assets flex align_center g_24px">
                         <iconify-icon class="fs_24px" icon="carbon:currency"></iconify-icon>
-                        <a href="#" class="fs-14px-fw-600">Currency</a>
+                        <a href="?mod=admin&act=addcurrency" class="fs-14px-fw-600">Currency</a>
                     </div>
                     <div class="nav-chart flex align_center g_24px">
                         <iconify-icon class="fs_24px" icon="carbon:category"></iconify-icon>
-                        <a href="#" class="fs-14px-fw-600">Category</a>
+                        <a href="?mod=admin&act=addcategory" class="fs-14px-fw-600">Category</a>
                     </div>
                     <div class="nav-chart flex align_center g_24px">
                         <iconify-icon class="fs_24px" icon="fluent-mdl2:account-management"></iconify-icon>
-                        <a href="#" class="fs-14px-fw-600">User Manager</a>
+                        <a href="?mod=admin&act=manageuser" class="fs-14px-fw-600">User Manager</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+    
     <div class="main w_70pc mt_48px">
-        <div class="path flex align_center g_6px mb_48px h_32px">
-            <span class="fs-14px-fw-500 gray-2nd-color">Dashboard</span> <iconify-icon class="gray-2nd-color" icon="mingcute:right-line"></iconify-icon> <span class="fs-14px-fw-500 gray-2nd-color">Home</span>
-        </div>
+       
         <div class="mb_48px">
             <div class="main-title flex_sp_bt mb_32px">
                 <span class="fs-32px-fw-700">ASSETS</span>
@@ -178,6 +179,9 @@ $result = $user->getUsers($_SESSION["id"]);
             </div>
         </div>
     </div>
+
+
+    
     <div class="line_straight"></div>
     <div class="profile w_15pc mt_48px flex f_column g_32px">
         <div class="flex f_column flex_center g_24px">
