@@ -1,0 +1,9 @@
+@import "./allstyle.css";
+@import "./defined.css";
+
+.container_category {
+    max-width: 1252px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-top: 32px;
+}

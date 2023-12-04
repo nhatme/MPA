@@ -13,11 +13,15 @@ if (isset($act)) {
 
         case 'home':
             $page = 1;
+            $category = '';
             if (isset($_GET['page']) && $_GET['page']) {
                 $page = $_GET['page'];
             }
+            if (isset($_GET['categoryid']) && $_GET['categoryid']) {
+                $category = $_GET['categoryid'];
+            }
 
-            $listCoin = $coinDetail->getPageCoin($page);
+            $listCoin = $coinDetail->getPageCoin($page, $category);
             $viewTitle = truncateText("MPA - Official");
             $resultCount = $coinDetail->getCountListCoin();
 
@@ -70,9 +74,7 @@ if (isset($act)) {
             include_once 'view/footer.php';
             break;
         case 'categories':
-            include_once 'view/header.php';
             include_once 'view/category.php';
-            include_once 'view/footer.php';
             break;
     }
 }

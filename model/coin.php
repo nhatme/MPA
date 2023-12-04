@@ -62,22 +62,37 @@ class Coin
         return $stmt->fetchAll();
     }
 
-    public function getPageCoin($page = 1)
+    public function getPageCoin($page = 1, $categoryId = "")
     {
 
         $offset = 20 * ($page - 1);
         $conn = connectDB();
-        $stmt = $conn->prepare("SELECT c.*,l.logo as logo1 FROM crypto_currency as c
-        left outer join logo_coin as l
-        on c.id = l.id_coin
-        order by c.cmc_rank asc limit $offset,20 ;");
+        if ($categoryId == "") {
+            $stmt = $conn->prepare("SELECT c.*,l.logo as logo1 FROM crypto_currency as c
+            left outer join logo_coin as l
+            on c.id = l.id_coin
+            order by c.cmc_rank asc limit $offset, 20;");
+            $getTotal = $conn->prepare("SELECT count(*) as total from crypto_currency");
+        } else {
+            $getTotal = $conn->prepare("SELECT count(*) as total from list_coins_category as l 
+            inner join crypto_currency as c
+            on l.id_coin = c.id 
+            left outer join logo_coin as lc
+            on c.id = lc.id_coin
+            where l.id_category = '$categoryId'");
+            $stmt = $conn->prepare("SELECT c.*,lc.logo as logo1 from list_coins_category as l 
+            inner join crypto_currency as c
+            on l.id_coin = c.id 
+            left outer join logo_coin as lc
+            on c.id = lc.id_coin
+            where l.id_category = '$categoryId'
+            order by c.cmc_rank asc LIMIT $offset, 20;");
+        }
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
         $coin_details = [];
 
-
-        $getTotal = $conn->prepare("SELECT count(*) as total from crypto_currency");
         $getTotal->execute();
         $getTotal->setFetchMode(PDO::FETCH_ASSOC);
         $valueTotal = $getTotal->fetch();

@@ -13,8 +13,13 @@ if (isset($mod)) {
             break;
         case 'page-detail':
             include_once 'controller/page-detail.php';
+            break;
         case 'request':
             include_once 'controller/request.php';
+            break;
+        case 'category':
+            include_once 'controller/category.php';
+            break;
     }
 } else {
     header('location: ?mod=page&act=home');

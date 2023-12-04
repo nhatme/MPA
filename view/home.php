@@ -234,11 +234,11 @@
                 <div class="ctn__lfl__cur__categ">
                     <div class="ctn__lflcc__cur">
                         <img src="./view/src/img/svg/cryptocurrency.svg" alt="">
-                        <a href="#" class="fs-12px-fw-600 ctn__lflccc__currency">Cryptocurrencies</a>
+                        <a href="?mod=page&act=home" class="fs-12px-fw-600 ctn__lflccc__currency">Cryptocurrencies</a>
                     </div>
                     <div class="ctn__lflcc__categ">
                         <img src="./view/src/img/svg/category.svg" alt="">
-                        <a href="#" class="fs-12px-fw-600 ctn__lflccc__category text-2nd-color">Categories</a>
+                        <a href="?mod=category&act=list-category" class="fs-12px-fw-600 ctn__lflccc__category text-2nd-color">Categories</a>
                     </div>
                 </div>
 
@@ -443,43 +443,57 @@
         <div class="pr__pages" style="display: flex; justify-content: center;">
             <div class="pages__count__list">
                 <a href="?mod=page&act=home&page=previous">
-
                     <img class="pc__count fs-15px-fw-600 pc__control" src="./view/src/img/svg/arrow-left.svg" alt="">
                 </a>
                 <div class="pagination" style="display: flex;">
                     <!-- pagination -->
-
                     <?php
-                    if (ceil($listCoin['total'] / 20) > 5) {
-                        $active = 1 == $page ? "active" : "";
-                        echo '<a href="?mod=page&act=home&page=1" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px ' . $active . ' ">1</a>';
-                        if ($page < 5) {
-                            for ($i = 2; $i <= 5; $i++) {
+                    $category = "";
+                    if (isset($_GET['categoryid']) && $_GET['categoryid']) {
+                        $category = "&categoryid=" . $_GET['categoryid'];
+                    }
+                    if (isset($_GET['categoryid']) && $_GET['categoryid']) {
+                        for ($i = 1; $i <= ceil($listCoin['total'] / 20); $i++) {
+                            $active = $i == $page ? "active" : "";
+                            echo '<a href="?mod=page&act=home' . $category . '&page=' . $i . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px ' . $active . '">' . $i . '</a>';
+                        }
+                    } else { ?>
+                        <?php
+
+                        if (ceil($listCoin['total'] / 20) > 5) {
+                            $active = 1 == $page ? "active" : "";
+                            echo '<a href="?mod=page&act=home' . $category . '&page=1" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px ' . $active . ' ">1</a>';
+                            if ($page < 5) {
+                                for ($i = 2; $i <= 5; $i++) {
+                                    $active = $i == $page ? "active" : "";
+                                    echo '<a href="?mod=page&act=home' . $category . '&page=' . $i . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px ' . $active . '">' . $i . '</a>';
+                                }
+                            } else {
+                                echo "...";
+                                echo '<a href="?mod=page&act=home' . $category . '&page=' . ($page - 2) . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px">' . ($page - 2) . '</a>';
+                                echo '<a href="?mod=page&act=home' . $category . '&page=' . ($page - 1) . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px">' . ($page - 1) . '</a>';
+                                echo '<a href="?mod=page&act=home' . $category . '&page=' . $page . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px active">' . $page . '</a>';
+                                echo '<a href="?mod=page&act=home' . $category . '&page=' . ($page + 1) . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px">' . ($page + 1) . '</a>';
+                                echo '<a href="?mod=page&act=home' . $category . '&page=' . ($page + 2) . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px">' . ($page + 2) . '</a>';
+                            }
+                            echo "...";
+                            echo '<a href="?mod=page&act=home' . $category . '&page=1" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px">' . ceil($listCoin['total'] / 20) . '</a>';
+                        } else if (ceil($listCoin['total'] / 20) > ceil($listCoin['total'] / 20) - 5) {
+                            for ($i = ceil($listCoin['total'] / 20); $i >= ceil($listCoin['total'] / 20) - 5; $i--) {
                                 $active = $i == $page ? "active" : "";
-                                echo '<a href="?mod=page&act=home&page=' . $i . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px ' . $active . '">' . $i . '</a>';
+                                echo '<a href="?mod=page&act=home' . $category . '&page=' . $i . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px ' . $active . '">' . $i . '</a>';
                             }
                         } else {
-                            echo "...";
-                            echo '<a href="?mod=page&act=home&page=' . ($page - 2) . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px">' . ($page - 2) . '</a>';
-                            echo '<a href="?mod=page&act=home&page=' . ($page - 1) . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px">' . ($page - 1) . '</a>';
-                            echo '<a href="?mod=page&act=home&page=' . $page . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px active">' . $page . '</a>';
-                            echo '<a href="?mod=page&act=home&page=' . ($page + 1) . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px">' . ($page + 1) . '</a>';
-                            echo '<a href="?mod=page&act=home&page=' . ($page + 2) . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px">' . ($page + 2) . '</a>';
-                        }
-                        echo "...";
-                        echo '<a href="?mod=page&act=home&page=1" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px">' . ceil($listCoin['total'] / 20) . '</a>';
-                    } else if (ceil($listCoin['total'] / 20) > ceil($listCoin['total'] / 20) - 5) {
-                        for ($i = ceil($listCoin['total'] / 20); $i >= ceil($listCoin['total'] / 20) - 5; $i--) {
-                            $active = $i == $page ? "active" : "";
-                            echo '<a href="?mod=page&act=home&page=' . $i . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px ' . $active . '">' . $i . '</a>';
-                        }
-                    } else {
-                        for ($i = 0; $i < ceil($listCoin['total'] / 20); $i++) { ?>
-                            <a href="?mod=page&act=home&page=<?= $i + 1 ?>" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px"><?= $i + 1 ?></a>
+                            for ($i = 0; $i < ceil($listCoin['total'] / 20); $i++) { ?>
+                                <a href="?mod=page&act=home'.$category.'&page=<?= $i + 1 ?>" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px"><?= $i + 1 ?></a>
 
 
-                    <?php  }
-                    } ?>
+                        <?php  }
+                        } ?>
+                    <?php }
+
+                    ?>
+
 
                 </div>
                 <a href="?mod=page&act=home&page=next">

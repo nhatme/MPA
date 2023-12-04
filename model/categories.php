@@ -1,5 +1,6 @@
 <?php
-class category
+
+class Categories
 {
     private $id;
     private $name;
@@ -61,8 +62,17 @@ class category
         return $this->volume_change;
     }
 
-    public function __construct()
+    public function __construct($id, $name, $title, $desc, $num_tokens, $avg_price_change, $market_cap, $market_cap_change, $volume, $volume_change)
     {
-        
+        $this->id = $id;
+        $this->name = $name;
+        $this->title = $title;
+        $this->desc = $desc;
+        $this->num_tokens = $num_tokens;
+        $this->avg_price_change = $avg_price_change;
+        $this->market_cap = $market_cap;
+        $this->market_cap_change = $market_cap_change;
+        $this->volume = $volume;
+        $this->volume_change = $volume_change;
     }
 }

@@ -31,6 +31,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
     <link rel="stylesheet" href="./view/src/css/funds.css">
     <!-- transaction history  -->
     <link rel="stylesheet" href="./view/src/css/transaction.css">
+    <!-- category  -->
+    <link rel="stylesheet" href="./view/src/css/category.css">
     <!-- currency  -->
     <link rel="stylesheet" href="./view/src/css/currency/currency.css">
     <link rel="stylesheet" href="./view/src/css/currency/currency_rss.css">
@@ -258,7 +260,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                     <div class="flex f_column">
                                         <a href="#" target="_self" class="emb__atag grid p_8px fs-14px-fw-600"><img class="m_inline_end_16px" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png" width="32px" height="32px" alt="img">Ranking</a>
                                         <a href="#" target="_self" class="emb__atag grid p_8px fs-14px-fw-600"><img class="m_inline_end_16px" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png" width="32px" height="32px" alt="img2">Recently Added</a>
-                                        <a href="#" target="_self" class="emb__atag grid p_8px fs-14px-fw-600"><img class="m_inline_end_16px" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png" width="32px" height="32px" alt="img3">Categories</a>
+                                        <a href="?mod=category&act=list-category" target="_self" class="emb__atag grid p_8px fs-14px-fw-600"><img class="m_inline_end_16px" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png" width="32px" height="32px" alt="img3">Categories</a>
                                         <a href="#" target="_self" class="emb__atag grid p_8px fs-14px-fw-600"><img class="m_inline_end_16px" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png" width="32px" height="32px" alt="img4">Spotlight</a>
                                         <a href="#" target="_self" class="emb__atag grid p_8px fs-14px-fw-600"><img class="m_inline_end_16px" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png" width="32px" height="32px" alt="img5">Gainers & Losers</a>
                                         <a href="#" target="_self" class="emb__atag grid p_8px fs-14px-fw-600"><img class="m_inline_end_16px" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png" width="32px" height="32px" alt="img6">Global Charts</a>
