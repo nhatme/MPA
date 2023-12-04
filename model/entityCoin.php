@@ -5,6 +5,7 @@ class CryptoCurrency
     private $id;
     private $name_product;
     private $symbol;
+    private $logo;
     private $cmc_rank;
     private $price;
     private $change_1h;
@@ -29,6 +30,11 @@ class CryptoCurrency
     public function getSymbol()
     {
         return $this->symbol;
+    }
+
+    public function getLogo()
+    {
+        return $this->logo;
     }
 
     public function getRank()
@@ -79,11 +85,12 @@ class CryptoCurrency
         return $this->created_at;
     }
 
-    public function __construct($id, $name_product, $symbol, $cmc_rank, $price, $change_1h, $change_24h, $change_7d, $market_cap, $volume_24h, $circulating_supply, $max_supply, $created_at)
+    public function __construct($id, $name_product, $symbol, $logo, $cmc_rank, $price, $change_1h, $change_24h, $change_7d, $market_cap, $volume_24h, $circulating_supply, $max_supply, $created_at)
     {
         $this->id = $id;
         $this->name_product = $name_product;
         $this->symbol = $symbol;
+        $this->logo = $logo;
         $this->cmc_rank = $cmc_rank;
         $this->price = $price;
         $this->change_1h = $change_1h;

@@ -4,15 +4,22 @@ include_once "./model/openOrders.php";
 include_once "./model/userAccount.php";
 
 $user = new UserAccount();
+$coinDetail = new Coin();
+
 extract($_REQUEST);
 
 if (isset($act)) {
-
     switch ($act) {
 
         case 'home':
-            $coinDetail = new Coin();
+            $page = 1;
+            if (isset($_GET['page']) && $_GET['page']) {
+                $page = $_GET['page'];
+            }
+
+            $listCoin = $coinDetail->getPageCoin($page);
             $viewTitle = truncateText("MPA - Official");
+            $resultCount = $coinDetail->getCountListCoin();
 
             include_once 'view/header.php';
             include_once 'view/home.php';
@@ -60,6 +67,11 @@ if (isset($act)) {
             }
             include_once 'view/header.php';
             include_once 'view/admin.php';
+            include_once 'view/footer.php';
+            break;
+        case 'categories':
+            include_once 'view/header.php';
+            include_once 'view/category.php';
             include_once 'view/footer.php';
             break;
     }

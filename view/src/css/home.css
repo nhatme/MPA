@@ -466,6 +466,11 @@ thead tr {
     font-weight: var(--fw-700);
 }
 
+.radius-6px.active {
+    background-color: var(--main-color);
+    color: white;
+}
+
 /* end news letter  */
 
 /* ===================================================================== */

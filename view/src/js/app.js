@@ -161,6 +161,21 @@ submitBtn.click(function (e) {
     }
 
 })
+// format price
+function formatNum(number) {
+    const formatter = new Intl.NumberFormat('en-US');
+    if (number == 0) {
+        return "";
+    } else {
+        return formatter.format(number);
+    }
+}
+
+const fmPrice = document.querySelectorAll('.fm-price');
+
+fmPrice.forEach(item=>{
+    item.textContent = formatNum(+item.textContent)
+})
 
 
 //toast message

@@ -323,162 +323,182 @@
                         </tr>
 
                     </thead>
-                    <tbody class="list-coin"></tbody>
+                    <tbody class="list-coin">
+                        <!-- render list -->
+                        <?php
 
-                    <script>
-                        const tableCoin = document.querySelector('.list-coin');
 
-                        function formatNum(number) {
-                            const formatter = new Intl.NumberFormat('en-US');
-                            if (number == 0) {
-                                return "";
-                            } else {
-                                return formatter.format(number);
+                        if ($listCoin) {
+                            foreach ($listCoin['data'] as $key => $value) {
+                        ?>
+                                <tr onclick="window.location='?mod=page-detail&id=<?= $value->getId() ?>';" class="list-coin-detail" style="cursor: pointer;">
+
+                                    <td class="ctn__list__td__star">
+                                        <img src="./view/src/img/svg/star-stroke.svg" alt="">
+                                    </td>
+                                    <td class="ctn__list__td fs-14px-fw-600 fs-12px-fw-700 text-2nd-color"><?= $value->getRank() ?></td>
+                                    <td class="ctn__list__td">
+                                        <div>
+                                            <div class="ctn__list__td__info">
+                                                <img style="border-radius: 50px;" src="<?= $value->getLogo() ? $value->getLogo() : "https://s2.coinmarketcap.com/static/img/coins/64x64/" . $value->getId() . '.png' ?>" alt="">
+                                                <span class="fs-14px-fw-600 no_wrap"><?= $value->getName(); ?></span>
+                                                <span class="fs-14px-fw-600 gray-2nd-color"><?= $value->getSymbol(); ?></span>
+                                            </div>
+
+
+
+                                            <div class="flex_sp_bt align_center p_8px_16px color_gray_200_bg radius-8px pointer mt_12px">
+                                                <div class="flex align_center g_8px">
+                                                    <iconify-icon class="fs_16px flex gray-2nd-color" icon="lets-icons:order"></iconify-icon>
+                                                    <span class="fs-12px-fw-700 gray-2nd-color">Add to Order</span>
+                                                </div>
+                                                <iconify-icon class="fs_16px gray-2nd-color" icon="ic:round-plus"></iconify-icon>
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                    <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">$<?= number_format($value->getPrice(), 2) ?></td>
+                                    <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">
+                                        <div class="ctn__list__td__percentIndex">
+                                            <?php
+                                            if ((float)($value->getchange_1h()) < 0) {
+                                            ?>
+                                                <iconify-icon class="fs_14px down-price" icon="icon-park-solid:down-one"></iconify-icon>
+                                                <span class="down-price"><?= number_format($value->getchange_1h(), 2); ?>%</span>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
+                                                <span class="up-price"><?= number_format($value->getchange_1h(), 2); ?>%</span>
+                                            <?php
+                                            }; ?>
+                                        </div>
+                                    </td>
+                                    <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">
+                                        <div class="ctn__list__td__percentIndex">
+                                            <?php
+                                            if ((float)($value->getchange_24h()) < 0) {
+                                            ?>
+                                                <iconify-icon class="fs_14px down-price" icon="icon-park-solid:down-one"></iconify-icon>
+                                                <span class="down-price"><?= number_format($value->getchange_24h(), 2); ?>%</span>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
+                                                <span class="up-price"><?= number_format($value->getchange_24h(), 2); ?>%</span>
+                                            <?php
+                                            }; ?>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">
+                                        <div class="ctn__list__td__percentIndex">
+                                            <?php
+                                            if ((float)($value->getchange_7d()) < 0) {
+                                            ?>
+                                                <iconify-icon class="fs_14px down-price" icon="icon-park-solid:down-one"></iconify-icon>
+                                                <span class="down-price"><?= number_format($value->getchange_7d(), 2); ?>%</span>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
+                                                <span class="up-price fm-price"><?= number_format($value->getchange_7d(), 2) ?></span>
+                                            <?php
+                                            }; ?>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right"><?= number_format($value->getmarket_cap()); ?></td>
+                                    <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">
+                                        <div class="ctn__list__td__totalVolume">
+                                            <span><?= number_format($value->getvolume_24h()); ?></span>
+                                        </div>
+                                    </td>
+                                    <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">
+                                        <div class="flex f_column">
+                                            <div>
+                                                <span class="m_inline_end_4px"><?= number_format($value->getcirculating_supply()); ?></span><span><?= ($value->getSymbol()); ?></span>
+                                            </div>
+                                            <span class="gray-2nd-color"><?= number_format($value->getmax_supply()); ?></span>
+                                        </div>
+                                    </td>
+                                    <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right no_wrap">Line chart</td>
+
+                                </tr>
+                        <?php
                             }
                         }
+                        ?>
 
-                        tableCoin.innerHTML = `
-                                                <?php
-                                                foreach ($coinDetail->getCoin() as $key => $value) {
-                                                ?>
-                                                    <tr onclick="window.location='?mod=page-detail&id=<?= $value->getId(); ?>';" class="list-coin-detail" style="cursor: pointer;">
-
-                                                        <td class="ctn__list__td__star">
-                                                            <img src="./view/src/img/svg/star-stroke.svg" alt="">
-                                                        </td>
-                                                        <td class="ctn__list__td fs-14px-fw-600 fs-12px-fw-700 text-2nd-color"><?= $key + 1 ?></td>
-                                                        <td class="ctn__list__td">
-                                                            <div>
-                                                                <div class="ctn__list__td__info">
-                                                                    <img style="border-radius: 50px;" src="" alt="">
-                                                                    <span class="fs-14px-fw-600 no_wrap"><?= $value->getName(); ?></span>
-                                                                    <span class="fs-14px-fw-600 gray-2nd-color"><?= $value->getSymbol(); ?></span>
-                                                                </div>
+                        <!-- asd -->
 
 
-
-                                                                <div class="flex_sp_bt align_center p_8px_16px color_gray_200_bg radius-8px pointer mt_12px">
-                                                                    <div class="flex align_center g_8px">
-                                                                        <iconify-icon class="fs_16px flex gray-2nd-color" icon="lets-icons:order"></iconify-icon>
-                                                                        <span class="fs-12px-fw-700 gray-2nd-color">Add to Order</span>
-                                                                    </div>
-                                                                    <iconify-icon class="fs_16px gray-2nd-color" icon="ic:round-plus"></iconify-icon>
-                                                                </div>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">$<?= number_format($value->getPrice(), 2) ?></td>
-                                                        <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">
-                                                            <div class="ctn__list__td__percentIndex">
-                                                                <?php
-                                                                if ((float)($value->getchange_1h()) < 0) {
-                                                                ?>
-                                                                    <iconify-icon class="fs_14px down-price" icon="icon-park-solid:down-one"></iconify-icon>
-                                                                    <span class="down-price">${(Math.round((<?= $value->getchange_1h(); ?>) * 100) / 100).toFixed(2)}%</span>
-                                                                <?php
-                                                                } else {
-                                                                ?>
-                                                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
-                                                                    <span class="up-price">${(Math.round((<?= $value->getchange_1h(); ?>) * 100) / 100).toFixed(2)}%</span>
-                                                                <?php
-                                                                }; ?>
-                                                            </div>
-                                                        </td>
-                                                        <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">
-                                                            <div class="ctn__list__td__percentIndex">
-                                                                <?php
-                                                                if ((float)($value->getchange_24h()) < 0) {
-                                                                ?>
-                                                                    <iconify-icon class="fs_14px down-price" icon="icon-park-solid:down-one"></iconify-icon>
-                                                                    <span class="down-price">${(Math.round((<?= $value->getchange_24h(); ?>) * 100) / 100).toFixed(2)}%</span>
-                                                                <?php
-                                                                } else {
-                                                                ?>
-                                                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
-                                                                    <span class="up-price">${(Math.round((<?= $value->getchange_24h(); ?>) * 100) / 100).toFixed(2)}%</span>
-                                                                <?php
-                                                                }; ?>
-                                                                </span>
-                                                            </div>
-                                                        </td>
-                                                        <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">
-                                                            <div class="ctn__list__td__percentIndex">
-                                                                <?php
-                                                                if ((float)($value->getchange_7d()) < 0) {
-                                                                ?>
-                                                                    <iconify-icon class="fs_14px down-price" icon="icon-park-solid:down-one"></iconify-icon>
-                                                                    <span class="down-price">${(Math.round((<?= $value->getchange_7d(); ?>) * 100) / 100).toFixed(2)}%</span>
-                                                                <?php
-                                                                } else {
-                                                                ?>
-                                                                    <iconify-icon class="fs_14px up-price" icon="icon-park-solid:up-one"></iconify-icon>
-                                                                    <span class="up-price">${(Math.round((<?= $value->getchange_7d(); ?>) * 100) / 100).toFixed(2)}%</span>
-                                                                <?php
-                                                                }; ?>
-                                                                </span>
-                                                            </div>
-                                                        </td>
-                                                        <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">$${formatNum(<?= (int)($value->getmarket_cap()); ?>)}</td>
-                                                        <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">
-                                                            <div class="ctn__list__td__totalVolume">
-                                                                <span>$${formatNum(<?= (int)($value->getvolume_24h()); ?>)}</span>
-                                                            </div>
-                                                        </td>
-                                                        <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right">
-                                                            <div class="flex f_column">
-                                                                <div>
-                                                                    <span class="m_inline_end_4px">${formatNum(<?= (int)($value->getcirculating_supply()); ?>)}</span><span><?= ($value->getSymbol()); ?></span>
-                                                                </div>
-                                                                <span class="gray-2nd-color">${formatNum(<?= (int)($value->getmax_supply()); ?>)}</span>
-                                                            </div>
-                                                        </td>
-                                                        <td class="ctn__list__td fs-14px-fw-600 ctn__lists__table__td__right no_wrap">Line chart</td>
-
-                                                    </tr>
-
-                                                <?php
-                                                }
-                                                ?>
-                                                `;
-                    </script>
+                    </tbody>
                 </table>
             </div>
         </div>
 
     </div>
-    <script>
-        // const coindetails = document.querySelectorAll('.list-coin-detail');
-        // coindetails.forEach((el) => {
-        //     window.location = this.data('href');
-        // })
-    </script>
     <div class="pages__rows">
-        <div class="pr__pages">
-            <p class="pr__pages__p fs-12px-fw-400">Showing 1 - 20 out of 9056</p>
+        <div class="pr__pages" style="display: flex; justify-content: center;">
             <div class="pages__count__list">
-                <img class="pc__count fs-15px-fw-600 pc__control" src="./view/src/img/svg/arrow-left.svg" alt="">
+                <a href="?mod=page&act=home&page=previous">
+
+                    <img class="pc__count fs-15px-fw-600 pc__control" src="./view/src/img/svg/arrow-left.svg" alt="">
+                </a>
                 <div class="pagination" style="display: flex;">
-                    <a href="#" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px">1</a>
-                    <a href="#" class="pc__count fs-15px-fw-600">2</a>
-                    <a href="#" class="pc__count fs-15px-fw-600">3</a>
-                    <a href="#" class="pc__count fs-15px-fw-600">4</a>
-                    <a href="#" class="pc__count fs-15px-fw-600">5</a>
-                    <a href="#" class="pc__count fs-15px-fw-600">6</a>
-                    <a href="#" class="pc__count fs-15px-fw-600">...</a>
-                    <a href="#" class="pc__count fs-15px-fw-600">500</a>
+                    <!-- pagination -->
+
+                    <?php
+                    if (ceil($listCoin['total'] / 20) > 5) {
+                        $active = 1 == $page ? "active" : "";
+                        echo '<a href="?mod=page&act=home&page=1" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px ' . $active . ' ">1</a>';
+                        if ($page < 5) {
+                            for ($i = 2; $i <= 5; $i++) {
+                                $active = $i == $page ? "active" : "";
+                                echo '<a href="?mod=page&act=home&page=' . $i . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px ' . $active . '">' . $i . '</a>';
+                            }
+                        } else {
+                            echo "...";
+                            echo '<a href="?mod=page&act=home&page=' . ($page - 2) . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px">' . ($page - 2) . '</a>';
+                            echo '<a href="?mod=page&act=home&page=' . ($page - 1) . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px">' . ($page - 1) . '</a>';
+                            echo '<a href="?mod=page&act=home&page=' . $page . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px active">' . $page . '</a>';
+                            echo '<a href="?mod=page&act=home&page=' . ($page + 1) . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px">' . ($page + 1) . '</a>';
+                            echo '<a href="?mod=page&act=home&page=' . ($page + 2) . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px">' . ($page + 2) . '</a>';
+                        }
+                        echo "...";
+                        echo '<a href="?mod=page&act=home&page=1" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px">' . ceil($listCoin['total'] / 20) . '</a>';
+                    } else if (ceil($listCoin['total'] / 20) > ceil($listCoin['total'] / 20) - 5) {
+                        for ($i = ceil($listCoin['total'] / 20); $i >= ceil($listCoin['total'] / 20) - 5; $i--) {
+                            $active = $i == $page ? "active" : "";
+                            echo '<a href="?mod=page&act=home&page=' . $i . '" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px ' . $active . '">' . $i . '</a>';
+                        }
+                    } else {
+                        for ($i = 0; $i < ceil($listCoin['total'] / 20); $i++) { ?>
+                            <a href="?mod=page&act=home&page=<?= $i + 1 ?>" class="page pc__count fs-15px-fw-600 main-color text-white radius-6px"><?= $i + 1 ?></a>
+
+
+                    <?php  }
+                    } ?>
+
                 </div>
-                <img class="pc__count fs-15px-fw-600 pc__control" src="./view/src/img/svg/arrow-right.svg" alt="">
+                <a href="?mod=page&act=home&page=next">
+                    <img class="pc__count fs-15px-fw-600 pc__control" src="./view/src/img/svg/arrow-right.svg" alt="">
+                </a>
             </div>
-            <div class="pr">
+
+            <!-- <div class="pr">
                 <p class="fs-14px-fw-400 mr_16px">Show rows</p>
                 <div class="pr__dprows color_gray_200_bg radius-6px">
                     <p class="prdpr__p fs-15px-fw-600">20</p>
                     <img src="./view/src/img/svg/dropdown-down.svg" class="prdpr__dp"></img>
                 </div>
-            </div>
+            </div> -->
         </div>
+        <p class="pr__pages__p fs-12px-fw-400">Showing 1 - 20 out of <?= $resultCount['count_coin'] ?></p>
+
         <div class="pr__pages__rss d_none">
-            <p class="pr__pages__prss fs-12px-fw-400">Showing 1 - 20 out of 9056</p>
+            <p class="pr__pages__p fs-12px-fw-400">Showing 1 - 20 out of <?= $resultCount['count_coin'] ?></p>
             <div class="prrss flex align_center">
                 <p class="fs-14px-fw-400 mr_16px">Show rows</p>
                 <div class="pr__dprows color_gray_200_bg radius-6px">

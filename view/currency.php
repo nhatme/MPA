@@ -14,7 +14,7 @@
                     <div class="coin_stats_header p_24px">
                         <div class="csh__top grid">
 
-                            <img src="" width="24px" height="24px" alt="img_coin">
+                            <img src="<?= 'https://s2.coinmarketcap.com/static/img/coins/64x64/' . $getIdCoin["id"] . '.png' ?>" width="24px" height="24px" alt="img_coin">
                             <div class="">
                                 <span class="m_right_8px fs-18px-fw-700"><?= $getIdCoin["name_product"] ?></span>
                                 <span class="fs-12px-fw-500 second-text-color"><?= $getIdCoin["symbol"] ?></span>
@@ -139,6 +139,7 @@
                                 </div>
 
                                 <!-- ================================================== -->
+
                                 <div>
                                     <div class="flex_sp_bt align_center">
                                         <div class="flex align_center">
@@ -220,7 +221,7 @@
                                 <span class="fs-12px-fw-700">UCID</span>
                                 <div class="flex mt_12px">
                                     <div class="flex align_center g_4px p_4px_8px color_gray_200_bg radius-8px">
-                                        <span class="fs-12px-fw-600">1</span>
+                                        <span class="fs-12px-fw-600"><?= $getIdCoin["id"] ?></span>
                                         <iconify-icon class="fs_16px second-color-body" icon="fluent:copy-24-regular"></iconify-icon>
                                     </div>
                                 </div>

@@ -2,8 +2,6 @@
 $user = new UserAccount();
 $result = $user->getUsers($_SESSION["id"]);
 
-var_dump($_SESSION["id"]);
-var_dump($_SESSION["avatar"]);
 ?>
 
 <div class="container">
