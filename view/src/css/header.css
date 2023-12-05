@@ -10,6 +10,7 @@
     padding: 12px;
     list-style: none;
     border-radius: 8px;
+    z-index: 999;
 }
 
 .drop_profile li {
@@ -25,6 +26,17 @@
     display: block;
 }
 
+.boxSearch {
+    width: 450px;
+    background-color: white;
+    box-shadow: var(--box-shadow2);
+    position: absolute;
+    right: 0;
+}
+
+.boxSearch_hidden.active {
+    display: block;
+}
 
 /* start top header  */
 
@@ -156,12 +168,10 @@
     outline: none;
     background: none;
     padding: 0;
-}
-
-.header-right-searchbar::placeholder {
     font-size: var(--fs-12px);
     font-weight: var(--fw-600);
     color: var(--color-gray-400);
+    width: 200px;
 }
 
 .change-color-icon-gg {

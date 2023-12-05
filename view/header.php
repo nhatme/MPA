@@ -395,7 +395,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                     </div>
                 </div>
             </div>
-            <div class="second-header-right">
+            <div class="second-header-right relative">
                 <div class="second-header-right-items">
                     <div class="second-header-right-item">
                         <iconify-icon class="fs_16px color_gray_400" icon="clarity:star-solid"></iconify-icon>
@@ -406,10 +406,24 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                         <div class="fs-12px-fw-400">Orders History</div>
                     </a>
                 </div>
-                <div class="second-header-right-searchbar">
+                <div class="second-header-right-searchbar search_area pointer">
                     <iconify-icon class="fs_20px color_gray_400" icon="iconamoon:search"></iconify-icon>
-                    <input class="header-right-searchbar" type="text" placeholder="Search">
+                    <div class="header-right-searchbar">Search</div>
                     <span class="header-right-searchbar-prompt gray-bg">/</span>
+                </div>
+                <div class="boxSearch_hidden d_none">
+                    <div class="boxSearch flex f_column radius-8px p_12px_24px">
+                        <div class="flex_sp_bt w_100pc align_center g_8px">
+                            <iconify-icon class="fs_20px color_gray_400" icon="mingcute:search-line"></iconify-icon>
+                            <input class="border_none outline_none h_32px w_80pc" type="text" placeholder="Search coin, name">
+                            <iconify-icon class="closeSearch fs_20px color_gray_400 pointer" icon="ph:x-bold"></iconify-icon>
+                        </div>
+                        <div class="resultSearch">
+                            <div class="mt_12px pointer">
+                                Bitcoin
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="second-header-right-rss d_none">

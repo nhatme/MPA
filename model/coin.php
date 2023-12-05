@@ -118,4 +118,14 @@ class Coin
         }
         return ['data' => $coin_details, 'total' => $valueTotal['total']];
     }
+
+    public function searchItem($name, $id, $symbol, $rank)
+    {
+        $conn = connectDB();
+        $stmt = $conn->prepare("SELECT * from crypto_currency where name_product = 'Litecoin' or id = 1 or symbol = 'shib' or cmc_rank = 122;");
+        $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+        return $stmt->fetchAll();
+    }
 }
