@@ -45,6 +45,7 @@
                         <tr>
                             <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__left">#</th>
                             <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__left tb-fixed">Name</th>
+                            <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__left tb-fixed">Description</th>
                             <th class="ctn__list__th fs-12px-fw-700 ctn__lists__table__td__right">Avg.Price Change</th>
 
                             <th class="ctn__lists__table__td__right">
@@ -71,6 +72,7 @@
                             <tr class="pointer" onclick="window.location='?mod=page&act=home&categoryid=<?= $value['id'] ?>'">
                                 <th class="ctn__list__th fs-14px-fw-600 ctn__lists__table__td__left"><?= $key + 1 ?></th>
                                 <th class="ctn__list__th fs-14px-fw-600 ctn__lists__table__td__left tb-fixed"><?= $value["name"] ?></th>
+                                <th class="ctn__list__th fs-14px-fw-600 ctn__lists__table__td__left tb-fixed"><?= $value["description"] ?></th>
 
                                 <th class="ctn__list__th fs-14px-fw-600 ctn__lists__table__td__right">
                                     <?php

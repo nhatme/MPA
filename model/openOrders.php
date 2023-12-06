@@ -17,19 +17,41 @@ class openOrder
     {
         $conn = connectDB();
         $id = uniqid();
+        $idUser = $_SESSION["id"];
 
-        if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
-            $username = $_SESSION["username"];
-            $getIdUser = $conn->prepare("SELECT * FROM users where username = '$username'; ");
-            $getIdUser->execute();
-            $result = $getIdUser->fetch(PDO::FETCH_ASSOC);
-            $idUser = $result["id"];
-
-            if ($result != false) {
-                $sql = "INSERT INTO `mpa_db`.`order` (`id`, `id_crypto`, `id_user`, `amount`, `status`, `type`, `isDelete`, `created_at`)
-                VALUES ('$id', '$idCrypto', '$idUser', '$amount', 'pending', 'Buy', '0', now());
-                ";
-            }
+        $stmt = $conn->prepare("INSERT INTO `mpa_db`.`order` (`id`, `id_crypto`, `id_user`, `amount`, `status`, `type`, `isCancel`, `created_at`)
+                    VALUES ('$id', '$idCrypto', '$idUser', '$amount', 'Pending', 'Buy', 0, now());");
+        $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch();
+        if ($result == false) {
+            return json_encode(["status" => false, "message" => "something went wrong!"], JSON_PRETTY_PRINT);
+        } else {
+            return json_encode(["status" => true, "message" => "Order Successful!"], JSON_PRETTY_PRINT);
         }
+    }
+
+    public function getAllOrders()
+    {
+        $conn = connectDB();
+        $valueUsername = $conn->prepare("SELECT * FROM `order`;");
+        $valueUsername->execute();
+        $valueUsername->setFetchMode(PDO::FETCH_ASSOC);
+        $result = $valueUsername->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function getOrderByIdUser($idUser)
+    {
+        $conn = connectDB();
+        $valueUsername = $conn->prepare("SELECT * FROM `order` where id_user = '$idUser';");
+        $valueUsername->execute();
+        $valueUsername->setFetchMode(PDO::FETCH_ASSOC);
+        $result = $valueUsername->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function canceledOrder() {
+        
     }
 }

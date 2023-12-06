@@ -54,32 +54,32 @@
                         </div>
                     </div>
 
-                    <div class="coin_stats_detail flex f_column g_32px">
+                    <form method="post" enctype="multipart/form-data" class="coin_stats_detail flex f_column g_32px">
 
                         <div>
                             <span class="flex fs-12px-fw-700">Amount</span>
                             <div class="toUSDConvert grid color_gray_200_bg radius-8px mt_12px p_4px">
                                 <div class="toUSDConvertLeft bg_white flex_sp_bt p_5px_8px">
                                     <span class="w_30pc fs-12px-fw-600 second-color-body"><?= $getIdCoin["symbol"] ?></span>
-                                    <input class="w_60pc border_none outline_none" name="inputcrypto" type="text" name="" id="inputcrypto" placeholder="0" value="1" dir="rtl" spellcheck="false">
+                                    <input class="w_60pc border_none outline_none" name="inputcrypto" type="text" id="inputcrypto" placeholder="0" value="1" dir="rtl" spellcheck="false">
                                 </div>
                                 <div class="toUSDConvertRight bg_white flex_sp_bt p_5px_8px">
                                     <span class="w_30pc fs-12px-fw-600 second-color-body">USD</span>
-                                    <input class="w_60pc border_none outline_none" name="inputUSD" type="text" name="" id="inputUSD" placeholder="0" coinPrice-value="<?= (float)($getIdCoin["price"]) ?>" value="<?= (float)($getIdCoin["price"]) ?>" dir="rtl" spellcheck="false">
+                                    <input class="w_60pc border_none outline_none" name="inputUSD" type="text" id="inputUSD" placeholder="0" coinPrice-value="<?= (float)($getIdCoin["price"]) ?>" value="<?= (float)($getIdCoin["price"]) ?>" dir="rtl" spellcheck="false">
                                 </div>
-                            </div>
+                            </div>  
                         </div>
 
                         <div>
-                            <div class="flex_sp_bt align_center p_8px_16px main-color-bg radius-8px pointer">
+                            <div id="addToOrder" class="flex_sp_bt align_center p_8px_16px main-color-bg radius-8px pointer">
                                 <div class="flex align_center g_8px">
                                     <iconify-icon class="fs_32px flex text-white" icon="lets-icons:order"></iconify-icon>
-                                    <span class="fs-32px-fw-700 text-white">Add to Order</span>
+                                    <input type="submit" value="Add to Order" name="addToOrder" style="background-color: transparent; border: none;" class="fs-32px-fw-700 text-white pointer">
                                 </div>
                                 <iconify-icon class="fs_32px text-white" icon="ic:round-plus"></iconify-icon>
                             </div>
 
-                            <a href="?mod=page&act=orders" class="second-header-right-item" style="margin-top: 20px;">
+                            <a href="?mod=order&act=orders" class="second-header-right-item" style="margin-top: 20px;">
                                 <iconify-icon class="fs_16px color_gray_400" icon="fa6-solid:chart-pie"></iconify-icon>
                                 <div class="fs-12px-fw-400">Orders History</div>
                             </a>
@@ -250,7 +250,7 @@
                                 <span class="fs-12px-fw-700 main-color">Update Token Info</span>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 <?php } ?>
             </div>
         </div>

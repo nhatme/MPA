@@ -137,8 +137,6 @@ function insertListCoinandCateg($getCategoryDetail)
     }
 }
 
-
-
 function getCoinLastest($endpoint, $limit)
 {
     $opts = [
@@ -213,23 +211,23 @@ function insertLogoCointoDB($logo, $id)
     }
 }
 
-$coinDetail = new Coin();
-$resultIdCoin = $coinDetail->getIdCoin(100);
+// $coinDetail = new Coin();
+// $resultIdCoin = $coinDetail->getIdCoin(100);
 
-foreach ($resultIdCoin as $key => $value) {
-    $result = getLogoCoin($getInfo, $value["id"]);
-    // Check if the key "id" exists in the result array before accessing it
-    $idCoin = isset($result[$value["id"]]["id"]) ? $result[$value["id"]]["id"] : null;
+// foreach ($resultIdCoin as $key => $value) {
+//     $result = getLogoCoin($getInfo, $value["id"]);
+//     // Check if the key "id" exists in the result array before accessing it
+//     $idCoin = isset($result[$value["id"]]["id"]) ? $result[$value["id"]]["id"] : null;
 
-    // Check if the key "logo" exists in the result array before accessing it
-    $logoCoin = isset($result[$value["id"]]["logo"]) ? $result[$value["id"]]["logo"] : null;
+//     // Check if the key "logo" exists in the result array before accessing it
+//     $logoCoin = isset($result[$value["id"]]["logo"]) ? $result[$value["id"]]["logo"] : null;
 
-    // Only proceed with the insertion if both $idCoin and $logoCoin are not null
-    if ($idCoin !== null && $logoCoin !== null) {
-        insertLogoCointoDB($logoCoin, $idCoin);
-    }
-    // insertLogoCointoDB($logoCoin, $idCoin);
-}
+//     // Only proceed with the insertion if both $idCoin and $logoCoin are not null
+//     if ($idCoin !== null && $logoCoin !== null) {
+//         insertLogoCointoDB($logoCoin, $idCoin);
+//     }
+//     // insertLogoCointoDB($logoCoin, $idCoin);
+// }
 
 function insertCointoDB($endpoint, $limit)
 {

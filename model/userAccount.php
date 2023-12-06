@@ -118,22 +118,16 @@ class UserAccount
                     exit;
                 } else {
 
-                    $sql = "INSERT INTO users ( id, email, username, password_user, avatar, bio, role_user, created_at)
-                        VALUES ('$id', '$databody->email', '$databody->username', '$password', '', 'This is your bio', 1, now())";
+                    $sql = "INSERT INTO users ( id, email, username, password_user, avatar, role_user, created_at)
+                        VALUES ('$id', '$databody->email', '$databody->username', '$password', '', 1, now())";
                     $conn->exec($sql);
 
                     echo json_encode(["status" => true, "message" => "sign up successful"], JSON_PRETTY_PRINT);
-                    // echo "<br>";
-                    // var_dump("INSERT INTO DB COMPLETE");
-                    // echo "<br>";
-                    // echo json_encode($databody, JSON_PRETTY_PRINT);
                     exit;
                 }
             }
         }
     }
-
-
 
     public function getUsers($id)
     {
@@ -148,8 +142,6 @@ class UserAccount
         }
     }
 
-
-
     public function userEditProfile($file = null, $username = "", $currentPassword = "", $newPassword = "")
     {
         $u_img = "";
@@ -159,7 +151,7 @@ class UserAccount
         $queryUpdate = "";
         $message = "";
 
-        $allowed = array("jpg", "jpeg", "png", "pdf");
+        $allowed = array("jpg", "jpeg", "png", "pdf", "webp");
         if (isset($file) && $file['error'] == 0) {
             $fileName = $file["name"];
             $fileTmpName = $file["tmp_name"];
@@ -234,14 +226,146 @@ class UserAccount
         }
     }
 
-    public function addNewCurr()
+    public function createNewCurImg($file)
     {
+        $message = "";
+        $fileNameNew = "";
+        $allowed = array("jpg", "jpeg", "png", "pdf", "webp");
+        if (isset($file) && $file['error'] === 0) {
+            $fileName = $file["name"];
+            $fileTmpName = $file["tmp_name"];
+            $fileSize = $file["size"];
+            $fileError = $file["error"];
+            $fileType = $file["type"];
+
+            $fileExt = explode(".", $fileName);
+            $fileActualExt = strtolower(end($fileExt));
+            if (in_array($fileActualExt, $allowed)) {
+                if ($fileError === 0) {
+                    if ($fileSize < 1000000) {
+                        $fileNameNew = uniqid("", true) . "." . $fileActualExt;
+                        $uploadDir = "./view/src/img/uploads/coin/";
+                        if (!file_exists($uploadDir)) {
+                            mkdir($uploadDir);
+                        }
+                        $fileDestination = $uploadDir . $fileNameNew;
+                        move_uploaded_file($fileTmpName, $fileDestination);
+                    } else {
+                        $message = "your file is too big!";
+                    }
+                } else {
+                    $message =  "there was an error uploading your file!";
+                }
+            } else {
+                $message = "You cannot upload files of this type!";
+            }
+        }
+        return $fileNameNew;
+    }
+
+    public function createNewUserImg($file)
+    {
+        $message = "";
+        $fileNameNew = "";
+        $allowed = array("jpg", "jpeg", "png", "pdf", "webp");
+        if (isset($file) && $file['error'] === 0) {
+            $fileName = $file["name"];
+            $fileTmpName = $file["tmp_name"];
+            $fileSize = $file["size"];
+            $fileError = $file["error"];
+            $fileType = $file["type"];
+
+            $fileExt = explode(".", $fileName);
+            $fileActualExt = strtolower(end($fileExt));
+            if (in_array($fileActualExt, $allowed)) {
+                if ($fileError === 0) {
+                    if ($fileSize < 1000000) {
+                        $fileNameNew = uniqid("", true) . "." . $fileActualExt;
+                        $uploadDir = "./view/src/img/uploads/";
+                        if (!file_exists($uploadDir)) {
+                            mkdir($uploadDir);
+                        }
+                        $fileDestination = $uploadDir . $fileNameNew;
+                        move_uploaded_file($fileTmpName, $fileDestination);
+                    } else {
+                        $message = "your file is too big!";
+                    }
+                } else {
+                    $message =  "there was an error uploading your file!";
+                }
+            } else {
+                $message = "You cannot upload files of this type!";
+            }
+        }
+        return $fileNameNew;
+    }
+
+    public function insertaddNewCurr($name_product = null, $symbol = null, $file = null, $price = null, $market_cap = null, $circulating_supply = null)
+    {
+        $fileNameImage = self::createNewCurImg($file);
         $id = uniqid();
         $conn = connectDB();
-        $stmt = $conn->prepare("INSERT INTO `mpa_db`.`crypto_currency` (`id`, `name_product`, `symbol`, `cmc_rank`, `price`, `circulating_supply`, `max_supply`)
-        VALUES ('$id', '432', 'rwe', '43', '6556', '765', '6756');");
+        $stmt = $conn->prepare("INSERT INTO `mpa_db`.`crypto_currency` (`id`, `name_product`, `symbol`, `logo`, `price`, `market_cap`, `circulating_supply`)
+            VALUES ('$id', '$name_product', '$symbol', '$fileNameImage', '$price', '$market_cap', '$circulating_supply');");
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $stmt->execute();
+    }
 
-        return  $stmt->execute();
+    public function getAllUsers()
+    {
+        $conn = connectDB();
+        $stmt = $conn->prepare("SELECT * FROM users where role_user = 1;");
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function getLatestRecord()
+    {
+        $conn = connectDB();
+        $stmt = $conn->prepare("SELECT *
+        FROM users
+        ORDER BY created_at DESC
+        LIMIT 10;");
+        $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll();
+    }
+
+    public function deleteUser($id)
+    {
+        $conn = connectDB();
+        $stmt = $conn->prepare("DELETE FROM users WHERE id = '$id';");
+        $stmt->execute();
+        $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function createNewUser($file, $username, $password)
+    {
+        $fileNameImage = self::createNewUserImg($file);
+        $id = uniqid();
+        $conn = connectDB();
+        $stmt = $conn->prepare("INSERT INTO users (id, username, password_user, avatar, role_user, created_at)
+        VALUES ('$id', '$username', '$password', '$fileNameImage', 1, now())");
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $result = $stmt->execute();
+        if ($result == false) {
+            return "Something went wrong!";
+        }
+        return $result;
+    }
+
+    public function updateUserByAdmin($idUser, $file = null, $email = null, $username = null, $password = null)
+    {
+        $avatar = self::createNewUserImg($file);
+        $conn = connectDB();
+        $sql = "UPDATE `mpa_db`.`users` 
+        SET `email` = '$email',
+         `username` = '$username',
+          `password_user` = '$password',
+           `avatar` = '$avatar' WHERE (`id` = '$idUser');";
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
     }
 }

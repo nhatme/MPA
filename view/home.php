@@ -327,7 +327,6 @@
                         <!-- render list -->
                         <?php
 
-
                         if ($listCoin) {
                             foreach ($listCoin['data'] as $key => $value) {
                         ?>
@@ -340,12 +339,10 @@
                                     <td class="ctn__list__td">
                                         <div>
                                             <div class="ctn__list__td__info">
-                                                <img style="border-radius: 50px;" src="<?= $value->getLogo() ? $value->getLogo() : "https://s2.coinmarketcap.com/static/img/coins/64x64/" . $value->getId() . '.png' ?>" alt="">
+                                                <img style="border-radius: 50px;" src="<?= $value->getLogo() ? $value->getLogo() : "https://s2.coinmarketcap.com/static/img/coins/64x64/" . $value->getId() . '.png'  ?>" alt="">
                                                 <span class="fs-14px-fw-600 no_wrap"><?= $value->getName(); ?></span>
                                                 <span class="fs-14px-fw-600 gray-2nd-color"><?= $value->getSymbol(); ?></span>
                                             </div>
-
-
 
                                             <div class="flex_sp_bt align_center p_8px_16px color_gray_200_bg radius-8px pointer mt_12px">
                                                 <div class="flex align_center g_8px">

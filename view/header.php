@@ -111,14 +111,14 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 
                         if ($_SESSION["role_user"] == 0) {
                         ?>
-                            <a href="?mod=page&act=admin">
-                                <img src="./view/src/img/uploads/<?php
-                                                                    if (isset($_SESSION["avatar"]) && $_SESSION["avatar"]) {
-                                                                        echo $_SESSION["avatar"];
-                                                                    } else {
-                                                                        echo "default.png";
-                                                                    }
-                                                                    ?>" alt="" width="28px">
+                            <a href="?mod=admin&act=admin-home">
+                                <img width="30px" height="30px" style="object-fit: cover; border-radius: 50px;" src="./view/src/img/uploads/<?php
+                                                                                                                                            if (isset($_SESSION["avatar"]) && $_SESSION["avatar"]) {
+                                                                                                                                                echo $_SESSION["avatar"];
+                                                                                                                                            } else {
+                                                                                                                                                echo "default.png";
+                                                                                                                                            }
+                                                                                                                                            ?>" alt="" width="28px">
                             </a>
                             <ul class="drop_profile d_none">
                                 <li onclick="window.location='?mod=admin&act=admin-home' " class="pointer fs-12px-fw-600 no_wrap">Admin Settings</li>
@@ -128,13 +128,13 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                         } else if ($_SESSION["role_user"] == 1) {
                         ?>
                             <a href="?mod=page&act=profile">
-                                <img src="./view/src/img/uploads/<?php
-                                                                    if (isset($_SESSION["avatar"]) && $_SESSION["avatar"]) {
-                                                                        echo $_SESSION["avatar"];
-                                                                    } else {
-                                                                        echo "default.png";
-                                                                    }
-                                                                    ?>" alt="" width="28px">
+                                <img width="30px" height="30px" style="object-fit: cover; border-radius: 50px;" src="./view/src/img/uploads/<?php
+                                                                                                                                            if (isset($_SESSION["avatar"]) && $_SESSION["avatar"]) {
+                                                                                                                                                echo $_SESSION["avatar"];
+                                                                                                                                            } else {
+                                                                                                                                                echo "default.png";
+                                                                                                                                            }
+                                                                                                                                            ?>" alt="" width="28px">
                             </a>
                             <ul class="drop_profile d_none">
                                 <li onclick="window.location='?mod=page&act=profile' " class="pointer fs-12px-fw-600">Settings</li>
@@ -401,30 +401,36 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                         <iconify-icon class="fs_16px color_gray_400" icon="clarity:star-solid"></iconify-icon>
                         <a href="?mod=page&act=watchlistNotLogin" class="fs-12px-fw-400">Watchlist</a>
                     </div>
-                    <a href="?mod=page&act=orders" class="second-header-right-item">
+                    <a href="?mod=order&act=orders" class="second-header-right-item">
                         <iconify-icon class="fs_16px color_gray_400" icon="fa6-solid:chart-pie"></iconify-icon>
                         <div class="fs-12px-fw-400">Orders History</div>
                     </a>
                 </div>
+
+                <!-- search bar  -->
+
                 <div class="second-header-right-searchbar search_area pointer">
                     <iconify-icon class="fs_20px color_gray_400" icon="iconamoon:search"></iconify-icon>
                     <div class="header-right-searchbar">Search</div>
                     <span class="header-right-searchbar-prompt gray-bg">/</span>
                 </div>
+
+
                 <div class="boxSearch_hidden d_none">
                     <div class="boxSearch flex f_column radius-8px p_12px_24px">
                         <div class="flex_sp_bt w_100pc align_center g_8px">
                             <iconify-icon class="fs_20px color_gray_400" icon="mingcute:search-line"></iconify-icon>
-                            <input class="border_none outline_none h_32px w_80pc" type="text" placeholder="Search coin, name">
+                            <input id="searchInput" class="border_none outline_none h_32px w_80pc" type="text" placeholder="Search coin, name">
                             <iconify-icon class="closeSearch fs_20px color_gray_400 pointer" icon="ph:x-bold"></iconify-icon>
                         </div>
-                        <div class="resultSearch">
-                            <div class="mt_12px pointer">
-                                Bitcoin
-                            </div>
-                        </div>
+                        <div class="resultSearch"><!-- result search here  --></div>
                     </div>
                 </div>
+
+
+                <!-- end search bar  -->
+
+
             </div>
             <div class="second-header-right-rss d_none">
                 <div class="flex pointer fs_24px m_inline_start_16px">

@@ -1,6 +1,5 @@
 <?php
 include_once "./model/coin.php";
-include_once "./model/openOrders.php";
 include_once "./model/userAccount.php";
 
 $user = new UserAccount();
@@ -44,21 +43,6 @@ if (isset($act)) {
             include_once 'view/watchlistNotLogin/createownacc.php';
             include_once 'view/watchlistNotLogin/mobileapp.php';
             include_once 'view/watchlistNotLogin/faq.php';
-            include_once 'view/footer.php';
-            break;
-        case 'orders':
-            include_once 'view/header.php';
-            include_once 'view/orders.php';
-            include_once 'view/footer.php';
-            break;
-        case 'transaction_history':
-            include_once 'view/header.php';
-            include_once 'view/transaction.php';
-            include_once 'view/footer.php';
-            break;
-        case 'funds':
-            include_once 'view/header.php';
-            include_once 'view/funds.php';
             include_once 'view/footer.php';
             break;
         case 'admin':

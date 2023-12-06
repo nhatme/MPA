@@ -20,6 +20,9 @@ if (isset($mod)) {
         case 'category':
             include_once 'controller/category.php';
             break;
+        case 'order':
+            include_once 'controller/order.php';
+            break;
     }
 } else {
     header('location: ?mod=page&act=home');

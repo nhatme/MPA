@@ -11,36 +11,35 @@ $result = $user->getUsers($_SESSION["id"]);
             </div>
             <div class="navigation flex f_column">
                 <div class="flex f_column g_32px">
-                    <div class="nav-home flex align_center g_24px p_12px_24px radius-8px up_priceBg">
+                    <a href="?mod=admin&act=admin-home" class="navLeft active flex align_center g_24px">
                         <iconify-icon class="fs_24px" icon="tabler:home-2"></iconify-icon>
-                        <a href="?mod=admin&act=admin-home" class="fs-14px-fw-600 ">Home</a>
-                    </div>
-                    <div class="nav-assets flex align_center g_24px">
+                        <div class="fs-14px-fw-600 ">Home</div>
+                    </a>
+                    <a href="?mod=admin&act=addcurrency" class="navLeft flex align_center g_24px">
                         <iconify-icon class="fs_24px" icon="carbon:currency"></iconify-icon>
-                        <a href="?mod=admin&act=addcurrency" class="fs-14px-fw-600">Currency</a>
-                    </div>
-                    <div class="nav-chart flex align_center g_24px">
+                        <siv class="fs-14px-fw-600">Currency</siv>
+                    </a>
+                    <a href="?mod=admin&act=addcategory" class="navLeft flex align_center g_24px">
                         <iconify-icon class="fs_24px" icon="carbon:category"></iconify-icon>
-                        <a href="?mod=admin&act=addcategory" class="fs-14px-fw-600">Category</a>
-                    </div>
-                    <div class="nav-chart flex align_center g_24px">
+                        <div class="fs-14px-fw-600">Category</div>
+                    </a>
+                    <a href="?mod=admin&act=manageuser" class="navLeft flex align_center g_24px">
                         <iconify-icon class="fs_24px" icon="fluent-mdl2:account-management"></iconify-icon>
-                        <a href="?mod=admin&act=manageuser" class="fs-14px-fw-600">User Manager</a>
-                    </div>
+                        <div class="fs-14px-fw-600">User Manager</div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
 
-    
     <div class="main w_70pc mt_48px">
-       
+
         <div class="mb_48px">
             <div class="main-title flex_sp_bt mb_32px">
-                <span class="fs-32px-fw-700">ASSETS</span>
+                <span class="fs-32px-fw-700">Top Users</span>
                 <div class="flex align_center g_16px">
-                    <span class="fs-16px-fw-400 main-color">More Assets</span>
+                    <span class="fs-16px-fw-400 main-color">More</span>
                     <iconify-icon class="fs_24px main-color" icon="lucide:move-right"></iconify-icon>
                 </div>
             </div>
@@ -90,98 +89,68 @@ $result = $user->getUsers($_SESSION["id"]);
             <div class="main-title flex_sp_bt mb_32px">
                 <span class="fs-32px-fw-700">ACTIVITY</span>
                 <div class="flex align_center g_16px">
-                    <span class="fs-16px-fw-400 main-color">More Assets</span>
+                    <span class="fs-16px-fw-400 main-color">More</span>
                     <iconify-icon class="fs_24px main-color" icon="lucide:move-right"></iconify-icon>
                 </div>
             </div>
 
 
-            <div class="border_main radius-8px">
-                <div class="activity-detail  p_16px " style="display: grid; grid-template-columns: 30% 15% 15% 10% 15% 15%;">
-                    <div>
-                        <div class="border-bottom pb_16px fs-14px-fw-700">Transactions</div>
-                        <div class="flex align_center g_8px pt_16px">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/1200px-Ethereum-icon-purple.svg.png" alt="" width="32px">
-                            <div class="fs-14px-fw-600">Ethereum Purchased</div>
+            <div class="border_main radius-8px" style="height: 500px; overflow-y: scroll;">
+
+                <?php
+                foreach ($getAllorders as $key => $value) {
+                    $idCrypto = $coin->getDetailCoin($value["id_crypto"]);
+                ?>
+                    <div class="activity-detail  p_16px " style="display: grid; grid-template-columns: 30% 15% 15% 10% 15% 15%;">
+                        <div>
+                            <div class="border-bottom pb_16px fs-14px-fw-700">Transactions</div>
+                            <div class="flex align_center g_8px pt_16px">
+                                <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/<?= $idCrypto["id"] . ".png" ?>" alt="" width="32px" height="32px" style="border-radius: 50px;">
+                                <div class="fs-14px-fw-600">
+                                    <span><?= $idCrypto["name_product"] ?></span>
+                                    <span style="margin-left: 8px;"><?= $idCrypto["symbol"] ?></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="border-bottom pb_16px fs-14px-fw-700">Amount</div>
+                            <div class="pt_16px"><?= number_format($value["amount"], 2) ?></div>
+                        </div>
+                        <div>
+                            <div class="border-bottom pb_16px fs-14px-fw-700">Total</div>
+                            <div class="pt_16px">$<?= number_format(($idCrypto["price"]) * ($value["amount"]), 2) ?></div>
+                        </div>
+                        <div>
+                            <div class="border-bottom pb_16px fs-14px-fw-700">Type</div>
+                            <div class="pt_16px"><?= $value["type"] ?></div>
+                        </div>
+                        <div>
+                            <div class="border-bottom pb_16px fs-14px-fw-700">Status</div>
+                            <div class="pt_16px" style=" font-weight: bold ;<?php switch ($value["status"]) {
+                                                                                case "Pending":
+                                                                                    echo "color: orange";
+                                                                                    break;
+                                                                                case "Confirmed":
+                                                                                    echo "color: green";
+                                                                                    break;
+                                                                                case "Cancelled":
+                                                                                    echo "color: gray";
+                                                                                    break;
+                                                                            } ?>"><?= $value["status"] ?></div>
+                        </div>
+                        <div>
+                            <div class="border-bottom pb_16px fs-14px-fw-700">Date</div>
+                            <div class="pt_16px"><?= $value["created_at"] ?></div>
                         </div>
                     </div>
-                    <div>
-                        <div class="border-bottom pb_16px fs-14px-fw-700">Amount</div>
-                        <div class="pt_16px">0.0154 ETH</div>
-                    </div>
-                    <div>
-                        <div class="border-bottom pb_16px fs-14px-fw-700">Total</div>
-                        <div class="pt_16px">$10.00</div>
-                    </div>
-                    <div>
-                        <div class="border-bottom pb_16px fs-14px-fw-700">Type</div>
-                        <div class="pt_16px">Buy</div>
-                    </div>
-                    <div>
-                        <div class="border-bottom pb_16px fs-14px-fw-700">Status</div>
-                        <div class="pt_16px">Pending</div>
-                    </div>
-                    <div>
-                        <div class="border-bottom pb_16px fs-14px-fw-700">Date</div>
-                        <div class="pt_16px">February 21, 2023</div>
-                    </div>
-                </div>
-
-                <div class="activity-detail  p_16px " style="display: grid; grid-template-columns: 30% 15% 15% 10% 15% 15%;">
-                    <div>
-                        <div class="flex align_center g_8px pt_16px">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/1200px-Ethereum-icon-purple.svg.png" alt="" width="32px">
-                            <div class="fs-14px-fw-600">Ethereum Purchased</div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="pt_16px">0.0154 ETH</div>
-                    </div>
-                    <div>
-                        <div class="pt_16px">$10.00</div>
-                    </div>
-                    <div>
-                        <div class="pt_16px">Buy</div>
-                    </div>
-                    <div>
-                        <div class="pt_16px">Pending</div>
-                    </div>
-                    <div>
-                        <div class="pt_16px">February 21, 2023</div>
-                    </div>
-                </div>
-
-                <div class="activity-detail  p_16px " style="display: grid; grid-template-columns: 30% 15% 15% 10% 15% 15%;">
-                    <div>
-                        <div class="flex align_center g_8px pt_16px">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/1200px-Ethereum-icon-purple.svg.png" alt="" width="32px">
-                            <div class="fs-14px-fw-600">Ethereum Purchased</div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="pt_16px">0.0154 ETH</div>
-                    </div>
-                    <div>
-                        <div class="pt_16px">$10.00</div>
-                    </div>
-                    <div>
-                        <div class="pt_16px">Buy</div>
-                    </div>
-                    <div>
-                        <div class="pt_16px">Pending</div>
-                    </div>
-                    <div>
-                        <div class="pt_16px">February 21, 2023</div>
-                    </div>
-                </div>
-
+                <?php } ?>
 
             </div>
         </div>
     </div>
 
 
-    
+
     <div class="line_straight"></div>
     <div class="profile w_15pc mt_48px flex f_column g_32px">
         <div class="flex f_column flex_center g_24px">

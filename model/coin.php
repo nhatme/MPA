@@ -1,9 +1,7 @@
 <?php
 include_once "model/connectDB.php";
 include_once "model/entityCoin.php";
-
-// include_once "./connectDB.php";
-// include_once "./entityCoin.php";
+include_once "model/userAccount.php";
 
 class Coin
 {
@@ -119,13 +117,62 @@ class Coin
         return ['data' => $coin_details, 'total' => $valueTotal['total']];
     }
 
-    public function searchItem($name, $id, $symbol, $rank)
+    public function searchItem()
     {
         $conn = connectDB();
-        $stmt = $conn->prepare("SELECT * from crypto_currency where name_product = 'Litecoin' or id = 1 or symbol = 'shib' or cmc_rank = 122;");
+        $entityBody = file_get_contents('php://input');
+        $databody = json_decode($entityBody);
+        if (isset($databody)) {
+            if (isset(($databody->keyword))) {
+                $stmt = $conn->prepare("SELECT * from crypto_currency where name_product = '$databody->keyword' or id = '$databody->keyword' or symbol = '$databody->keyword' or cmc_rank = '$databody->keyword';");
+                $stmt->execute();
+                $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                $result = $stmt->fetch();
+                if ($result != false) {
+                    echo json_encode(["status" => true, "result" => $result]);
+                } else {
+                    echo json_encode(["status" => false, "result" => $result]);
+                }
+            }
+        }
+    }
+
+    public function getLatestRecord()
+    {
+        $conn = connectDB();
+        $stmt = $conn->prepare("SELECT *
+        FROM crypto_currency
+        ORDER BY created_at DESC, cmc_rank
+        LIMIT 10;");
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
-
         return $stmt->fetchAll();
+    }
+
+    public function deleteCurr($id)
+    {
+        $conn = connectDB();
+        $stmt = $conn->prepare("DELETE FROM crypto_currency WHERE id = '$id';");
+        $stmt->execute();
+        $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function updateCurrByAdmin($idCurr, $name = null, $symbol = null, $logo = null, $price = null, $marketcap = null, $circulating = null)
+    {
+
+        $uploadCurrImg = new UserAccount();
+        $resultImg = $uploadCurrImg->createNewCurImg($logo);
+
+        $conn = connectDB();
+        $sql = "UPDATE `crypto_currency` SET
+         `name_product` = '$name',
+         `symbol` = '$symbol', 
+         `logo` = '$resultImg', 
+         `price` = '$price', 
+         `market_cap` = '$marketcap', 
+         `circulating_supply` = '$circulating' WHERE (`id` = '$idCurr');";
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
     }
 }

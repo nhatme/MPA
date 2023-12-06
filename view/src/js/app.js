@@ -245,8 +245,6 @@ $(".switchform").click(function () {
 
     $(this).addClass("active")
     $(".label-bottom." + type).addClass("active")
-
-    console.log(type)
 })
 
 function formatNum(number) {
@@ -314,8 +312,65 @@ const closeSearch = document.querySelector('.closeSearch')
 
 search_area.onclick = () => {
     boxSearch.classList.add('active')
+    $('#searchInput').focus()
 }
 
 closeSearch.onclick = () => {
     boxSearch.classList.remove('active')
 }
+
+////////////////////////// editDetailBtn editable ////////////////////
+const editDetailBtn = document.querySelectorAll('.editDetailBtn')
+const modal_CurrLatest = document.querySelectorAll('.modal_CurrLatest');
+const closeModalCurrLatest = document.querySelectorAll('.closeModalCurrLatest');
+const backdropModalCurrLatest = document.querySelectorAll('.backdrop_modal_CurrLatest');
+
+editDetailBtn.forEach((el, index) => {
+    el.onclick = () => {
+        modal_CurrLatest[index].classList.add('active');
+        backdropModalCurrLatest[index].style = "display: flex";
+        if (closeModalCurrLatest) {
+            closeModalCurrLatest[index].onclick = () => {
+                modal_CurrLatest[index].classList.remove('active');
+                backdropModalCurrLatest[index].style = "display: none";
+            }
+        }
+    }
+})
+
+// search bar 
+
+$('#searchInput').on("input", function () {
+    let keyword = $('#searchInput').val()
+    $.ajax({
+        type: "POST",
+        url: "?mod=request&act=searchEngine",
+        data: JSON.stringify({
+            keyword: keyword
+        }),
+        success: function (res) {
+            let json_data = JSON.parse(res);
+            if (json_data.status == false) {
+                $(".resultSearch").html("Not found")
+                if (keyword == "") {
+                    $(".resultSearch").html("")
+                }
+            } else {
+                let result = `<div onclick="window.location='?mod=page-detail&id=${json_data.result.id}'" class="mt_24px pointer">
+                                <div>
+                                    <span>ID: ${json_data.result.id}</span>
+                                    <span style='margin-left: 8px;'>Rank: ${json_data.result.cmc_rank}</span>
+                                </div>
+                                <div class='flex f_column'>
+                                    <strong style='margin-top: 8px; color: #3861FB;'>${json_data.result.name_product}</strong>
+                                    <strong style='color: #3861FB;'>${json_data.result.symbol}</strong>
+                                </div>
+                                </div>`
+                $(".resultSearch").html(result)
+            }
+        }
+    })
+})
+
+
+// order 

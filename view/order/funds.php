@@ -1,13 +1,13 @@
 <div class="container_funds border-left border-right border-bottom">
     <div class="flex_sp_bt align_center mb_32px">
         <div class="flex align_center">
-            <a href="?mod=page&act=orders" class="fs-14px-fw-600 pointer p_8px">
+            <a href="?mod=order&act=orders" class="fs-14px-fw-600 pointer p_8px">
                 Open Orders
                 <span>(0)</span>
             </a>
-            <a href="?mod=page&act=funds" style="margin-left: 16px;" class="fs-14px-fw-600 pointer p_8px">Funds</a>
+            <a href="?mod=order&act=funds" style="margin-left: 16px;" class="fs-14px-fw-600 pointer p_8px">Funds</a>
         </div>
-        <a href="?mod=page&act=transaction_history" class="flex p_8px">
+        <a href="?mod=order&act=transaction_history" class="flex p_8px">
             <iconify-icon class="fs_24px" icon="ic:round-history"></iconify-icon>
         </a>
     </div>

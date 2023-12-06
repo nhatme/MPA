@@ -75,10 +75,38 @@
     z-index: 999;
 }
 
+.backdrop_modal_CurrLatest {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
 /* end modal edit admin  */
 
 .input_edit_profile_admin {
     border: 1px solid var(--color-gray-300);
     height: 32px;
     border-radius: 6px;
+}
+
+.navLeft.active {
+    padding: 12px 24px;
+    border-radius: 8px;
+    background-color: rgb(181, 181, 255);
+}
+
+.container_manageUser {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.container_manageUser::-webkit-scrollbar {
+    display: none;
 }
