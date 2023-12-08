@@ -122,17 +122,20 @@ class Coin
         $conn = connectDB();
         $entityBody = file_get_contents('php://input');
         $databody = json_decode($entityBody);
+
         if (isset($databody)) {
-            if (isset(($databody->keyword))) {
-                $stmt = $conn->prepare("SELECT * from crypto_currency where name_product = '$databody->keyword' or id = '$databody->keyword' or symbol = '$databody->keyword' or cmc_rank = '$databody->keyword';");
+            if (isset($databody->keyword) && $databody->keyword != "") {
+                $stmt = $conn->prepare("SELECT id, name_product, symbol, cmc_rank from crypto_currency where name_product LIKE '%$databody->keyword%' or id LIKE '$databody->keyword' or symbol LIKE '%$databody->keyword%' or cmc_rank LIKE '%$databody->keyword%';");
                 $stmt->execute();
                 $stmt->setFetchMode(PDO::FETCH_ASSOC);
-                $result = $stmt->fetch();
+                $result = $stmt->fetchAll();
                 if ($result != false) {
                     echo json_encode(["status" => true, "result" => $result]);
                 } else {
                     echo json_encode(["status" => false, "result" => $result]);
                 }
+            } else {
+                echo json_encode(["status" => false, "result" => "Empty"]);
             }
         }
     }

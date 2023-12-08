@@ -44,14 +44,83 @@ class openOrder
     public function getOrderByIdUser($idUser)
     {
         $conn = connectDB();
-        $valueUsername = $conn->prepare("SELECT * FROM `order` where id_user = '$idUser';");
+        $valueUsername = $conn->prepare("SELECT * FROM `order` where id_user = '$idUser' and isCancel = 0;");
         $valueUsername->execute();
         $valueUsername->setFetchMode(PDO::FETCH_ASSOC);
         $result = $valueUsername->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
 
-    public function canceledOrder() {
-        
+    public function confirmedOrder($idTable, $idUser)
+    {
+        $conn = connectDB();
+
+        $stmtUpdateConfirmed = $conn->prepare("UPDATE `order` SET status = 'Confirmed', isCancel = 2 WHERE id = :idTable;");
+        $stmtUpdateConfirmed->bindParam(':idTable', $idTable, PDO::PARAM_STR);
+        $updateConfirmedSuccess = $stmtUpdateConfirmed->execute();
+        if ($updateConfirmedSuccess) {
+            $stmtUpdateProcessed = $conn->prepare("UPDATE `order` SET isProcessed = 1 WHERE id_user = :idUser AND isCancel IN (1, 2);");
+            $stmtUpdateProcessed->bindParam(':idUser', $idUser, PDO::PARAM_STR);
+            $updateProcessedSuccess = $stmtUpdateProcessed->execute();
+            if ($updateProcessedSuccess) {
+            } else {
+            }
+        } else {
+        }
+    }
+
+    public function canceledOrder($idTable, $idUser)
+    {
+        $conn = connectDB();
+
+        $stmtUpdateCancelled = $conn->prepare("UPDATE `order` SET status = 'Cancelled', isCancel = 1 WHERE id = :idTable;");
+        $stmtUpdateCancelled->bindParam(':idTable', $idTable, PDO::PARAM_STR);
+        $updateCancelledSuccess = $stmtUpdateCancelled->execute();
+        if ($updateCancelledSuccess) {
+            $stmtUpdateProcessed = $conn->prepare("UPDATE `order` SET isProcessed = 1 WHERE id_user = :idUser AND isCancel IN (1, 2);");
+            $stmtUpdateProcessed->bindParam(':idUser', $idUser, PDO::PARAM_STR);
+            $updateProcessedSuccess = $stmtUpdateProcessed->execute();
+            if ($updateProcessedSuccess) {
+            } else {
+            }
+        } else {
+        }
+    }
+
+    public function transHistory($idUser)
+    {
+        $conn = connectDB();
+        $stmtInsert = $conn->prepare("INSERT INTO transaction_history (id, id_user, id_crypto, amount, isCancel, status)
+        SELECT UUID(), id_user, id_crypto, amount, isCancel, status
+        FROM `order` WHERE id_user = :idUser AND isProcessed = 1;");
+
+        $stmtInsert->bindParam(':idUser', $idUser, PDO::PARAM_STR);
+        $insertSuccess = $stmtInsert->execute();
+        if ($insertSuccess) {
+            // echo json_encode(["status" => false, "message" => "Update of isProcessed in transaction_history table successful !"]);
+            $stmtUpdate = $conn->prepare("UPDATE `order` SET isProcessed = 2
+            WHERE id_user = :idUser AND isProcessed = 1");
+            $stmtUpdate->bindParam(':idUser', $idUser, PDO::PARAM_STR);
+            $updateSuccess = $stmtUpdate->execute();
+            if ($updateSuccess) {
+                // echo "Update of isProcessed in order table successful !";
+            } else {
+                // echo "Update of isProcessed in order table failed !";
+            }
+        } else {
+            // echo json_encode(["status" => false, "message" => "Update of isProcessed in transaction_history table failed !"]);
+        }
+        $stmtInsert->closeCursor();
+        $stmtUpdate->closeCursor();
+    }
+
+    public function queryAllTransHistory($idUser)
+    {
+        $conn = connectDB();
+        $valueUsername = $conn->prepare("SELECT * FROM `transaction_history` where id_user = '$idUser';");
+        $valueUsername->execute();
+        $valueUsername->setFetchMode(PDO::FETCH_ASSOC);
+        $result = $valueUsername->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
     }
 }

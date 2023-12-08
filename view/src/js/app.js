@@ -317,6 +317,8 @@ search_area.onclick = () => {
 
 closeSearch.onclick = () => {
     boxSearch.classList.remove('active')
+    $(".resultSearch").html("")
+    $('#searchInput').val("")
 }
 
 ////////////////////////// editDetailBtn editable ////////////////////
@@ -349,28 +351,49 @@ $('#searchInput').on("input", function () {
             keyword: keyword
         }),
         success: function (res) {
-            let json_data = JSON.parse(res);
-            if (json_data.status == false) {
-                $(".resultSearch").html("Not found")
-                if (keyword == "") {
-                    $(".resultSearch").html("")
-                }
+            let data = JSON.parse(res);
+            console.log(data);
+            if (data.status == false) {
+                $(".resultSearch").html("<strong style='margin-top: 24px; text-align: center;'>Not found</strong>")
             } else {
-                let result = `<div onclick="window.location='?mod=page-detail&id=${json_data.result.id}'" class="mt_24px pointer">
+                let html = data.result.map((json_data) => {
+                    return `<a href="?mod=page-detail&id=${json_data.id}" target="_blank" class="mt_24px pointer resultSearchTag">
                                 <div>
-                                    <span>ID: ${json_data.result.id}</span>
-                                    <span style='margin-left: 8px;'>Rank: ${json_data.result.cmc_rank}</span>
+                                    <span>ID: ${json_data.id}</span>
+                                    <span style='margin-left: 8px;'>Rank: ${json_data.cmc_rank}</span>
                                 </div>
-                                <div class='flex f_column'>
-                                    <strong style='margin-top: 8px; color: #3861FB;'>${json_data.result.name_product}</strong>
-                                    <strong style='color: #3861FB;'>${json_data.result.symbol}</strong>
+                                <div class=''>
+                                    <strong style='margin-top: 8px; color: #3861FB;'>${json_data.name_product}</strong>
+                                    <strong style='color: #3861FB; margin-left: 8px;'>${json_data.symbol}</strong>
                                 </div>
-                                </div>`
-                $(".resultSearch").html(result)
+                            </a>`
+                }).join(" ")
+                $(".resultSearch").html(html)
             }
         }
     })
 })
 
-
 // order 
+
+// fetch('http://localhost/MPA/model/openOrders.php', {
+//     method: 'POST',
+//     headers: {
+//         'Content-Type': 'application/json',
+//     }
+// })
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log(data);
+//         if (data.status) {
+//             // Success
+//             console.log(data.message);
+//         } else {
+//             // Failure
+//             console.error(data.message);
+//         }
+//     })
+//     .catch(error => {
+//         // Handle errors here
+//         console.error('Error:', error);
+//     });

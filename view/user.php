@@ -37,7 +37,7 @@ $result = $user->getUsers($_SESSION["id"]);
                                 </div>
                                 <div class="flex_sp_bt align_center">
                                     <div class="border_300 color_gray_100_bg radius_50 of_hidden" style="width: 80px; height: 80px;">
-                                        <img src="./view/src/img/uploads/<?php if (isset($_SESSION["avatar"])) echo ($_SESSION["avatar"]) ?>" width="100px" height="100px" alt="">
+                                        <img src="./view/src/img/uploads/<?php if (isset($_SESSION["avatar"])) echo ($_SESSION["avatar"]) ?>" width="100px" height="100px" style="object-fit: cover;" alt="">
                                     </div>
                                     <div>
                                         <input id="inputFileUser" type="file" name="avatar" placeholder="Upload" value="Edit Avatar" class="fs-14px-fw-600 p_12px_24px radius-8px pointer">

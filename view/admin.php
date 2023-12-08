@@ -1,5 +1,7 @@
 <?php
 $result = $user->getUsers($_SESSION["id"]);
+
+
 ?>
 
 <div class="container_admin flex w_100pc">
@@ -101,7 +103,7 @@ $result = $user->getUsers($_SESSION["id"]);
                 foreach ($getAllorders as $key => $value) {
                     $idCrypto = $coin->getDetailCoin($value["id_crypto"]);
                 ?>
-                    <div class="activity-detail  p_16px " style="display: grid; grid-template-columns: 30% 15% 15% 10% 15% 15%;">
+                    <div class="activity-detail  p_16px " style="display: grid; grid-template-columns: 30% 15% 15% 10% 10% 20%;">
                         <div>
                             <div class="border-bottom pb_16px fs-14px-fw-700">Transactions</div>
                             <div class="flex align_center g_8px pt_16px">
@@ -125,22 +127,40 @@ $result = $user->getUsers($_SESSION["id"]);
                             <div class="pt_16px"><?= $value["type"] ?></div>
                         </div>
                         <div>
-                            <div class="border-bottom pb_16px fs-14px-fw-700">Status</div>
-                            <div class="pt_16px" style=" font-weight: bold ;<?php switch ($value["status"]) {
-                                                                                case "Pending":
-                                                                                    echo "color: orange";
-                                                                                    break;
-                                                                                case "Confirmed":
-                                                                                    echo "color: green";
-                                                                                    break;
-                                                                                case "Cancelled":
-                                                                                    echo "color: gray";
-                                                                                    break;
-                                                                            } ?>"><?= $value["status"] ?></div>
+                            <div class="border-bottom pb_16px fs-14px-fw-700" style="width: 100px; text-align: center;">Status</div>
+                            <div class="pt_16px" style="width: 100px; font-weight: bold;<?php switch ($value["status"]) {
+                                                                                            case "Confirmed":
+                                                                                                echo "color: green";
+                                                                                                break;
+                                                                                            case "Cancelled":
+                                                                                                echo "color: red";
+                                                                                                break;
+                                                                                        } ?>; text-align: center;">
+                                <?php if ($value["status"] == "Pending") {
+                                ?>
+                                    <form method="post">
+                                        <div style="color: orange"><?= $value["status"] ?></div>
+                                        <div>
+                                            <input style="margin-top: 8px; min-width: 80px;" class="pointer" type="submit" name="submitConfirm[<?= $value['id'] ?>]" value="Confirm ?">
+                                            <input style="margin-top: 8px; min-width: 80px;" class="pointer" type="submit" name="submitCancel[<?= $value['id'] ?>]" value="Cancel ?">
+                                        </div>
+                                    </form>
+                                <?php
+                                    if (isset($_POST["submitConfirm"][$value['id']])) {
+                                        $orders->confirmedOrder($value["id"], $_SESSION["id"]);
+                                        $orders->transHistory($_SESSION["id"]);
+                                    } else if (isset($_POST["submitCancel"][$value['id']])) {
+                                        $orders->canceledOrder($value["id"], $_SESSION["id"]);
+                                        $orders->transHistory($_SESSION["id"]);
+                                    }
+                                } else {
+                                    echo $value["status"];
+                                } ?>
+                            </div>
                         </div>
                         <div>
-                            <div class="border-bottom pb_16px fs-14px-fw-700">Date</div>
-                            <div class="pt_16px"><?= $value["created_at"] ?></div>
+                            <div class="border-bottom pb_16px fs-14px-fw-700" style="text-align: center;">Date</div>
+                            <div class="pt_16px" style="text-align: center;"><?= $value["created_at"] ?></div>
                         </div>
                     </div>
                 <?php } ?>

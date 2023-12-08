@@ -49,14 +49,23 @@
                         <div style="width: 14.28%" class="fs-12px-fw-600"><?= $value["type"] ?></div>
                         <form action="" method="post">
                             <div style="width: 14.28%; text-align: center;" class=""><?php if ($value["status"] == "Pending") {
-                                                                                            echo '<input class="pointer" type="submit" value="X" name="cancelProuct">';
+                                                                                            $idTable = $value['id'];
+                                                                                            $html = <<< STR
+                                                                                                            <input class="pointer" type="submit" value="X" name="submitCancel[$idTable]">
+                                                                                                STR;
+                                                                                            echo $html;
                                                                                         } else {
                                                                                             echo '<input class="pointer" style="background-color: green; color: white;" type="submit" value="OKE" name="" disabled>';
                                                                                         } ?></div>
                         </form>
                     </div>
                 </div>
-            <?php }
+            <?php
+                if (isset($_POST["submitCancel"][$value['id']])) {
+                    $openOrder->canceledOrder($value["id"], $_SESSION["id"]);
+                    $openOrder->transHistory($_SESSION["id"]);
+                }
+            }
             ?>
         </div>
     </div>

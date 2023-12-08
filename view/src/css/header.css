@@ -32,6 +32,7 @@
     box-shadow: var(--box-shadow2);
     position: absolute;
     right: 0;
+    z-index: 999;
 }
 
 .boxSearch_hidden.active {
@@ -451,4 +452,22 @@
 
 .label-bottom.active {
     border-bottom: 3px solid var(--main-color);
+}
+
+/* search  */
+.resultSearch {
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    overflow-y: scroll;
+
+}
+
+.resultSearchTag {
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.resultSearchTag:hover {
+    background-color: rgb(240, 240, 240);
 }

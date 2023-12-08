@@ -29,14 +29,22 @@ if (isset($act)) {
             include_once 'view/footer.php';
             break;
         case 'profile':
-            $viewTitle = truncateText("Profile User");
-            if (isset($_POST["submitEditProfile"]) && $_POST["submitEditProfile"]) {
-                $value = $user->userEditProfile($_FILES["avatar"], $_POST["username"], $_POST["currentpassword"], $_POST["newpassword"]);
+            if (!empty($_SESSION["id"])) {
+                if ($_SESSION["role_user"] == 0) {
+                    header("location: ?mod=admin&act=admin-home");
+                }
+                $viewTitle = truncateText("Profile User");
+                if (isset($_POST["submitEditProfile"]) && $_POST["submitEditProfile"]) {
+                    $value = $user->userEditProfile($_FILES["avatar"], $_POST["username"], $_POST["currentpassword"], $_POST["newpassword"]);
+                }
+                include_once 'view/header.php';
+                include_once 'view/user.php';
+                include_once 'view/footer.php';
+                break;
+            } else {
+                header("location: ./");
+                break;
             }
-            include_once 'view/header.php';
-            include_once 'view/user.php';
-            include_once 'view/footer.php';
-            break;
         case 'watchlistNotLogin':
             $viewTitle = truncateText("Sign up today and get");
             include_once 'view/header.php';
