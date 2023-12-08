@@ -12,7 +12,7 @@
             <iconify-icon class="fs_24px" icon="ic:round-history"></iconify-icon>
         </a>
     </div>
-    <div class="portfolio_main">
+    <div class="portfolio_main" style="max-height: 500px; overflow-x: scroll;">
         <div class="portfolio_transaction flex f_column" style="margin: 26px 0;">
             <div class="p_16px_0px border-bottom">
                 <div style="width: 100%;" class="flex">

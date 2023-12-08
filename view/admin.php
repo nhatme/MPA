@@ -113,6 +113,7 @@ $result = $user->getUsers($_SESSION["id"]);
                                     <span style="margin-left: 8px;"><?= $idCrypto["symbol"] ?></span>
                                 </div>
                             </div>
+                            <div style="font-weight: bold; margin-top: 8px;">UID: <?= $value["id_user"] ?></div>
                         </div>
                         <div>
                             <div class="border-bottom pb_16px fs-14px-fw-700">Amount</div>
