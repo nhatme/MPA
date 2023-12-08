@@ -34,7 +34,7 @@ class openOrder
     public function getAllOrders()
     {
         $conn = connectDB();
-        $valueUsername = $conn->prepare("SELECT * FROM `order`;");
+        $valueUsername = $conn->prepare("SELECT * FROM `order` order by created_at desc;");
         $valueUsername->execute();
         $valueUsername->setFetchMode(PDO::FETCH_ASSOC);
         $result = $valueUsername->fetchAll(PDO::FETCH_ASSOC);
@@ -44,7 +44,7 @@ class openOrder
     public function getOrderByIdUser($idUser)
     {
         $conn = connectDB();
-        $valueUsername = $conn->prepare("SELECT * FROM `order` where id_user = '$idUser' and isCancel = 0;");
+        $valueUsername = $conn->prepare("SELECT * FROM `order` where id_user = '$idUser' and isCancel = 0 order by created_at desc;");
         $valueUsername->execute();
         $valueUsername->setFetchMode(PDO::FETCH_ASSOC);
         $result = $valueUsername->fetchAll(PDO::FETCH_ASSOC);
@@ -117,7 +117,7 @@ class openOrder
     public function queryAllTransHistory($idUser)
     {
         $conn = connectDB();
-        $valueUsername = $conn->prepare("SELECT * FROM `transaction_history` where id_user = '$idUser';");
+        $valueUsername = $conn->prepare("SELECT * FROM `transaction_history` where id_user = '$idUser' order by created_at desc;");
         $valueUsername->execute();
         $valueUsername->setFetchMode(PDO::FETCH_ASSOC);
         $result = $valueUsername->fetchAll(PDO::FETCH_ASSOC);

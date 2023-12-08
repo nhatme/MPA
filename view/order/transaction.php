@@ -3,11 +3,12 @@
         <div class="flex align_center">
             <a href="?mod=order&act=orders" class="fs-14px-fw-600 pointer p_8px">
                 Open Orders
-                <span>( <?= count($resultUser) ?> )</span>
+                <span>( <?= count($resultOrders) ?> )</span>
             </a>
             <a href="?mod=order&act=funds" style="margin-left: 16px;" class="fs-14px-fw-600 pointer p_8px">Funds</a>
         </div>
-        <a href="?mod=order&act=transaction_history" class="flex p_8px">
+        <a href="?mod=order&act=transaction_history" class="flex p_8px fs-14px-fw-600 flex align_center">
+            <span>( <?= count($resultTransHistory) ?> )</span>
             <iconify-icon class="fs_24px" icon="ic:round-history"></iconify-icon>
         </a>
     </div>
@@ -25,9 +26,9 @@
                 </div>
             </div>
             <?php
-            if (!empty($resultUser)) {
+            if (!empty($resultTransHistory)) {
 
-                foreach ($resultUser as $key => $value) {
+                foreach ($resultTransHistory as $key => $value) {
                     $idCrypto = $coin->getDetailCoin($value["id_crypto"]);
             ?>
                     <div class="p_16px_0px border-bottom pointer">

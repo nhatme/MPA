@@ -5,19 +5,20 @@ include_once './model/userAccount.php';
 
 $openOrder = new openOrder();
 $coin = new Coin();
+$resultOrders = $openOrder->getOrderByIdUser($_SESSION["id"]);
+$resultTransHistory = $openOrder->queryAllTransHistory($_SESSION["id"]);
+
 extract($_REQUEST);
 
 if (!empty($_SESSION["id"])) {
     if (isset($act)) {
         switch ($act) {
             case 'orders':
-                $resultUser = $openOrder->getOrderByIdUser($_SESSION["id"]);
                 include_once 'view/header.php';
                 include_once 'view/order/orders.php';
                 include_once 'view/footer.php';
                 break;
             case 'transaction_history':
-                $resultUser = $openOrder->queryAllTransHistory($_SESSION["id"]);
                 include_once 'view/header.php';
                 include_once 'view/order/transaction.php';
                 include_once 'view/footer.php';
